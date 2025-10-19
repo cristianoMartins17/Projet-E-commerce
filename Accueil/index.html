@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accueil</title>
+  <!-- Feuille de style simple -->
+  <link rel="stylesheet" href="../Accueil/accueil.css">
+</head>
+<body>
+  <!-- Exemple de fond (on voit la nav transparente dessus) -->
+  <div class="page-hero">
+    <img src="Activite.gif" alt="Illustration" class="hero-img">
+  </div>
 
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="mainNav">
+      <div class="nav-inner">
+        <!-- gauche : boutique + panier (sur mobile on cache) -->
+        <div class="nav-left">
+          <a href="/boutique" class="nav-link">Boutique</a>
+          <a href="/panier" class="nav-link">Panier</a>
+        </div>
+
+        <!-- titre : centré sur ordi, gauche sur mobile.
+             Contient texte + logo (on swap par hover via CSS) -->
+        <div class="nav-title">
+          <a href="/" class="title-link" aria-label="Accueil">
+            <span class="title-text">Not For Teachers</span>
+            <img src="Activite.gif" alt="Logo" class="title-logo">
+          </a>
+        </div>
+
+        <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
+        <div class="nav-right">
+          <a href="/a-propos" class="nav-link">À propos</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenu fictif pour permettre le scroll -->
+  <main>
+    <section style="height:1500px; padding:2rem;">
+      <h1>Contenu de la page</h1>
+      <p>Fais défiler pour voir la barre changer de couleur.</p>
+    </section>
+  </main>
+
+  <script src="../Accueil/accueil.js"></script>
+</body>
+</html>
