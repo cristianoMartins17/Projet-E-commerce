@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halo souris fonctionnel</title>
+  <style>
+    :root {
+      --fond: #070517;
+      --violet: rgba(189, 34, 251, 0.4);
+      --rose: rgba(237, 38, 192, 0.3);
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: var(--fond);
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .halo {
+      position: fixed;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--rose), var(--violet));
+      pointer-events: none;
+      mix-blend-mode: lighten;
+      opacity: 0.6;
+      transition: transform 0.05s ease;
+      z-index: 1000;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="halo" id="halo"></div>
+  <div class="card">
+    <h1>Halo souris violet/rosé</h1>
+    <p>Le halo suit ta souris sur un fond sombre.</p>
+  </div>
+
+  <script>
+    const halo = document.getElementById("halo");
+
+    document.addEventListener("mousemove", (e) => {
+      halo.style.transform = `translate(${e.clientX - 60}px, ${e.clientY - 60}px)`;
+    });
+  </script>
+</body>
+</html>

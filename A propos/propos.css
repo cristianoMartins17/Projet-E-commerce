@@ -1,6 +1,9 @@
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 2;
 }
 body {
 
@@ -12,27 +15,37 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--sombre)
+  background-color: var(--sombre);
+
 }
 
 
 main {
     background-color: var(--sombre);
+    background-attachment: scroll;
     align-items: center;
     transform-origin: top right;
     padding: 50px;
     position: relative;
     z-index: 2;
-    transition: transform 1s;
+    transition: transform 0.2s ;
     display: flex;
     flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap:100px;
+    padding-bottom: 300px;
 }
 
 footer {
     position: relative;
     z-index: 1;
-    background-color: var(--violet-clair)
+    background-color: var(--violet-clair);
+    display: flex;
+    flex-direction: column;
+
 }
+
 
 .texteCentrer {
     text-align: center;
@@ -51,7 +64,7 @@ div img {
 h1 {
     border: 1px solid white;
     color: white;
-    background-color: var(--rose);
+    background:linear-gradient(to right, var(--violet-fonce ) 10%,#421868 90%);
     width: 30%;
     text-align: center;
     text-justify: center;
@@ -61,7 +74,7 @@ h1 {
 }
 
 h3 {
-    width: 15%;
+    width: 20%;
     background-color: var(--violet-clair);
     color:white;
     padding: 10px;
@@ -73,7 +86,11 @@ a {
     color:var(--rose);
 }
 
+li {
+    text-align: left;
+}
 .imageDroite {
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
 }
@@ -91,11 +108,18 @@ a {
     column-gap: 20px;
 }
 
+.imageDroite img {
+    background-color: #0D0723;
+    width: 20%;
+    height: auto;
+}
+
 .gauche {
     margin-right: auto;
 }
 
 .imageGauche {
+    margin-right: 10%;
     display: flex;
     flex-direction: column;
 }
@@ -123,6 +147,7 @@ a {
 }
 
 #annecdotes {
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
 }
@@ -139,7 +164,7 @@ a {
 }
 
 #actualites {
-    width: 100%;
+    margin-right: 10%;
 }
 #conteneurActu div {
     background: rgba(255,255,255,0.04);
@@ -155,5 +180,20 @@ a {
 
 
 
+@media (max-width:768px) {
+    h1 {
+        width: 100%;
+    }
+    h3 {
+        width: 100%;
+    }
+
+    .imageDroite div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
 
 
