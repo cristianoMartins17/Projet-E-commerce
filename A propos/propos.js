@@ -24,7 +24,7 @@ window.addEventListener("scroll", () => {
   if (hauteurActuelle>= hauteurTotale*hauteurEffet) {
     let coeff=(hauteurActuelle-hauteurTotale*hauteurEffet)/(hauteurTotale*(1-hauteurEffet));
     coeff=Math.min(coeff,1);
-    main.style.transform=`rotate(${-coeff*25}deg)`;
+    main.style.transform=`rotate(${-coeff*15}deg) translateX(${coeff*50}%)` ;
   }
   else {
     main.style.transform="rotate(0deg)";

@@ -19,18 +19,17 @@ body {
 main {
     background-color: var(--sombre);
     align-items: center;
-    transform-origin: top left;
+    transform-origin: top right;
     padding: 50px;
     position: relative;
     z-index: 2;
-    transition: transform 2s;
+    transition: transform 1s;
     display: flex;
     flex-direction: column;
 }
 
 footer {
     position: relative;
-    padding: 100px;
     z-index: 1;
     background-color: var(--violet-clair)
 }
@@ -43,6 +42,11 @@ footer {
     text-align: left;
 }
 
+div img {
+    height: 100%;
+    width: auto;
+    background-color: white;
+}
 
 h1 {
     border: 1px solid white;
@@ -68,56 +72,54 @@ h3 {
 a {
     color:var(--rose);
 }
-#presentation, #annecdotes{
 
-    margin-left: 7%;
+.imageDroite {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
 }
 
-#presentation h3 {
-    margin-right: 80%;
-    width: 20%;
-}
-#presentation div{
-    background-color: var(--violet-fonce);
+.imageDroite div {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    text-align:center;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
     display: flex;
     column-gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid white;;
 }
 
-#presentation * {
-    color: white;
-    line-height: 1.6;
+.gauche {
+    margin-right: auto;
 }
 
-#histoire {
-    margin-right: 7%;
-    margin-top: 20px;
+.imageGauche {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-#histoire h3 {
-    margin-left: 80%;
-}
-#histoire div {
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 20px;
+.imageGauche div {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    text-align:center;
+    box-shadow: 0 6px 30px black;
+    backdrop-filter: blur(6px);
     display: flex;
     flex-direction: row-reverse;
-    background-color: var(--violet-fonce);
     column-gap: 20px;
 }
-#histoire * {
-    color: white;
-    line-height: 1.6;
+
+.gauche {
+    margin-right: auto;
+}
+
+.droite {
+    margin-left: auto;
 }
 
 #annecdotes {
@@ -125,45 +127,33 @@ a {
     flex-direction: column;
 }
 
-
-#annecdotes h3 {
-    margin-right: 80%;
-}
 #annecdotes ul {
-
-    justify-content: center;
-    align-items: left;
-    padding: 20px;
-    background-color: var(--violet-fonce);
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    border:1px solid white;
-    color:white
-}
-
-main img {
-    background-color: black;
-    width: 100%;
-    height: auto;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    text-align:center;
+    box-shadow: 0 6px 30px black;
+    backdrop-filter: blur(6px);
 }
 
 #actualites {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    margin-right: 7%;
+}
+#conteneurActu div {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 30px;
+    border-radius: 12px;
+    color: #fff;
+    text-align:center;
+    box-shadow: 0 6px 30px black;
+    backdrop-filter: blur(6px);
+    width: 100%;
 }
 
-#actualites h3 {
-    margin-left: 80%;
-}
 
-#actualites div {
-    color:white;
-    padding: 20px;
-    background-color: var(--violet-fonce);
-    border-radius: 20px;
-    border:1px solid white;
-}
+
+
 
