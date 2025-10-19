@@ -45,6 +45,7 @@ footer {
 
 
 h1 {
+    border: 1px solid white;
     color: white;
     background-color: var(--rose);
     width: 30%;
@@ -61,11 +62,15 @@ h3 {
     color:white;
     padding: 10px;
     border-radius: 10px;
+    text-align: center;
 }
 
+a {
+    color:var(--rose);
+}
 #presentation, #annecdotes{
-    margin-left: 7%;
 
+    margin-left: 7%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,17 +78,22 @@ h3 {
 }
 
 #presentation h3 {
-    margin-right: auto;
+    margin-right: 80%;
     width: 20%;
 }
 #presentation div{
-    background-color: white;
+    background-color: var(--violet-fonce);
     display: flex;
     column-gap: 20px;
     padding: 20px;
     border-radius: 10px;
+    border: 1px solid white;;
 }
 
+#presentation * {
+    color: white;
+    line-height: 1.6;
+}
 
 #histoire {
     margin-right: 7%;
@@ -94,16 +104,20 @@ h3 {
 }
 
 #histoire h3 {
-    margin-left: auto;
+    margin-left: 80%;
 }
 #histoire div {
+    border: 1px solid white;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: row-reverse;
-    background-color: white;
+    background-color: var(--violet-fonce);
     column-gap: 20px;
-
+}
+#histoire * {
+    color: white;
+    line-height: 1.6;
 }
 
 #annecdotes {
@@ -113,16 +127,19 @@ h3 {
 
 
 #annecdotes h3 {
-    margin-right: auto;
+    margin-right: 80%;
 }
 #annecdotes ul {
+
     justify-content: center;
     align-items: left;
     padding: 20px;
-    background-color: white;
+    background-color: var(--violet-fonce);
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    border:1px solid white;
+    color:white
 }
 
 main img {
@@ -139,11 +156,14 @@ main img {
 }
 
 #actualites h3 {
-    margin-left: auto;
+    margin-left: 80%;
 }
 
 #actualites div {
+    color:white;
     padding: 20px;
-    background-color: white;
+    background-color: var(--violet-fonce);
     border-radius: 20px;
+    border:1px solid white;
 }
+
