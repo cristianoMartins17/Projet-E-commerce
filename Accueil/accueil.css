@@ -1,1 +1,144 @@
 
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+
+body {
+  min-height: 100vh;
+  line-height: 1.3;
+}
+
+/* image de fond */
+.page-hero { width: 100%; height: 420px; overflow: hidden; position: relative; }
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- NAVBAR de base ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 60;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  /* transparent pour qu'on voit l'image derrière */
+  background-color: transparent;
+}
+
+/* conteneur interne pour aligner éléments */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  position: relative; /* pour titre centré en absolute */
+}
+
+/* elements gauche et droite */
+.nav-left, .nav-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* liens dans la nav */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.98rem;
+  position: relative;
+  padding: 8px 16px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  border-radius: 30px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Ajustement de la couleur du cercle quand la navbar est scrollée */
+.navbar--scrolled .nav-link::before {
+  border-color: #222;
+}
+
+/* ---------- TITRE centré ---------- */
+.nav-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto; 
+}
+
+/* lien titre : contient texte + logo */
+.title-link { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+}
+
+/* texte visible par défaut */
+.title-text {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: opacity 0.25s ease;
+}
+
+/* logo caché affiché au hover */
+.title-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  height: 34px;
+  width: 34px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Au hover sur le titre : texte disparait, logo apparait */
+.nav-title:hover .title-text { opacity: 0; }
+.nav-title:hover .title-logo { 
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1); 
+}
+
+
+/* ---------- SCROLL : changement de couleur ---------- */
+/* Cette classe est ajoutée via JS quand on scrolle */
+.navbar.navbar--scrolled {
+  background-color: rgba(255,255,255,0.95); /* fond clair quand scrolled */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Dans l'état scrolled, on change la couleur du texte */
+.navbar.navbar--scrolled .nav-link,
+.navbar.navbar--scrolled .title-text {
+  color: #222;
+}
+
