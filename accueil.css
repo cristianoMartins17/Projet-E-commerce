@@ -4,21 +4,6 @@
   padding: 0; 
 }
 
-/* corps : on laisse la police par défaut du navigateur (pas d'import) */
-body {
-  min-height: 100vh;
-  line-height: 1.3;
-}
-
-/* image de fond/hero : visible sous la navbar transparente */
-.page-hero { width: 100%; height: 420px; overflow: hidden; position: relative; }
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 /* ---------- NAVBAR de base ---------- */
 .navbar {
   position: fixed;    /* toujours en haut */
