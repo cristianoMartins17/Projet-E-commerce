@@ -1,17 +1,16 @@
-
 * { 
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
 
-
+/* corps : on laisse la police par défaut du navigateur (pas d'import) */
 body {
   min-height: 100vh;
   line-height: 1.3;
 }
 
-/* image de fond */
+/* image de fond/hero : visible sous la navbar transparente */
 .page-hero { width: 100%; height: 420px; overflow: hidden; position: relative; }
 .hero-img {
   width: 100%;
@@ -22,14 +21,17 @@ body {
 
 /* ---------- NAVBAR de base ---------- */
 .navbar {
-  position: fixed;
+  position: fixed;    /* toujours en haut */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 60;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
-  /* transparent pour qu'on voit l'image derrière */
-  background-color: transparent;
+  background: rgba(13, 7, 35, 0.8);
+  border-bottom: 2px solid rgba(189, 34, 251, 0.4);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.3);
+  backdrop-filter: blur(8px);
+  animation: neonGlow 3s infinite alternate;
+  transition: all 0.4s ease;
 }
 
 /* conteneur interne pour aligner éléments */
@@ -41,17 +43,17 @@ body {
   position: relative; /* pour titre centré en absolute */
 }
 
-/* elements gauche et droite */
+/* left / right simples */
 .nav-left, .nav-right {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* liens dans la nav */
+/* liens de nav */
 .nav-link {
   text-decoration: none;
-  color: white;
+  color: white; /* texte blanc sur fond image */
   font-weight: 600;
   font-size: 0.98rem;
   position: relative;
@@ -77,18 +79,13 @@ body {
   transform: scale(1);
 }
 
-/* Ajustement de la couleur du cercle quand la navbar est scrollée */
-.navbar--scrolled .nav-link::before {
-  border-color: #222;
-}
-
-/* ---------- TITRE centré ---------- */
+/* ---------- TITRE centré (desktop) ---------- */
 .nav-title {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: auto; 
+  pointer-events: auto; /* autorise le hover */
 }
 
 /* lien titre : contient texte + logo */
@@ -108,7 +105,7 @@ body {
   transition: opacity 0.25s ease;
 }
 
-/* logo caché affiché au hover */
+/* logo caché par défaut (on l'affiche au hover) */
 .title-logo {
   position: absolute;
   left: 50%;
@@ -130,15 +127,150 @@ body {
 
 
 /* ---------- SCROLL : changement de couleur ---------- */
-/* Cette classe est ajoutée via JS quand on scrolle */
-.navbar.navbar--scrolled {
-  background-color: rgba(255,255,255,0.95); /* fond clair quand scrolled */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+.navbar--scrolled {
+  background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite, neonGlow 6s infinite alternate;
+  border-bottom: none;
 }
 
-/* Dans l'état scrolled, on change la couleur du texte */
-.navbar.navbar--scrolled .nav-link,
-.navbar.navbar--scrolled .title-text {
-  color: #222;
+/* Animation du glow pulsant */
+@keyframes neonGlow {
+  0% {
+    box-shadow:
+      0 0 8px #BD22FB,
+      0 0 15px #ED26C0,
+      0 0 25px rgba(237, 38, 192, 0.6);
+  }
+  100% {
+    box-shadow:
+      0 0 20px #BD22FB,
+      0 0 35px #ED26C0,
+      0 0 60px rgba(189, 34, 251, 0.8);
+  }
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- NAVBAR hamburger (mobile) ---------- */
+/* Bouton burger (le seul visible au départ) */
+#burger-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    font-size: 26px;           /* Taille du symbole ☰ */
+    color: black;              /* Couleur du symbole burger */
+    background-color: #BD22FB;   /* Fond violet */
+    border: none;
+    border-radius: 50%;        /* Rend le bouton circulaire */
+    width: 45px;               /* Largeur du cercle */
+    height: 45px;              /* Hauteur du cercle */
+    display: flex;             /* Pour centrer le symbole */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+    cursor: pointer;
+    transition: 0.3s; 
+}
+
+/* Petit effet au survol */
+#burger-btn:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0; /* léger gris au survol */
+}
+
+/* Le menu (fermé par défaut) */
+.hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px groove #41156A;
+    border-radius: 0 10px 10px 0;
+    transition: width 0.5s ease;
+    animation: neonGlow 3s infinite alternate;
+    z-index: 999;
+}
+
+/* Quand le menu est "ouvert" (classe ajoutée par JS) */
+.hamburger.open {
+    width: 100%;
+}
+
+/* Contenu du menu (liens, logo) */
+.hamburger img {
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Liens du menu */
+.hamburger a {
+    opacity: 0;
+    color: white;
+    background-color: #41156A;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: opacity 0.5s, background 0.3s;
+}
+
+.hamburger a:hover {
+    background-color: #BD22FB;
+}
+
+/* Quand le menu est ouvert, on rend tout visible */
+.hamburger.open a,
+.hamburger.open img {
+    opacity: 1;
+}
+
+/* Lien actif */
+.hamburger > .actif {
+    background-color: #BD22FB;
+}
+
+/* Option : cacher le menu sur grand écran si tu veux */
+@media (min-width: 768px) {
+    #burger-btn {
+        display: none;
+    }
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    header>nav {
+        flex-direction: column;
+    }
+
+    header>nav>a {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 4vw;
+        padding: 5px 0;
+        border-radius: 0; /* on désactive les bordures arrondies */
+    }
+}
