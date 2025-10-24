@@ -251,14 +251,15 @@ a{
 .liens {
   width: 80%;
   background-color: var(--violet-fonce);
-  padding: 25px;
+  padding: 50px;
   border-radius: 12px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
 }
+
+
 
 .liens a{
   display: flex;
