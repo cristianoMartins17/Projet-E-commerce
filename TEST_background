@@ -3,16 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Animated background avec lignes</title>
+<title>Animated background avec 4 halos</title>
 <style>
   :root{
     --sombre: #070517;
     --accent1: rgba(189,34,251,0.85);
     --accent2: rgba(237,38,192,0.75);
-    --blur-size: 180px;
+    --blur-size: 100px;
     --intensity: 0.9;
-    --x: 50%;
-    --y: 50%;
   }
 
   html,body{
@@ -26,95 +24,120 @@
     inset: 0;
     overflow: hidden;
     z-index: -1;
-    pointer-events: none;
     background: var(--sombre);
+    pointer-events: none;
   }
 
-  /* Halo existants */
+  /* halos principaux d’origine */
   .animated-bg::before,
   .animated-bg::after {
     content: "";
     position: absolute;
     inset: -20%;
     filter: blur(var(--blur-size));
-    transform: translate3d(0,0,0);
-    will-change: transform, opacity, background-position;
     mix-blend-mode: screen;
     opacity: calc(var(--intensity) * 1);
-    transition: opacity 400ms ease, transform 400ms ease;
+    will-change: transform;
     pointer-events: none;
   }
 
   .animated-bg::before {
     background:
-      radial-gradient(
-        circle at var(--x) var(--y),
+      radial-gradient(circle at 40% 40%,)
         color-mix(in srgb, var(--accent1) 55%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%
-      );
-    animation: float1 12s linear infinite;
-    opacity: calc(var(--intensity) * 0.95);
+        transparent 15%, rgba(0,0,0,0) 35%;
+        animation: float1 14s linear infinite;
+        opacity: 0.8;
   }
 
   .animated-bg::after {
     background:
-      radial-gradient(
-        circle at 20% 30%,
+      radial-gradient(circle at 70% 60%,
         color-mix(in srgb, var(--accent2) 55%, transparent 0%),
-        transparent 18%,
-        rgba(0,0,0,0) 42%
-      );
+        transparent 25%,
+        rgba(0,0,0,0) 45%);
     animation: float2 18s linear infinite;
-    opacity: calc(var(--intensity) * 0.7);
-    transform-origin: center;
+    opacity: 0.7;
   }
 
-  /* Lignes de cahier dynamiques */
+  /* 2 halos supplémentaires */
+  .halo {
+    position: absolute;
+    inset: -20%;
+    filter: blur(var(--blur-size));
+    mix-blend-mode: screen;
+    pointer-events: none;
+    opacity: 0.6;
+    will-change: transform;
+  }
+
+  .halo:nth-child(2) {
+    background:
+      radial-gradient(circle at 25% 70%,
+        color-mix(in srgb, var(--accent1) 50%, transparent 0%),
+        transparent 30%,
+        rgba(0,0,0,0) 50%);
+    animation: float3 20s linear infinite;
+  }
+
+  .halo:nth-child(3) {
+    background:
+      radial-gradient(circle at 80% 20%,
+        color-mix(in srgb, var(--accent2) 60%, transparent 0%),
+        transparent 25%,
+        rgba(0,0,0,0) 45%);
+    animation: float4 26s linear infinite;
+  }
+
+  /* Lignes de fond visibles partout */
   .animated-bg .lines {
     position: absolute;
     inset: 0;
-    pointer-events: none;
     z-index: 0;
+    pointer-events: none;
     background-image: repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,0.05) 0px,
-      rgba(255,255,255,0.05) 1px,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 1px,
       transparent 1px,
       transparent 24px
     );
-    background-position: calc(var(--x) * 0.2) calc(var(--y) * 0.2);
-    transition: background-position 0.3s ease;
+    opacity: 0.5;
+    mix-blend-mode: lighten;
   }
 
+  /* animations */
   @keyframes float1 {
-    0%   { transform: translate3d(-6%, -4%, 0) scale(1); }
-    25%  { transform: translate3d(8%, -6%, 0)  scale(1.05); }
-    50%  { transform: translate3d(6%, 6%, 0)   scale(1.02); }
-    75%  { transform: translate3d(-8%, 6%, 0)  scale(0.98); }
-    100% { transform: translate3d(-6%, -4%, 0) scale(1); }
+    0%   { transform: translate3d(-30%, -20%, 0) scale(1); }
+    25%  { transform: translate3d(25%, -25%, 0) scale(1.1); }
+    50%  { transform: translate3d(20%, 30%, 0)  scale(1.05); }
+    75%  { transform: translate3d(-25%, 25%, 0) scale(0.95); }
+    100% { transform: translate3d(-30%, -20%, 0) scale(1); }
   }
 
   @keyframes float2 {
-    0%   { transform: translate3d(12%, 6%, 0) scale(0.95); }
-    25%  { transform: translate3d(-6%, 10%, 0) scale(1.02); }
-    50%  { transform: translate3d(-12%, -8%, 0) scale(1.05); }
-    75%  { transform: translate3d(6%, -4%, 0) scale(1); }
-    100% { transform: translate3d(12%, 6%, 0) scale(0.95); }
+    0%   { transform: translate3d(35%, 25%, 0) scale(0.9); }
+    25%  { transform: translate3d(-20%, 35%, 0) scale(1.05); }
+    50%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+    75%  { transform: translate3d(20%, -25%, 0) scale(1); }
+    100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
   }
 
-  .interactive-area:hover ~ .animated-bg,
-  .animated-bg:hover {
-    --intensity: 1.25;
-    filter: saturate(1.05);
+  /* tu peux ajouter encore un halo : */
+  @keyframes float3 {
+    0%   { transform: translate3d(-40%, 40%, 0) scale(1); }
+    25%  { transform: translate3d(30%, -35%, 0) scale(1.05); }
+    50%  { transform: translate3d(40%, 35%, 0) scale(0.95); }
+    75%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+    100% { transform: translate3d(-40%, 40%, 0) scale(1); }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .animated-bg::before,
-    .animated-bg::after {
-      animation: none;
-      transition: none;
-    }
+  @keyframes float4 {
+    0%   { transform: translate3d(-12%, 8%, 0) scale(1); }
+    25%  { transform: translate3d(10%, -6%, 0) scale(1.05); }
+    50%  { transform: translate3d(6%, 12%, 0) scale(0.9); }
+    75%  { transform: translate3d(-10%, -8%, 0) scale(1.08); }
+    100% { transform: translate3d(-12%, 8%, 0) scale(1); }
   }
 
   .page {
@@ -122,13 +145,12 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:2rem;
     padding:4rem;
   }
 
   .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.05);
     padding: 30px;
     border-radius: 12px;
     color: #fff;
@@ -138,101 +160,30 @@
     backdrop-filter: blur(6px);
   }
 
-  .hint {
-    font-size: 0.9rem;
-    opacity: 0.8;
+  .hint { opacity: 0.8; }
+
+  body:hover .animated-bg {
+    --intensity: 1.25;
+    filter: saturate(1.1);
   }
-
-  /* couche "lignes de cahier" uniquement visible dans le halo */
-.animated-bg .lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  
-  /* lignes fines horizontales */
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.3) 0px,
-    rgba(255,255,255,0.3) 1px,
-    transparent 1px,
-    transparent 24px
-  );
-  
-  /* décalage dynamique pour suivre le halo */
-  background-position: calc(var(--x) * 0.2) calc(var(--y) * 0.2);
-  
-  /* masque radial basé sur la position du halo */
-  -webkit-mask-image: radial-gradient(circle at var(--x) var(--y), rgba(0,0,0,1) 120px, rgba(0,0,0,0) 160px);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: cover;
-
-  mask-image: radial-gradient(circle at var(--x) var(--y), rgba(0,0,0,1) 120px, rgba(0,0,0,0) 160px);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: cover;
-
-  mix-blend-mode: lighten; /* pour se mélanger au halo */
-  transition: background-position 0.3s ease, -webkit-mask-position 0.3s ease, mask-position 0.3s ease;
-}
-
 </style>
 </head>
 <body>
 
-<div class="interactive-area" style="position:relative; z-index: 1;">
-  <main class="page">
-    <div class="card">
-      <h1>Exemple d'arrière-plan animé</h1>
-      <p class="hint">Bouge ta souris — le halo violet suit le curseur.</p>
-      <p>Les lignes imitent un cahier derrière le halo.</p>
-    </div>
-  </main>
-</div>
+<!-- <div class="page">
+  <div class="card">
+    <h1>Fond animé avec 4 halos</h1>
+    <p class="hint">Halos violets doux, lignes visibles sur tout le fond.</p>
+  </div>
+</div>-->
 
-<!-- background full-screen avec lignes -->
-<div class="animated-bg" id="animatedBg" aria-hidden="true">
+<div class="animated-bg">
   <div class="lines"></div>
-</div>
+  2 halos supplémentaires
+  <div class="halo"></div>
+  <div class="halo"></div>
+</div> 
 
-<script>
-(function () {
-  const bg = document.getElementById('animatedBg');
-  if (!bg) return;
-
-  let rafId = null;
-
-  function onMove(e) {
-    let x, y;
-    if (e.touches && e.touches.length) {
-      x = e.touches[0].clientX;
-      y = e.touches[0].clientY;
-    } else {
-      x = e.clientX;
-      y = e.clientY;
-    }
-    if (rafId) return;
-    rafId = requestAnimationFrame(() => {
-      const { left, top, width, height } = document.documentElement.getBoundingClientRect();
-      const px = ((x - left) / width) * 100;
-      const py = ((y - top) / height) * 100;
-      const clamp = (v) => Math.max(0, Math.min(100, v));
-      bg.style.setProperty('--x', clamp(px) + '%');
-      bg.style.setProperty('--y', clamp(py) + '%');
-      rafId = null;
-    });
-  }
-
-  window.addEventListener('mousemove', onMove, { passive: true });
-  window.addEventListener('touchmove', onMove, { passive: true });
-
-  window.addEventListener('mouseleave', () => {
-    bg.style.setProperty('--x', '50%');
-    bg.style.setProperty('--y', '50%');
-  });
-})();
-</script>
 
 </body>
 </html>
