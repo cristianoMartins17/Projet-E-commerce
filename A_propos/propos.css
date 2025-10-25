@@ -168,7 +168,7 @@ body:hover .animated-bg {
 /*==============================*/
 
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
     font-size: 16px;
     line-height: 2;
@@ -200,9 +200,13 @@ main {
     flex-direction: column;
     display: flex;
     flex-direction: column;
-    gap:100px;
     padding-bottom: 300px;
 }
+
+.hoverOmbreRose {
+  transition: 1s;
+}
+
 
 footer {
     position: relative;
@@ -212,13 +216,19 @@ footer {
     flex-direction: column;
 }
 
-
+main>hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 div img {
     height: 100%;
     width: auto;
     background-color: white;
 }
-
+p {
+  text-align: center;
+  color: white;
+}
 h1 {
     border: 1px solid white;
     color: white;
@@ -229,7 +239,6 @@ h1 {
     padding: 10px;
     border-radius: 10px;
     font-size: 30px;
-
 }
 
 h3 {
@@ -347,23 +356,52 @@ hr {
 
 
 
-#annecdotes {
-    margin-left: 10%;
+#caniotte {
     display: flex;
     flex-direction: column;
 }
 
-#annecdotes ul {
-    background: rgba(255,255,255,0.04);
+#caniotte>div {
+    /* background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.04);
     padding: 30px;
     border-radius: 12px;
     color: #fff;
     text-align:center;
     box-shadow: 0 6px 30px black;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px); */
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
+#caniotte>div>p {
+  height: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 6px 30px black;
+  backdrop-filter: blur(6px);
+  width: 50%;
+}
+#caniotte>div>div {
+  box-shadow: 0 6px 30px black;
+  background-color: var(--sombre);
+  padding: 10px;
+  height: 100%;
+  margin-left: 5%;
+  width: 40%;
+}
+
+#caniotte img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
 #actualites {
     margin-right: 10%;
 }
@@ -379,7 +417,28 @@ hr {
     width: 100%;
 }
 
+#inscription {
+  align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: #0D0723;
 
+}
+
+#inscription h3 {
+  width: 30%;
+}
+#inscription form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.hoverOmbreRose:hover {
+  box-shadow:0 6px 6px #ED26C0;
+}
 
 @media (max-width:768px) {
     h1 {
