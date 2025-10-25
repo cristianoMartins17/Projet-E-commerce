@@ -373,12 +373,16 @@ hr {
     position: relative;
     height: auto;
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: auto;
 }
 
 #caniotte>div>p {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 1;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.04);
   padding: 30px;
@@ -386,26 +390,25 @@ hr {
   color: #fff;
   box-shadow: 0 6px 30px black;
   backdrop-filter: blur(6px);
-  width: 50%;
 }
 #caniotte>div>div {
+  grid-column: 2/2;
   box-shadow: 0 6px 30px black;
   background-color: var(--sombre);
   padding: 10px;
-  height: 100%;
   margin-left: 5%;
-  width: 40%;
 }
 
 #caniotte img {
+  object-fit: cover;
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  height:auto;
 }
 #actualites {
     margin-right: 10%;
 }
-#conteneurActu div {
+#conteneurActu {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.04);
     padding: 30px;
@@ -417,9 +420,14 @@ hr {
     width: 100%;
 }
 
+#actualites progress {
+  width: 100%;
+}
+
 #inscription {
+
   align-items: center;
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   background-color: #0D0723;
@@ -452,6 +460,10 @@ hr {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    #histoire {
+      display: block;
     }
     
 }
