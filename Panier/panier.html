@@ -1,19 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-     <link rel="stylesheet" href="panier.css">
-    <title>Panier</title>
-  </head>
-  
-  <body>
- <div class="animated-bg">
-    <div class="lines"></div>
-    <div class="halo"></div>
-    <div class="halo"></div>
-</div> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panier — Not For Teachers</title>
+  <link rel="stylesheet" href="panier.css" />
+</head>
+<body>
 
-  </body>
+  <!-- ===== FOND ANIMÉ ===== -->
+  <div class="animated-bg" id="animatedBg"><div class="lines"></div></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <nav class="nav-left">
+        <a href="../index.html" class="nav-link">Accueil</a>
+        <a href="../Boutique/boutique.html" class="nav-link">Boutique</a>
+      </nav>
+
+      <div class="nav-title">
+        <a href="#" class="title-link">
+          <span class="title-text">Not For Teachers</span>
+          <img src="Images/error.gif" alt="logo" class="title-logo" />
+        </a>
+      </div>
+
+      <nav class="nav-right">
+        <a href="#" class="nav-link actif">Panier</a>
+        <a href="../A_propos/propos.html" class="nav-link">À propos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MENU BURGER ===== -->
+  <button id="burger-btn">☰</button>
+  <nav class="hamburger" id="menu">
+    <img src="error.gif" alt="logo nft" />
+    <a href="#">Accueil</a>
+    <a href="#">Boutique</a>
+    <a href="#" class="actif">Panier</a>
+    <a href="#">À propos</a>
+  </nav>
+
+  <!-- ===== CONTENU PRINCIPAL ===== -->
+  <main class="panier-section">
+    <h1>🛒 Mon Panier</h1>
+    <p class="subtitle">Les vrais savent... Pas pour les profs 😎</p>
+
+    <section class="cart-list">
+      <!-- Produit 1 -->
+      <div class="cart-item">
+        <img src="melvyn-lors-de-sa-montee-sur-la-premiere-marche-du-podium-du-tournoi-du-lion-1461248424.jpg" alt="Produit 1" />
+        <div class="cart-details">
+          <h3>🏆 Edition Limitée</h3>
+          <p class="price">250000 €</p>
+          <div class="quantity">
+            <button class="btn-qty">−</button>
+            <span>1</span>
+            <button class="btn-qty">+</button>
+          </div>
+        </div>
+        <button class="remove-btn">✖</button>
+      </div>
+
+      <!-- Produit 2 -->
+      <div class="cart-item">
+        <img src="Capture d’écran du 2025-10-23 08-24-04.png" alt="Produit 2" />
+        <div class="cart-details">
+          <h3>🔥 Ultra Rare</h3>
+          <p class="price">250000 €</p>
+          <div class="quantity">
+            <button class="btn-qty">−</button>
+            <span>2</span>
+            <button class="btn-qty">+</button>
+          </div>
+        </div>
+        <button class="remove-btn">✖</button>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="cart-item">
+        <img src="Capture d’écran du 2025-10-23 08-20-25.png" alt="Produit 3" />
+        <div class="cart-details">
+          <h3>👑 Masterpiece</h3>
+          <p class="price">250000 €</p>
+          <div class="quantity">
+            <button class="btn-qty">−</button>
+            <span>1</span>
+            <button class="btn-qty">+</button>
+          </div>
+        </div>
+        <button class="remove-btn">✖</button>
+      </div>
+    </section>
+
+    <!-- TOTAL -->
+    <div class="cart-total">
+      <p>Total : <span id="total-price">1000000 €</span></p>
+      <button class="checkout-btn">💸 Commander</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Not For Teachers — Tous droits réservés.</p>
+  </footer>
+
+  <script src="panier.js"></script>
+</body>
 </html>
-
