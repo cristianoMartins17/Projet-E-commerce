@@ -184,12 +184,11 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--sombre);
-
 }
 
 
 main {
-    background-color: var(--sombre);
+  background-color: #0d072363;
     background-attachment: scroll;
     align-items: center;
     transform-origin: top right;
@@ -211,17 +210,8 @@ footer {
     background-color: var(--violet-clair);
     display: flex;
     flex-direction: column;
-
 }
 
-
-.texteCentrer {
-    text-align: center;
-}
-
-.texteGauche {
-    text-align: left;
-}
 
 div img {
     height: 100%;
@@ -238,10 +228,12 @@ h1 {
     text-justify: center;
     padding: 10px;
     border-radius: 10px;
+    font-size: 30px;
 
 }
 
 h3 {
+  font-size: 20px;
     width: 20%;
     background-color: var(--violet-clair);
     color:white;
@@ -257,6 +249,12 @@ a {
 li {
     text-align: left;
 }
+
+hr {
+  width: 100%;
+  color: var(--rose);
+  height: 2px;
+}
 .imageDroite {
     margin-left: 10%;
     display: flex;
@@ -264,7 +262,7 @@ li {
 }
 
 .imageDroite div {
-    background: rgba(255,255,255,0.04);
+    background-color: var(--sombre);
     border: 1px solid rgba(255,255,255,0.04);
     padding: 30px;
     border-radius: 12px;
@@ -282,37 +280,72 @@ li {
     height: auto;
 }
 
-.gauche {
-    margin-right: auto;
+#histoire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
 }
 
-.imageGauche {
-    margin-right: 10%;
-    display: flex;
-    flex-direction: column;
+#histoire #conteneurHistoire {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
 }
 
-.imageGauche div {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.04);
-    padding: 30px;
-    border-radius: 12px;
-    color: #fff;
-    text-align:center;
-    box-shadow: 0 6px 30px black;
-    backdrop-filter: blur(6px);
-    display: flex;
-    flex-direction: row-reverse;
-    column-gap: 20px;
+#histoire #conteneurHistoire #phrise {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.gauche {
-    margin-right: auto;
+
+
+#histoire #conteneurHistoire #phrise .texteHistoire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  border: 1px solid var(--rose);
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+  padding-top: 2px;
+  background-color: #0D0723;
+  color:white;
 }
 
-.droite {
-    margin-left: auto;
+#histoire #conteneurHistoire #phrise .texteHistoire h3{
+  padding: 3px;
+  text-align: center;
+  font-size: 15px;
+  width: 30%;
+
 }
+
+#histoire #conteneurHistoire #phrise .traitVertical {
+  width: 5px;
+  background-color: white;
+  height: 70px;
+}
+
+
+#histoire #conteneurHistoire #imageHistoire {
+  padding: 10px;
+  background-color: #070517;
+  width: 45%;
+  border-radius: 15px;
+  height: auto;
+  margin-left: 10%;
+}
+
+
+
+
+
 
 #annecdotes {
     margin-left: 10%;
