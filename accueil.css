@@ -482,11 +482,12 @@ body:hover .halo {
 
 /* Configuration de la carte avec effet 3D */
 .Carte {
-  width: inherit;
-  height: inherit;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: .6s .1s;
+   width: inherit;
+   height: inherit;
+   position: relative;
+   background: transparent ;
+   transform-style: preserve-3d;
+   transition: .6s .1s;
 }
 
 /* Rotation de la carte au survol ou au focus */
