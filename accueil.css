@@ -938,6 +938,15 @@ figcaption {
     display: none;
   }
 
+   header>nav>a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 5px 0;
+    border-radius: 0;
+    /* on désactive les bordures arrondies */
+  }
    
   header>nav {
     flex-direction: column;
