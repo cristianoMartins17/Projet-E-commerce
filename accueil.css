@@ -965,14 +965,36 @@ footer {
   gap: 15px;
 }
 
-footer>h3 {
-  width: 100%;
-  font-size: 15px;
+footer h3 {
+   width: 100%;
+   font-size: 15px;
+   margin-bottom: 20px;
+   font-size: 20px;
+   width: 20%;
+   background-color: var(--violet-clair);
+   color: white;
+   padding: 10px;
+   border-radius: 10px;
+   text-align: center;
 }
 
-footer>h2 {
-  font-size: 13px;
-  width: 100%;
+footer h2 {
+   font-size: 13px;
+   width: 100%;
+   position: relative;
+   transform-origin: center;
+   text-align: center;
+   font-size: 3em;
+   font-weight: bold;
+   background: linear-gradient(135deg, #ED26C0, #BD22FB);
+   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+   border-radius: 10px;
+   padding: 10px 20px;
+   color: white;
+   margin: 0;
+   font-size: 30px;
+   width: 50%;
+   margin-bottom: 20px;
 }
 
 .nous {
