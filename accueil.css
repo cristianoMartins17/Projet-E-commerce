@@ -927,19 +927,14 @@ figcaption {
 
 
 /* ========================================
-   10. RESPONSIVE (Adaptations mobiles / desktop)
+   10. RESPONSIVE (Adaptations mobiles / PC)
    ======================================== */
 
-/* 💻 Version DESKTOP (à partir de 769px) */
+/* Version PC  */
 @media (min-width: 769px) {
   /* Cacher le bouton burger */
   #burger-btn {
     display: none;
-  }
-
-  /* Afficher la navbar de base */
-  .navbar {
-    display: flex;
   }
 
   /* S'assurer que le menu hamburger reste invisible */
@@ -948,7 +943,7 @@ figcaption {
   }
 }
 
-/* 📱 Version MOBILE (jusqu’à 768px) */
+/* Version MOBILE */
 @media (max-width: 768px) {
   /* Bouton burger visible */
   #burger-btn {
