@@ -20,6 +20,7 @@ Pour cela, nous avons demander leur autorisation pour utiliser leur image (photo
 
 ## Choix de conception
 Pour la conception du site, nous nous sommes inspirés de différents designs trouvées sur Codepen, <a href="https://www.webdesign-inspiration.com/fr">Webdesign Inspiration </a> et <a href="https://www.awwwards.com/websites">Awwards</a>.
+
 ###Nos inspirations :
 - Carrousel (Accueil) : <a href="https://www.youtube.com/watch?v=Xh-wIMqohD0">Youtube</a>
 - Carte (Accueil) : <a href="https://codepen.io/AbubakerSaeed/pen/EJrRvY">Codepen</a>
