@@ -49,7 +49,7 @@ Vérification W3C :
 <strong>Page à propos<br>
 Auteur : TACHERIFT Sofiane</strong><br>
 Vérification W3C :
-![screenW3S]()
+![screenW3S](image/validateur_page_à_propos.jpeg)
 
 <br><br>
 <strong>Page boutique<br>
