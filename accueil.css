@@ -164,6 +164,7 @@ body:hover .halo {
    3. NAVBAR (Barre de navigation desktop)
    ======================================== */
 
+/* Barre de navigation fixée en haut de la page */
 .navbar {
   position: fixed;
   top: 0;
@@ -178,74 +179,24 @@ body:hover .halo {
   transition: all 0.4s ease;
 }
 
+/* Conteneur interne qui organise les éléments de la navbar */
 .nav-global {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  width: 100%;
+  position: relative;
 }
 
-.nav-gauche {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex: 1;
-  justify-content: flex-start;
-}
-
-.nav-titre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
+/* Sections gauche et droite de la navbar */
+.nav-gauche, 
 .nav-droite {
   display: flex;
   gap: 12px;
   align-items: center;
-  flex: 1;
-  justify-content: flex-end;
 }
 
-.titre-lien { 
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center;
-  text-decoration: none;
-  position: relative;
-  white-space: nowrap;
-}
-
-.titre-texte {
-  color: white;
-  font-size: 1.25rem;
-  font-weight: 700;
-  transition: opacity 0.25s ease;
-}
-
-.titre-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  height: 34px;
-  width: 34px;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.nav-titre:hover .titre-texte { 
-  opacity: 0; 
-}
-
-.nav-titre:hover .titre-logo { 
-  opacity: 1; 
-  transform: translate(-50%, -50%) scale(1); 
-}
-
+/* Style des liens de navigation */
 .nav-lien {
   text-decoration: none;
   color: white;
@@ -253,15 +204,16 @@ body:hover .halo {
   font-size: 0.98rem;
   position: relative;
   padding: 8px 16px;
-  white-space: nowrap;
 }
 
+/* Effet au survol : fond noir apparaît derrière le texte */
 .nav-lien:hover {
   background-color: #0D0723;
   border-radius: 30px;
   transition: background-color 0.3s ease;
 }
 
+/* Effet néon qui apparaît au survol des liens */
 .nav-lien::before {
   content: '';
   position: absolute;
@@ -281,11 +233,62 @@ body:hover .halo {
   border-radius: 30px;
 }
 
+/* Activation de l'effet néon au survol */
 .nav-lien:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
+/* Titre centré dans la navbar */
+.nav-titre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Lien du titre contenant le texte et le logo */
+.titre-lien { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Texte du titre visible par défaut */
+.titre-texte {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: opacity 0.25s ease;
+}
+
+/* Logo caché par défaut, apparaît au survol */
+.titre-logo {
+  background-color: #00000000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  height: 34px;
+  width: 34px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Au survol du titre : le texte disparaît et le logo apparaît */
+.nav-titre:hover .titre-texte { 
+  opacity: 0; 
+}
+
+.nav-titre:hover .titre-logo { 
+  opacity: 1; 
+  transform: translate(-50%, -50%) scale(1); 
+}
+
+/* Changement de style de la navbar lors du scroll */
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
   background-size: 300% 300%;
