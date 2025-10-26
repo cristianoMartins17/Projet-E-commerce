@@ -19,13 +19,13 @@ Nous avons décidé de créer un site web sur lequel nous "vendons" des NFT de n
 Pour cela, nous avons demandé l'autorisation pour utiliser leur image (photos trouvées sur Internet).
 
 ## Choix de conception
-Pour la conception du site, nous nous sommes inspirés de différents designs trouvées sur Codepen, <a href="https://www.webdesign-inspiration.com/fr">Webdesign Inspiration </a> et <a href="https://www.awwwards.com/websites">Awwards</a>.
+Pour la conception du site, nous nous sommes inspirés de différents designs trouvés sur Codepen, <a href="https://www.webdesign-inspiration.com/fr">Webdesign Inspiration </a> et <a href="https://www.awwwards.com/websites">Awwards</a>.
 
 <strong> Nos inspirations : </strong>
 - Carrousel (Accueil) : <a href="https://www.youtube.com/watch?v=Xh-wIMqohD0">Youtube</a>
 - Carte (Accueil) : <a href="https://codepen.io/AbubakerSaeed/pen/EJrRvY">Codepen</a>
 
-<strong> Nos concepts de design original : (réalisé par Mansourah sur Canva) : </strong>
+<strong> Nos concepts de design originaux (réalisé par Mansourah sur Canva) : </strong>
 ![Premier Design Footer](image/Design1.png)
 ![Deuxième Design Footer](image/Design2.png)
 ![Description Deuxième Design Footer](image/Description_Design2.png)
