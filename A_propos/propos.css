@@ -2,177 +2,756 @@
 /*=========background===========*/
 /*==============================*/
 
-:root{
-    --sombre: #070517;
-    --accent1: rgba(189,34,251,0.85);
-    --accent2: rgba(237,38,192,0.75);
-    --blur-size: 100px;
-    --intensity: 0.9;
-  }
+:root {
+  --sombre: #070517;
+  --accent1: rgba(189, 34, 251, 0.85);
+  --accent2: rgba(237, 38, 192, 0.75);
+  --blur-size: 100px;
+  --intensity: 0.9;
+}
 
-html,body{
-    height:100%;
-    margin:0;
-    font-family: system-ui, Arial, sans-serif;
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+}
 
 .animated-bg {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: -1;
-    background: var(--sombre);
-    pointer-events: none;
-  }
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--sombre);
+  pointer-events: none;
+}
 
-  /* halos principaux d’origine */
+/* halos principaux d’origine */
 .animated-bg::before,
 .animated-bg::after {
-    content: "";
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    opacity: calc(var(--intensity) * 1);
-    will-change: transform;
-    pointer-events: none;
-  }
+  content: "";
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  opacity: calc(var(--intensity) * 1);
+  will-change: transform;
+  pointer-events: none;
+}
 
 .animated-bg::before {
-    background:
-      radial-gradient(circle at 40% 40%,)
-        color-mix(in srgb, var(--accent1) 55%, transparent 0%),
-        transparent 15%, rgba(0,0,0,0) 35%;
-        animation: float1 14s linear infinite;
-        opacity: 0.8;
-  }
+  background:
+    radial-gradient(circle at 40% 40%, ) color-mix(in srgb, var(--accent1) 55%, transparent 0%),
+    transparent 15%, rgba(0, 0, 0, 0) 35%;
+  animation: float1 14s linear infinite;
+  opacity: 0.8;
+}
 
 .animated-bg::after {
-    background:
-      radial-gradient(circle at 70% 60%,
-        color-mix(in srgb, var(--accent2) 55%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float2 18s linear infinite;
-    opacity: 0.7;
-  }
+  background:
+    radial-gradient(circle at 70% 60%,
+      color-mix(in srgb, var(--accent2) 55%, transparent 0%),
+      transparent 25%,
+      rgba(0, 0, 0, 0) 45%);
+  animation: float2 18s linear infinite;
+  opacity: 0.7;
+}
 
-  /* 2 halos supplémentaires */
+/* 2 halos supplémentaires */
 .halo {
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    pointer-events: none;
-    opacity: 0.6;
-    will-change: transform;
-  }
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.6;
+  will-change: transform;
+}
 
 .halo:nth-child(2) {
-    background:
-      radial-gradient(circle at 25% 70%,
-        color-mix(in srgb, var(--accent1) 50%, transparent 0%),
-        transparent 30%,
-        rgba(0,0,0,0) 50%);
-    animation: float3 20s linear infinite;
-  }
+  background:
+    radial-gradient(circle at 25% 70%,
+      color-mix(in srgb, var(--accent1) 50%, transparent 0%),
+      transparent 30%,
+      rgba(0, 0, 0, 0) 50%);
+  animation: float3 20s linear infinite;
+}
 
 .halo:nth-child(3) {
-    background:
-      radial-gradient(circle at 80% 20%,
-        color-mix(in srgb, var(--accent2) 60%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float4 26s linear infinite;
-  }
+  background:
+    radial-gradient(circle at 80% 20%,
+      color-mix(in srgb, var(--accent2) 60%, transparent 0%),
+      transparent 25%,
+      rgba(0, 0, 0, 0) 45%);
+  animation: float4 26s linear infinite;
+}
 
-  /* Lignes de fond visibles partout */
+/* Lignes de fond visibles partout */
 .animated-bg .lines {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08) 0px,
-      rgba(255,255,255,0.08) 1px,
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.08) 0px,
+      rgba(255, 255, 255, 0.08) 1px,
       transparent 1px,
-      transparent 24px
-    );
-    opacity: 0.5;
-    mix-blend-mode: lighten;
+      transparent 24px);
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
+
+/* animations */
+@keyframes float1 {
+  0% {
+    transform: translate3d(-30%, -20%, 0) scale(1);
   }
 
-  /* animations */
-  @keyframes float1 {
-    0%   { transform: translate3d(-30%, -20%, 0) scale(1); }
-    25%  { transform: translate3d(25%, -25%, 0) scale(1.1); }
-    50%  { transform: translate3d(20%, 30%, 0)  scale(1.05); }
-    75%  { transform: translate3d(-25%, 25%, 0) scale(0.95); }
-    100% { transform: translate3d(-30%, -20%, 0) scale(1); }
+  25% {
+    transform: translate3d(25%, -25%, 0) scale(1.1);
   }
 
-  @keyframes float2 {
-    0%   { transform: translate3d(35%, 25%, 0) scale(0.9); }
-    25%  { transform: translate3d(-20%, 35%, 0) scale(1.05); }
-    50%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    75%  { transform: translate3d(20%, -25%, 0) scale(1); }
-    100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
+  50% {
+    transform: translate3d(20%, 30%, 0) scale(1.05);
   }
 
-  /* tu peux ajouter encore un halo : */
-  @keyframes float3 {
-    0%   { transform: translate3d(-40%, 40%, 0) scale(1); }
-    25%  { transform: translate3d(30%, -35%, 0) scale(1.05); }
-    50%  { transform: translate3d(40%, 35%, 0) scale(0.95); }
-    75%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    100% { transform: translate3d(-40%, 40%, 0) scale(1); }
+  75% {
+    transform: translate3d(-25%, 25%, 0) scale(0.95);
   }
 
-  @keyframes float4 {
-    0%   { transform: translate3d(-12%, 8%, 0) scale(1); }
-    25%  { transform: translate3d(10%, -6%, 0) scale(1.05); }
-    50%  { transform: translate3d(6%, 12%, 0) scale(0.9); }
-    75%  { transform: translate3d(-10%, -8%, 0) scale(1.08); }
-    100% { transform: translate3d(-12%, 8%, 0) scale(1); }
+  100% {
+    transform: translate3d(-30%, -20%, 0) scale(1);
   }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate3d(35%, 25%, 0) scale(0.9);
+  }
+
+  25% {
+    transform: translate3d(-20%, 35%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(-35%, -30%, 0) scale(1.1);
+  }
+
+  75% {
+    transform: translate3d(20%, -25%, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(35%, 25%, 0) scale(0.9);
+  }
+}
+
+/* tu peux ajouter encore un halo : */
+@keyframes float3 {
+  0% {
+    transform: translate3d(-40%, 40%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(30%, -35%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(40%, 35%, 0) scale(0.95);
+  }
+
+  75% {
+    transform: translate3d(-35%, -30%, 0) scale(1.1);
+  }
+
+  100% {
+    transform: translate3d(-40%, 40%, 0) scale(1);
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: translate3d(-12%, 8%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(10%, -6%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(6%, 12%, 0) scale(0.9);
+  }
+
+  75% {
+    transform: translate3d(-10%, -8%, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-12%, 8%, 0) scale(1);
+  }
+}
 
 .page {
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:4rem;
-  }
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
 
 .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 12px;
-    color: #fff;
-    max-width:420px;
-    text-align:center;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
-  }
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
 
-.hint { opacity: 0.8; }
+.hint {
+  opacity: 0.8;
+}
 
 body:hover .animated-bg {
-    --intensity: 1.25;
-    filter: saturate(1.1);
+  --intensity: 1.25;
+  filter: saturate(1.1);
+}
+
+/*==============================*/
+/*=========background===========*/
+/*==============================*/
+/*==============================*/
+/*=========background===========*/
+/*==============================*/
+
+:root {
+  --sombre: #070517;
+  --accent1: rgba(189, 34, 251, 0.85);
+  --accent2: rgba(237, 38, 192, 0.75);
+  --blur-size: 100px;
+  --intensity: 0.9;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--sombre);
+  pointer-events: none;
+}
+
+/* halos principaux d’origine */
+.animated-bg::before,
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  opacity: calc(var(--intensity) * 1);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animated-bg::before {
+  background:
+    radial-gradient(circle at 40% 40%, ) color-mix(in srgb, var(--accent1) 55%, transparent 0%),
+    transparent 15%, rgba(0, 0, 0, 0) 35%;
+  animation: float1 14s linear infinite;
+  opacity: 0.8;
+}
+
+.animated-bg::after {
+  background:
+    radial-gradient(circle at 70% 60%,
+      color-mix(in srgb, var(--accent2) 55%, transparent 0%),
+      transparent 25%,
+      rgba(0, 0, 0, 0) 45%);
+  animation: float2 18s linear infinite;
+  opacity: 0.7;
+}
+
+/* 2 halos supplémentaires */
+.halo {
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.6;
+  will-change: transform;
+}
+
+.halo:nth-child(2) {
+  background:
+    radial-gradient(circle at 25% 70%,
+      color-mix(in srgb, var(--accent1) 50%, transparent 0%),
+      transparent 30%,
+      rgba(0, 0, 0, 0) 50%);
+  animation: float3 20s linear infinite;
+}
+
+.halo:nth-child(3) {
+  background:
+    radial-gradient(circle at 80% 20%,
+      color-mix(in srgb, var(--accent2) 60%, transparent 0%),
+      transparent 25%,
+      rgba(0, 0, 0, 0) 45%);
+  animation: float4 26s linear infinite;
+}
+
+/* Lignes de fond visibles partout */
+.animated-bg .lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.08) 0px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px,
+      transparent 24px);
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
+
+/* animations */
+@keyframes float1 {
+  0% {
+    transform: translate3d(-30%, -20%, 0) scale(1);
   }
+
+  25% {
+    transform: translate3d(25%, -25%, 0) scale(1.1);
+  }
+
+  50% {
+    transform: translate3d(20%, 30%, 0) scale(1.05);
+  }
+
+  75% {
+    transform: translate3d(-25%, 25%, 0) scale(0.95);
+  }
+
+  100% {
+    transform: translate3d(-30%, -20%, 0) scale(1);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate3d(35%, 25%, 0) scale(0.9);
+  }
+
+  25% {
+    transform: translate3d(-20%, 35%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(-35%, -30%, 0) scale(1.1);
+  }
+
+  75% {
+    transform: translate3d(20%, -25%, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(35%, 25%, 0) scale(0.9);
+  }
+}
+
+/* tu peux ajouter encore un halo : */
+@keyframes float3 {
+  0% {
+    transform: translate3d(-40%, 40%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(30%, -35%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(40%, 35%, 0) scale(0.95);
+  }
+
+  75% {
+    transform: translate3d(-35%, -30%, 0) scale(1.1);
+  }
+
+  100% {
+    transform: translate3d(-40%, 40%, 0) scale(1);
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: translate3d(-12%, 8%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(10%, -6%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(6%, 12%, 0) scale(0.9);
+  }
+
+  75% {
+    transform: translate3d(-10%, -8%, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-12%, 8%, 0) scale(1);
+  }
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.hint {
+  opacity: 0.8;
+}
+
+body:hover .animated-bg {
+  --intensity: 1.25;
+  filter: saturate(1.1);
+}
+
 /*==============================*/
 /*=========background===========*/
 /*==============================*/
 
 * {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 2;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* ---------- NAVBAR de base ---------- */
+.navbar {
+  position: fixed;
+  /* toujours en haut */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 60;
+  background: rgba(13, 7, 35, 0.8);
+  border-bottom: 2px solid rgba(189, 34, 251, 0.4);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.3);
+  backdrop-filter: blur(8px);
+  animation: neonGlow 3s infinite alternate;
+  transition: all 0.4s ease;
+}
+
+/* conteneur interne pour aligner éléments */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  position: relative;
+  /* pour titre centré en absolute */
+}
+
+/* left / right simples */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* liens de nav */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  /* texte blanc sur fond image */
+  font-weight: 600;
+  font-size: 0.98rem;
+  position: relative;
+  padding: 8px 16px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+  border-radius: 30px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- TITRE centré (desktop) ---------- */
+.nav-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  /* autorise le hover */
+}
+
+/* lien titre : contient texte + logo */
+.title-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+}
+
+/* texte visible par défaut */
+.title-text {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: opacity 0.25s ease;
+}
+
+/* logo caché par défaut (on l'affiche au hover) */
+.title-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  height: 34px;
+  width: 34px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Au hover sur le titre : texte disparait, logo apparait */
+.nav-title:hover .title-text {
+  opacity: 0;
+}
+
+.nav-title:hover .title-logo {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* ---------- SCROLL : changement de couleur ---------- */
+
+.navbar--scrolled {
+  background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite, neonGlow 6s infinite alternate;
+  border-bottom: none;
+}
+
+/* Animation du glow pulsant */
+@keyframes neonGlow {
+  0% {
+    box-shadow:
+      0 0 8px #BD22FB,
+      0 0 15px #ED26C0,
+      0 0 25px rgba(237, 38, 192, 0.6);
+  }
+
+  100% {
+    box-shadow:
+      0 0 20px #BD22FB,
+      0 0 35px #ED26C0,
+      0 0 60px rgba(189, 34, 251, 0.8);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---------- NAVBAR hamburger (mobile) ---------- */
+/* Bouton burger (le seul visible au départ) */
+#burger-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  font-size: 26px;
+  /* Taille du symbole ☰ */
+  color: black;
+  /* Couleur du symbole burger */
+  background-color: #BD22FB;
+  /* Fond violet */
+  border: none;
+  border-radius: 50%;
+  /* Rend le bouton circulaire */
+  width: 45px;
+  /* Largeur du cercle */
+  height: 45px;
+  /* Hauteur du cercle */
+  display: flex;
+  /* Pour centrer le symbole */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Petit effet au survol */
+#burger-btn:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+  /* léger gris au survol */
+}
+
+/* Le menu (fermé par défaut) */
+.hamburger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 5px groove #41156A;
+  border-radius: 0 10px 10px 0;
+  transition: width 0.5s ease;
+  animation: neonGlow 3s infinite alternate;
+  z-index: 999;
+}
+
+/* Quand le menu est "ouvert" (classe ajoutée par JS) */
+.hamburger.open {
+  width: 100%;
+}
+
+/* Contenu du menu (liens, logo) */
+.hamburger img {
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Liens du menu */
+.hamburger a {
+  opacity: 0;
+  color: white;
+  background-color: #41156A;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: opacity 0.5s, background 0.3s;
+}
+
+.hamburger a:hover {
+  background-color: #BD22FB;
+}
+
+/* Quand le menu est ouvert, on rend tout visible */
+.hamburger.open a,
+.hamburger.open img {
+  opacity: 1;
+}
+
+/* Lien actif */
+.hamburger>.actif {
+  background-color: #BD22FB;
+}
+
+/* Option : cacher le menu sur grand écran si tu veux */
+@media (min-width: 768px) {
+  #burger-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  header>nav {
+    flex-direction: column;
+  }
+
+  header>nav>a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 5px 0;
+    border-radius: 0;
+    /* on désactive les bordures arrondies */
+  }
+}
+
+
+
+
+
+
+
+/* mon css: */
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 2;
+}
+
 body {
 
   --violet-clair: #BD22FB;
@@ -189,74 +768,94 @@ body {
 
 main {
   background-color: #0d072363;
-    background-attachment: scroll;
-    align-items: center;
-    transform-origin: top right;
-    padding: 50px;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.2s ;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 300px;
-}
-
-.hoverOmbreRose {
-  transition: 1s;
+  background-attachment: scroll;
+  align-items: center;
+  transform-origin: top right;
+  padding: 50px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 300px;
 }
 
 
 footer {
-    position: relative;
-    z-index: 1;
-    background-color: var(--violet-clair);
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background-color: var(--violet-clair);
+  display: flex;
+  flex-direction: column;
 }
 
 main>hr {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
 div img {
-    height: 100%;
-    width: auto;
-    background-color: white;
+  height: 100%;
+  width: auto;
+  background-color: white;
 }
+
 p {
   text-align: center;
   color: white;
 }
+
 h1 {
-    border: 1px solid white;
-    color: white;
-    background:linear-gradient(to right, var(--violet-fonce ) 10%,#421868 90%);
-    width: 30%;
-    text-align: center;
-    text-justify: center;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 30px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  border: 1px solid white;
+  color: white;
+  background: linear-gradient(to right, var(--violet-fonce) 10%, #421868 90%);
+  width: 60%;
+  text-align: center;
+  text-justify: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 50px;
+}
+
+h2 {
+  position: relative;
+  transform-origin: center;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ED26C0, #BD22FB);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  margin: 0;
+  font-size: 30px;
+  width: 50%;
+  margin-bottom: 20px;
 }
 
 h3 {
+  margin-bottom: 20px;
   font-size: 20px;
-    width: 20%;
-    background-color: var(--violet-clair);
-    color:white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+  width: 20%;
+  background-color: var(--violet-clair);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 
+
 a {
-    color:var(--rose);
+  color: var(--rose);
 }
 
 li {
-    text-align: left;
+  text-align: left;
 }
 
 hr {
@@ -319,10 +918,10 @@ hr {
   padding: 20px;
   padding-top: 2px;
   background-color: #0D0723;
-  color:white;
+  color: white;
 }
 
-#histoire #conteneurHistoire #phrise .texteHistoire h3{
+#histoire #conteneurHistoire #phrise .texteHistoire h3 {
   padding: 3px;
   text-align: center;
   font-size: 15px;
@@ -339,25 +938,37 @@ hr {
 
 #histoire #conteneurHistoire #imageHistoire {
   padding: 10px;
-  background-color: #070517;
   width: 45%;
   border-radius: 15px;
   height: auto;
   margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 
-
-
+#histoire #imageHistoire img{
+  border-radius: 20px;
+  background-color: #0D0723;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border: 1px solid var(--rose);
+}
 
 
 #caniotte {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #caniotte>div {
-    /* background: rgba(255,255,255,0.04);
+  /* background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.04);
     padding: 30px;
     border-radius: 12px;
@@ -365,27 +976,34 @@ hr {
     text-align:center;
     box-shadow: 0 6px 30px black;
     backdrop-filter: blur(6px); */
-    position: relative;
-    height: auto;
-    width: 100%;
-    display: grid;
-    grid-column: 1fr 1fr;
-    grid-row: auto;
+  position: relative;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-column: 1fr 1fr;
+  grid-row: auto;
 }
 
 #caniotte>div>p {
+  transition: box-shadow 1s;
+  border: 1px solid var(--rose);
   display: flex;
   justify-content: center;
   align-items: center;
   grid-column: 1 / 1;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   padding: 30px;
   border-radius: 12px;
   color: #fff;
   box-shadow: 0 6px 30px black;
   backdrop-filter: blur(6px);
 }
+
+#caniotte>div>p:hover {
+  box-shadow: 0 6px 6px #ED26C0;
+
+}
+
 #caniotte>div>div {
   grid-column: 2/2;
   box-shadow: 0 6px 30px black;
@@ -398,25 +1016,54 @@ hr {
   object-fit: cover;
   border-radius: 10px;
   width: 100%;
-  height:auto;
+  height: auto;
 }
+
 #actualites {
-    margin-right: 10%;
+  margin-right: 10%;
+}
+
+#actualites #actuTitre {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#actualites>#actuTitre h2 {
+  margin-top: auto;
+  height: min-content;
+}
+
+#actualites #actuTitre img {
+  max-height: 300px;
+  background-color: #00000000;
 }
 #conteneurActu {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.04);
-    padding: 30px;
-    border-radius: 12px;
-    color: #fff;
-    text-align:center;
-    box-shadow: 0 6px 30px black;
-    backdrop-filter: blur(6px);
-    width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 30px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 30px black;
+  backdrop-filter: blur(6px);
+  width: 100%;
 }
 
 #actualites progress {
   width: 100%;
+  height: 5px;
+  overflow: hidden;
+  background-color: #41156A;
+  border-radius: 20px;
+}
+
+#actualites progress::-webkit-progress-bar {
+  background-color: white;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--rose);
 }
 
 #inscription {
@@ -425,46 +1072,273 @@ hr {
   width: 70%;
   display: flex;
   flex-direction: column;
-  background-color: #0D0723;
+
 
 }
 
 #inscription h3 {
   width: 30%;
 }
-#inscription form {
+
+#inscription>form {
+  padding: 30px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-
+  box-shadow: 0 6px 30px black;
+  width: 100%;
 }
 
+#inscription>form>label {
+  color: white;
+}
+
+#inscription>form>label {
+  border-radius: 10px;
+}
+
+#inscription input:valid {
+  background-color: white;
+}
+
+#inscription input:invalid {
+  background-color: rgb(216, 171, 206);
+}
+.hoverOmbreRose {
+  transition: 1s;
+}
 .hoverOmbreRose:hover {
-  box-shadow:0 6px 6px #ED26C0;
+  box-shadow: 0 6px 6px #ED26C0;
+}
+
+
+/* --- FOOTER --- */
+footer {
+  position: relative;
+  padding: 40px 20px;
+  background-color: var(--sombre);
+  overflow: hidden;
+}
+
+
+/* FOOTER */
+
+
+/* conteneur global */
+.footer-contenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* --- PARTIE GAUCHE : personnages --- */
+.Personnages-reseaux {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.nom-Personnages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  font-size: 18px;
+  
+}
+
+.nous {
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  bottom: 0; /* colle l’image au bas du footer */
+  left: 150px;
+}
+
+/* --- PARTIE CENTRALE --- */
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.footer-centre {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 150px;
+  gap: 30px;
+}
+
+/* Grande box du haut */
+.liens {
+  width: 80%;
+  background-color: var(--violet-fonce);
+  padding: 50px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.liens a{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Texte central */
+.footer-centre > p {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Deux box du bas alignées */
+.footer-lois-gif {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 80%; /* même largeur que la box du haut */
+}
+
+/* Les deux petites box */
+.footer-lois,
+.footer-gif {
+  flex: 1;
+  background-color: var(--violet-fonce);
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* GIF ajusté */
+.footer-gif img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* --- RESEAUX SOCIAUX --- */
+.Reseaux_sociaux-general {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Reseaux_sociaux-general a img {
+  width: 25px;
+  height: auto;
+  color: var(--violet-fonce);
+}
+
+.Reseaux_sociaux-general a {
+  background-color: var(--violet-clair);
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--violet-fonce);
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.twitter , .instagram , .facebook , .mail , .phone {
+  
+  color: var(--rose);
+}
+
+
+.Reseaux_sociaux-general a:hover {
+  background-color: var(--rose);
+  transform: scale(1.1);
+}
+
+/* crédits */
+.footer-credits {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #ccc;
 }
 
 @media (max-width:768px) {
-    h1 {
-        width: 100%;
-    }
-    h3 {
-        width: 100%;
-    }
+  
+  h1 {
+    width: 100%;
+  }
 
-    .imageDroite div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  h2 {
+    width: 100%;
+  }
 
-    #histoire #conteneurHistoire{
-      display: block;
-    }
+  .imageDroite div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #histoire {
+    position: relative;
+  }
+  #histoire #conteneurHistoire {
+    display: block;
+    width: 100%;
+  }
 
-    #histoire #contenuHistoire #phrise {
-      width: 100%;
-    }
-    
+  #histoire #conteneurHistoire #phrise {
+    width: 100%;
+  }
+  #histoire #conteneurHistoire #phrise .texteHistoire{
+    width: 100%;
+  }
+
+  #histoire #imageHistoire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    background-color: #41156A;
+    align-items: center;
+    position: relative;
+  }
+
+  #histoire img {
+    width: 20%;
+    height: auto;
+
+  }
+
+  #caniotte>div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  #caniotte>div>p {
+    width: 100%;
+  }
+
+  #actualites {
+    justify-content: center;
+    margin-right: 0%;
+    width: 80%;
+  }
 }
-
-

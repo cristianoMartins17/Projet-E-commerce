@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A_Propos</title>
     <link rel="stylesheet" href="propos.css">
 </head>
@@ -10,27 +11,64 @@
 <body>
 
     <!-- background -->
-<div class="animated-bg">
-    <div class="lines"></div>
-    <div class="halo"></div>
-    <div class="halo"></div>
-</div> 
+    <div class="animated-bg">
+        <div class="lines"></div>
+        <div class="halo"></div>
+        <div class="halo"></div>
+    </div>
     <!-- background -->
-
     <header>
+        <nav class="navbar" id="mainNav">
+            <div class="nav-inner">
+                <!-- gauche : boutique + panier (sur mobile on cache) -->
+                <div class="nav-left">
+                    <a href="Boutique/boutique.html" class="nav-link">Boutique</a>
+                    <a href="Panier/panier.html" class="nav-link">Panier</a>
+                </div>
 
+                <!-- titre : centré sur ordi, gauche sur mobile.
+             Contient texte + logo (on swap par hover via CSS) -->
+                <div class="nav-title">
+                    <a href="../index.html" class="title-link" aria-label="Accueil">
+                        <span class="title-text">Not For Teachers</span>
+                        <img src="../image/logo-nft_rond-removebg-preview.png" alt="Logo" class="title-logo">
+                    </a>
+                </div>
+
+                <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
+                <div class="nav-right">
+                    <a href="A_propos/propos.html" class="nav-link">À propos</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu burger -->
+        <button id="burger-btn">&#9776;</button>
+        <nav class="hamburger" id="menu">
+            <img src="Images/logo_nft.jpg" alt="logo nft">
+            <a href="" class="actif">Accueil</a>
+            <a href="Boutique/boutique.html">Boutique</a>
+            <a href="Panier/panier.html">Panier</a>
+            <a href="A_propos/propos.html">À propos</a>
+        </nav>
     </header>
     <main>
         <h1>A PROPOS</h1>
-        <section id="presentation" class="imageDroite" >
-            <h3>Qui sommes-nous?</h3>
+        <section id="presentation" class="imageDroite">
+            <h2>Qui sommes-nous?</h2>
             <div>
-                <p>Si vous ne savez pas qui nous sommes, nous sommes un groupe d'étudiants de 4 élèves, Martins Cristiano, Omeya, Mansourah, Sofiane.
-                    Nous avons décidé de lancer un projet. Réaliser des NFT à partir des professeurs de l'IUT Nord Franche Compté, pour cela il nous des acheteurs.
-                    C'est donc pour cela que nous avons décidé de lancer un grand projet de communication fait par des experts.
-                    Nous avons pour objectifs de récolter 1,2 millions d'euros d'ici 2030. Vous pourriez vous demander pourquoi nous voudrions récolter une telle somme d'argent ?
-                    La réponse est que nous voudrions financer des associations qui viennent en aide aux plus démunis. Pour cela, nous comptons donc sur une grande activité de votre part. 
-                    Pour chaque échange, nous reçevons 3% du revenu du transfert. C'est par ce moyen que nous comptons financer ce projet.
+                <p>Si vous ne savez pas qui nous sommes, nous sommes un groupe d'étudiants de 4 élèves, Martins
+                    Cristiano, Omeya, Mansourah, Sofiane.
+                    Nous avons décidé de lancer un projet. Réaliser des NFT à partir des professeurs de l'IUT Nord
+                    Franche Compté, pour cela il nous des acheteurs.
+                    C'est donc pour cela que nous avons décidé de lancer un grand projet de communication fait par des
+                    experts.
+                    Nous avons pour objectifs de récolter 1,2 millions d'euros d'ici 2030. Vous pourriez vous demander
+                    pourquoi nous voudrions récolter une telle somme d'argent ?
+                    La réponse est que nous voudrions financer des associations qui viennent en aide aux plus démunis.
+                    Pour cela, nous comptons donc sur une grande activité de votre part.
+                    Pour chaque échange, nous reçevons 3% du revenu du transfert. C'est par ce moyen que nous comptons
+                    financer ce projet.
                 </p>
                 <img src="../image/logo-nft_rond-removebg-preview.png" alt="image de présentation">
             </div>
@@ -38,73 +76,89 @@
         <hr>
         <section id="histoire" class="imageGauche">
 
-            <h3>Notre histoire</h3>
+            <h2>Notre histoire</h2>
             <div id="conteneurHistoire">
                 <div id="phrise">
                     <div class="texteHistoire hoverOmbreRose">
                         <h3>2021</h3>
-                        C'est en 2021 que notre groupea eu l'idée de créer des NFT sur les professeurs de l'univéristé pour aider des personnes dans le besoin.Dans le cadre de notre projet, nous avons travaillé sans relaches pendant de longs mois
+                        C'est en 2021 que notre groupea eu l'idée de créer des NFT sur les professeurs de l'univéristé
+                        pour aider des personnes dans le besoin.Dans le cadre de notre projet, nous avons travaillé sans
+                        relaches pendant de longs mois
                     </div>
                     <div class="traitVertical">
                     </div>
                     <div class="texteHistoire hoverOmbreRose">
                         <h3>2021-2023</h3>
-                        entre 2021 et 2023, nous avons appris les bases de HTML, CSS ainsi que ddu language de programmation JavaScript. Tout cela avec une optique, 
+                        entre 2021 et 2023, nous avons appris les bases de HTML, CSS ainsi que ddu language de
+                        programmation JavaScript. Tout cela avec une optique,
                         connecter l'intêret de l'utilisateur à l'égard des professeurs
                     </div>
                     <div class="traitVertical">
                     </div>
                     <div class="texteHistoire hoverOmbreRose">
-                        <h3>2023+</h3>
-                        Nous avons essayé, experimentés et donné le meilleur de nous meme pour
-                        aujourd'hui montrer ce projet. En plus de cela nous avons chacun financés le projet avec nos moyens.
+                        <h3>2023-2025</h3>
+                        Depuis 2023, nous avons essayé, experimentés et donnés le meilleur de nous même pour
+                        aujourd'hui montrer ce projet. En plus de cela nous avons chacun financés le projet avec nos
+                        moyens.
                         Nous n'avons pas fait ce projet dans un but financier mais dans le but d'aider les autres
                     </div>
                 </div>
                 <div id="imageHistoire">
-                    <img src="#" alt="image histoire">
+                    <img src="../image/idee-removebg-preview.webp" alt="image idée">
+                    <img src="../image/code_violet2.webp" alt="image code violet">
                 </div>
+            </div>
         </section>
         <hr>
         <section id="caniotte" class="blog">
-            <h3>Le saviez-vous ?</h3>
+            <h2>Le saviez-vous ?</h2>
             <div>
-                <p>Vous pouvez participer activement à la reussite de ce projet, Nous avons ouvert une cagnotte qui 
-                    va VOUS permettre de mener à bien des dons. Et ce en quelques secondes, nous avons lancé une nouvelle
-                    plateforme de don en ligne qui va non seulement servir dans le cadre de ce projet ; Mais nous allons aussi 
-                    la rendre publique. A therme, nous éspérons que de nombreux projets comme le notre verront le jour. Nous 
+                <p>Vous pouvez participer activement à la reussite de ce projet, Nous avons ouvert une cagnotte qui
+                    va VOUS permettre de mener à bien des dons. Et ce en quelques secondes, nous avons lancé une
+                    nouvelle
+                    plateforme de don en ligne qui va non seulement servir dans le cadre de ce projet ; Mais nous allons
+                    aussi
+                    la rendre publique. A therme, nous éspérons que de nombreux projets comme le notre verront le jour.
+                    Nous
                     comptons donc sur vous !
                 </p>
-                <div>
-                    <img src="../image/logo_don.webp">
-                    <p>Notre nouvelle platefro</p>
-                </div>          
+                <div class="hoverOmbreRose">
+                    <img src="../image/logo_don.webp" alt="image nouvelle appli">
+                    <p>Notre nouvelle plateforme qui arrive en 2026 : NotProfHelp</p>
+                </div>
             </div>
         </section>
         <hr>
         <section id="actualites" class="blog">
-            <h3 class="droite">Notre actualité</h3>
+            <div id="actuTitre">
+                <h2 class="droite">Notre actualité</h2>
+                <img src="../image/journaliste-removebg-preview.png">
+            </div>
             <div id="conteneurActu">
                 <div>
-                    <p> Ceci est l'endroit qui sera resérvé à notre actualité. Pour l'instant il n'y a pas grand chose mais nous ajouterons plus d'articles plus tard! Revenez bientot !</p>
-                    <p>Nous avons déja récoltés plus de 130 000&euro;, nous avons décidé de mettre une barre qui permet de suivre la progression de la somme récoltée: </p>
+                    <p> Ceci est l'endroit qui sera resérvé à notre actualité. Pour l'instant il n'y a pas grand chose
+                        mais nous ajouterons plus d'articles plus tard! Revenez bientot !</p>
+                    <p>Nous avons déja récoltés plus de 130 000&euro;, nous avons décidé de mettre une barre qui permet
+                        de suivre la progression de la somme récoltée: </p>
                 </div>
-                <p class="texteGauche">132 000 &euro;/1 200 000&euro;</p>
+                <p>132 000 &euro;/1 200 000&euro;</p>
                 <progress value="130000" max="1200000"></progress>
             </div>
         </section>
         <hr>
         <section id="inscription">
-            <h3>Inscrivez-vous !</h3>
+            <h2>Inscrivez-vous !</h2>
             <form>
-                <label for="prenom">Entrez votre prénom:</label>
-                <input type="texte" placeholder="Prénom" name="prenom" required>
-                <label for="nom">Entrez votre nom:</label>
-                <input type="texte" placeholder="nom" name="nom" required>
+                <label for="nom">Entrez votre prénom:</label>
+                <input type="text" name="nom" placeholder="Nom" id="nom" required>
+                <label for="prenom">Entrez votre nom:</label>
+                <input type="text" name="prenom" id="prenom" placeholder="prénom" required>
                 <label for="date_naissance">Entrez votre date de date_naissance</label>
-                <input type="date" placeholder="JJ/MM/AAAA" name="date_naissance" required>
-                <label for="">Quelle note mettriez vous à notre site?</label>
-                <progress value="1" max="3"></progress>
+                <input type="date" name="date_naissance" id="date_naissance" required>
+                <label for="mail">Entrez votre date de date_naissance</label>
+                <input type="text" name="mail" id="mail" required>
+                <label for="mdp_mail">Entrez le mot de passe de votre adresse mail</label>
+                <input type="password" name="mdp_mail" id="mdp_mail" required>
             </form>
         </section>
 
@@ -112,16 +166,12 @@
 
         <script src="propos.js"></script>
     </main>
-    <footer>
-        <section class="footer-contenu">
-            <div class="Personnages-reseaux">
-                <div class="Personnages">
-                    <img src="#" alt="Cristiano Martins">
-                    <img src="#" alt="Sofiane">
-                    <img src="#" alt="Omeyya">
-                    <img src="#" alt="Mansourah Mahamane">
-                </div>
 
+
+
+    <footer>
+    <section class="footer-contenu">
+            <div class="Personnages-reseaux">
                 <div class="nom-Personnages">
                     <p>Cristiano Martins</p>
                     <p>Sofiane</p>
@@ -129,64 +179,59 @@
                     <p>Mansourah Mahamane</p>
                 </div>
 
-                <div class="Reseaux_sociaux">
-                    <div class="Reseaux_sociaux-Cristiano">
-                        <a href=""><img src="#" alt="Instagram"></a>
-                        <a href="#"><img src="#" alt="Discord"></a>
-                        <a href="#"><img src="#" alt="mail"></a>
-                    </div>
-                    <div class="Reseaux_sociaux-Sofiane">
-                        <a href="#"><img src="#" alt="Instagram"></a>
-                        <a href="#"><img src="#" alt="Discord"></a>
-                        <a href="#"><img src="#" alt="mail"></a>
-                    </div>
-                    <div class="Reseaux_sociaux-Omeyya">
-                        <a href="#"><img src="#" alt="Instagram"></a>
-                        <a href="#"><img src="#" alt="Discord"></a>
-                        <a href="#"><img src="#" alt="mail"></a>
-                    </div>
-                    <div class="Reseaux_sociaux-Mansourah">
-                        <a href="#"><img src="#" alt="Instagram"></a>
-                        <a href="#"><img src="#" alt="Discord"></a>
-                        <a href="#"><img src="#" alt="mail"></a>
-                    </div>
+                <div class="Personnages">
+                    <img src="nous.png" alt="Personnages" class="nous">
                 </div>
             </div>
 
-            <div class="footer-texte-gif">
-                <div class="footer-liens">
-                    <div class="liens-A"></div>
-                        <a href="#">Accueil</a>
-                        <a href="#">Boutique</a>
-                        <a href="#">Panier</a>
-                    <div class="liens-A"></div>
-                        <a href="#">Nouveautés</a>
-                        <a href="#">À propos</a>
-                        <a href="#">Contact</a>
-                </div>
-                <div class="footer-lois">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Conditions d'utilisation</a>
-                    <a href="#">Politique de retour</a>
-                    <a href="#">Politique de cookies</a>
-                </div>
-                <div class="footer-gif">
-                    <img src="#" alt="GIF animé">
-                </div>
-            </div>
-            
-            <div class="Reseaux_sociaux-general">
-                <a href="#"><img src="#" alt="Twitter"></a>
-                <a href="#"><img src="#" alt="Instagram"></a>
-                <a href="#"><img src="#" alt="Facebook"></a>
-                <a href="#"><img src="#" alt="mail"></a>
-                <a href="#"><img src="#" alt="telephone"></a>
-            </div>
-            <div class="footer-credits">
-                <p>&copy; 2024 Boutique. Tous droits réservés.</p>
-        </div>
+            <div class="footer-centre-principal">
+                <div class="footer-centre">
+                    <div class="liens">
+                        <div class="liens-A">
+                            <a href="#">Accueil</a>
+                            <a href="#">Boutique</a>
+                            <a href="#">Panier</a>
+                        </div>
+                        <div class="liens-B">
+                            <a href="#">Nouveautés</a>
+                            <a href="#">À propos</a>
+                            <a href="#">Contact</a>
+                        </div> 
+                    </div> 
 
+                    <p>NFTNFTNFTNFNTNFTNFTNFTNFT</p>
+
+                    <div class="footer-lois-gif">
+                        <div class="footer-lois">
+                            <a href="#">Politique de confidentialité</a>
+                            <a href="#">Politique de retour</a>
+                            <a href="#">Politique de cookies</a>
+                        </div>
+
+                        <div class="footer-gif">
+                            <img src="#" alt="GIF animé">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Réseaux sociaux sur le côté -->
+                <div class="Reseaux_sociaux-general">
+                    <a href="twitter.svg"><img src="twitter.svg" alt="Twitter" class="icon"></a>
+                    <a href="instagram.svg"><img src="instagram.svg" alt="Instagram" class="icon"></a>
+                    <a href="facebook.svg"><img src="facebook.svg" alt="Facebook" class="icon"></a>
+                    <a href="mail.svg"><img src="mail.svg" alt="Mail" class="icon"></a>
+                    <a href="phone.svg"><img src="phone.svg" alt="Téléphone" class="icon"></a>
+                </div>
+            </div>
+    </section>
+
+    <div class="footer-credits">
+        <p>&copy; 2024 Boutique. Tous droits réservés.</p>
+    </div>
     </footer>
+
+
+
 </body>
 
 
