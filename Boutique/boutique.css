@@ -1,183 +1,154 @@
 /*================================*/
 /*========Background css==========*/
 /*================================*/
-  :root{
-    --violet-clair: #BD22FB;
-    --violet-fonce: #41156A;
-    --sombre: #0D0723;
-    --rose: #ED26C0;
+:root{
+  --violet-clair: #BD22FB;
+  --violet-fonce: #41156A;
+  --sombre: #070517;
+  --rose: #ED26C0;
 
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background-color: var(--sombre);
-    
-    --blur-size:100px;
-    --intensity: 0.9;
-  }
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--sombre);
+  
+  --blur-size:100px;
+  --intensity: 0.9;
+}
 
-  html,body{
-    height:100%;
-    font-family: system-ui, Arial, sans-serif;
-  }
+html,body{
+  height:100%;
+  font-family: system-ui, Arial, sans-serif;
+}
 
-  .animated-bg {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: -1;
-    background: var(--sombre);
-    pointer-events: none;
-  }
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--sombre);
+  pointer-events: none;
+}
 
-  /* halos principaux d’origine */
-  .animated-bg::before,
-  .animated-bg::after {
-    content: "";
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    opacity: calc(var(--intensity) * 1);
-    will-change: transform;
-    pointer-events: none;
-  }
+/* halos principaux d'origine */
+.animated-bg::before,
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  opacity: calc(var(--intensity) * 1);
+  will-change: transform;
+  pointer-events: none;
+}
 
-  .animated-bg::before {
-    background:
-      radial-gradient(circle at 40% 40%,)
-        color-mix(in srgb, var(--accent1) 55%, transparent 0%),
-        transparent 15%, rgba(0,0,0,0) 35%;
-        animation: float1 14s linear infinite;
-        opacity: 0.8;
-  }
+.animated-bg::before {
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(189, 34, 251, 0.55) 0%,
+    transparent 15%
+  );
+  animation: float1 14s linear infinite;
+  opacity: 0.8;
+}
 
-  .animated-bg::after {
-    background:
-      radial-gradient(circle at 70% 60%,
-        color-mix(in srgb, var(--accent2) 55%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float2 18s linear infinite;
-    opacity: 0.7;
-  }
+.animated-bg::after {
+  background: radial-gradient(
+    circle at 70% 60%,
+    rgba(237, 38, 192, 0.55) 0%,
+    transparent 25%
+  );
+  animation: float2 18s linear infinite;
+  opacity: 0.7;
+}
 
-  /* 2 halos supplémentaires */
-  .halo {
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    pointer-events: none;
-    opacity: 0.6;
-    will-change: transform;
-  }
+/* 2 halos supplémentaires */
+.halo {
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur-size));
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.6;
+  will-change: transform;
+}
 
-  .halo:nth-child(2) {
-    background:
-      radial-gradient(circle at 25% 70%,
-        color-mix(in srgb, var(--accent1) 50%, transparent 0%),
-        transparent 30%,
-        rgba(0,0,0,0) 50%);
-    animation: float3 20s linear infinite;
-  }
+.halo:nth-child(2) {
+  background: radial-gradient(
+    circle at 25% 70%,
+    rgba(189, 34, 251, 0.50) 0%,
+    transparent 30%
+  );
+  animation: float3 20s linear infinite;
+}
 
-  .halo:nth-child(3) {
-    background:
-      radial-gradient(circle at 80% 20%,
-        color-mix(in srgb, var(--accent2) 60%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float4 26s linear infinite;
-  }
+.halo:nth-child(3) {
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(237, 38, 192, 0.60) 0%,
+    transparent 25%
+  );
+  animation: float4 26s linear infinite;
+}
 
-  /* Lignes de fond visibles partout */
-  .animated-bg .lines {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08) 0px,
-      rgba(255,255,255,0.08) 1px,
-      transparent 1px,
-      transparent 24px
-    );
-    opacity: 0.5;
-    mix-blend-mode: lighten;
-  }
+/* Lignes de fond visibles partout */
+.animated-bg .lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.08) 0px,
+    rgba(255,255,255,0.08) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
 
-  /* animations */
-  @keyframes float1 {
-    0%   { transform: translate3d(-30%, -20%, 0) scale(1); }
-    25%  { transform: translate3d(25%, -25%, 0) scale(1.1); }
-    50%  { transform: translate3d(20%, 30%, 0)  scale(1.05); }
-    75%  { transform: translate3d(-25%, 25%, 0) scale(0.95); }
-    100% { transform: translate3d(-30%, -20%, 0) scale(1); }
-  }
+/* animations */
+@keyframes float1 {
+  0%, 100% { transform: translate3d(-30%, -20%, 0) scale(1); }
+  25%  { transform: translate3d(25%, -25%, 0) scale(1.1); }
+  50%  { transform: translate3d(20%, 30%, 0)  scale(1.05); }
+  75%  { transform: translate3d(-25%, 25%, 0) scale(0.95); }
+}
 
-  @keyframes float2 {
-    0%   { transform: translate3d(35%, 25%, 0) scale(0.9); }
-    25%  { transform: translate3d(-20%, 35%, 0) scale(1.05); }
-    50%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    75%  { transform: translate3d(20%, -25%, 0) scale(1); }
-    100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
-  }
+@keyframes float2 {
+  0%, 100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
+  25%  { transform: translate3d(-20%, 35%, 0) scale(1.05); }
+  50%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+  75%  { transform: translate3d(20%, -25%, 0) scale(1); }
+}
 
-  /* tu peux ajouter encore un halo : */
-  @keyframes float3 {
-    0%   { transform: translate3d(-40%, 40%, 0) scale(1); }
-    25%  { transform: translate3d(30%, -35%, 0) scale(1.05); }
-    50%  { transform: translate3d(40%, 35%, 0) scale(0.95); }
-    75%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    100% { transform: translate3d(-40%, 40%, 0) scale(1); }
-  }
+@keyframes float3 {
+  0%, 100% { transform: translate3d(-40%, 40%, 0) scale(1); }
+  25%  { transform: translate3d(30%, -35%, 0) scale(1.05); }
+  50%  { transform: translate3d(40%, 35%, 0) scale(0.95); }
+  75%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+}
 
-  @keyframes float4 {
-    0%   { transform: translate3d(-12%, 8%, 0) scale(1); }
-    25%  { transform: translate3d(10%, -6%, 0) scale(1.05); }
-    50%  { transform: translate3d(6%, 12%, 0) scale(0.9); }
-    75%  { transform: translate3d(-10%, -8%, 0) scale(1.08); }
-    100% { transform: translate3d(-12%, 8%, 0) scale(1); }
-  }
+@keyframes float4 {
+  0%, 100% { transform: translate3d(-12%, 8%, 0) scale(1); }
+  25%  { transform: translate3d(10%, -6%, 0) scale(1.05); }
+  50%  { transform: translate3d(6%, 12%, 0) scale(0.9); }
+  75%  { transform: translate3d(-10%, -8%, 0) scale(1.08); }
+}
 
-  .page {
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 64px; /* converti de 4rem */
-  }
-
-  /* .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 12px;
-    color: #fff;
-    max-width:420px;
-    text-align:center;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
-  } */
-
-  .hint { opacity: 0.8; }
-
-  body:hover .animated-bg {
-    --intensity: 1.25;
-    filter: saturate(1.1);
-  }
-/*================================*/
-/*========Background css==========*/
-/*================================*/
+body:hover .animated-bg {
+  --intensity: 1.25;
+  filter: saturate(1.1);
+}
 
 /*================================*/
 /*========NAVBAR==================*/
 /*================================*/
 
 .navbar {
-  position: fixed;    /* toujours en haut */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -190,32 +161,37 @@
   transition: all 0.4s ease;
 }
 
-/* conteneur interne pour aligner éléments */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  position: relative; /* pour titre centré en absolute */
+  position: relative;
 }
 
-/* left / right simples */
 .nav-left, .nav-right {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* liens de nav */
 .nav-link {
   text-decoration: none;
-  color: white; /* texte blanc sur fond image */
+  color: white;
   font-weight: 600;
-  font-size: 16px; /* converti de 0.98rem */
+  font-size: 0.98rem;
   position: relative;
   padding: 8px 16px;
 }
 
+/* Effet au survol : fond noir apparaît derrière le texte */
+.nav-link:hover {
+  background-color: #0D0723;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet néon qui apparaît au survol des liens */
 .nav-link::before {
   content: '';
   position: absolute;
@@ -223,28 +199,31 @@
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid white;
-  border-radius: 30px;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease;
+  box-shadow:
+    0 0 5px #BD22FB,
+    0 0 10px #BD22FB,
+    0 0 20px #ED26C0,
+    0 0 40px rgba(189, 34, 251, 0.6);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  border-radius: 30px;
 }
 
+/* Activation de l'effet néon au survol */
 .nav-link:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-/* ---------- TITRE centré (desktop) ---------- */
 .nav-title {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: auto; /* autorise le hover */
 }
 
-/* lien titre : contient texte + logo */
 .title-link { 
   display: inline-flex; 
   align-items: center; 
@@ -253,7 +232,6 @@
   position: relative;
 }
 
-/* texte visible par défaut */
 .title-text {
   color: white;
   font-size: 1.25rem;
@@ -261,28 +239,24 @@
   transition: opacity 0.25s ease;
 }
 
-/* logo caché par défaut (on l'affiche au hover) */
 .title-logo {
+  background-color: #00000000;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   height: 34px;
-  width: 45px;
+  width: 34px;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Au hover sur le titre : texte disparait, logo apparait */
 .nav-title:hover .title-text { opacity: 0; }
 .nav-title:hover .title-logo { 
   opacity: 1; 
   transform: translate(-50%, -50%) scale(1); 
 }
-
-
-/* ---------- SCROLL : changement de couleur ---------- */
 
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
@@ -291,7 +265,6 @@
   border-bottom: none;
 }
 
-/* Animation du glow pulsant */
 @keyframes neonGlow {
   0% {
     box-shadow:
@@ -313,133 +286,105 @@
   100% { background-position: 0% 50%; }
 }
 
-/* ---------- NAVBAR hamburger (mobile) ---------- */
-/* Bouton burger (le seul visible au départ) */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 5px #BD22FB,
+      0 0 10px #ED26C0,
+      0 0 20px rgba(237, 38, 192, 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 10px #BD22FB,
+      0 0 20px #ED26C0,
+      0 0 40px rgba(189, 34, 251, 0.8);
+  }
+}
+
+/* Menu burger */
 #burger-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    font-size: 26px;           /* Taille du symbole ☰ */
-    color: black;              /* Couleur du symbole burger */
-    background-color: #BD22FB;   /* Fond violet */
-    border: none;
-    border-radius: 50%;        /* Rend le bouton circulaire */
-    width: 45px;               /* Largeur du cercle */
-    height: 45px;              /* Hauteur du cercle */
-    display: flex;             /* Pour centrer le symbole */
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-    cursor: pointer;
-    transition: 0.3s; 
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  font-size: 26px;
+  color: black;
+  background-color: #BD22FB;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  cursor: pointer;
+  transition: 0.3s; 
 }
 
-/* Petit effet au survol */
 #burger-btn:hover {
-    transform: scale(1.1);
-    background-color: #f0f0f0; /* léger gris au survol */
+  transform: scale(1.1);
+  background-color: #f0f0f0;
 }
 
-/* Le menu (fermé par défaut) */
 .hamburger {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 800px; /* converti de 100vh */
-    background-color: #000000;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-right: 5px groove #41156A;
-    border-radius: 0 10px 10px 0;
-    transition: width 0.5s ease;
-    animation: neonGlow 3s infinite alternate;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 5px groove #41156A;
+  border-radius: 0 10px 10px 0;
+  transition: width 0.5s ease;
+  animation: neonGlow 3s infinite alternate;
+  z-index: 999;
 }
 
-/* Quand le menu est "ouvert" (classe ajoutée par JS) */
 .hamburger.open {
-    width: 100%;
+  width: 100%;
 }
 
-/* Contenu du menu (liens, logo) */
 .hamburger img {
-    width: 100px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    opacity: 0;
-    transition: opacity 0.5s;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-/* Liens du menu */
 .hamburger a {
-    opacity: 0;
-    color: white;
-    background-color: #41156A;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: opacity 0.5s, background 0.3s;
+  opacity: 0;
+  color: white;
+  background-color: #41156A;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: opacity 0.5s, background 0.3s;
 }
 
 .hamburger a:hover {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
 
-/* Quand le menu est ouvert, on rend tout visible */
 .hamburger.open a,
 .hamburger.open img {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Lien actif */
 .hamburger > .actif {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
 
-/* Option : cacher le menu sur grand écran si tu veux */
-@media (min-width: 768px) {
-    #burger-btn {
-        display: none;
-    }
-    .hamburger {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    header>nav {
-        flex-direction: column;
-    }
-
-    header>nav>a {
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-size: 16px; /* converti de 4vw */
-        padding: 5px 0;
-        border-radius: 0; /* on désactive les bordures arrondies */
-    }
-}
-
-
 /*================================*/
-/*========NAVBAR==================*/
+/*========ARTICLES================*/
 /*================================*/
-
-/*================================*/
-/*========ARTICLEs===============*/
-/*================================*/
-
 
 body{
   background: var(--sombre);
@@ -451,14 +396,13 @@ body{
 
 .shop {
   padding: 40px 0;
-  
 }
 
 .shop h1, h2 {
-  margin: 20px auto 40px auto;  /* centrage horizontal automatique */
-  text-align: center;        /* centrage du texte à l'intérieur */
+  margin: 20px auto 40px auto;
+  text-align: center;
   display: block;   
-  padding: 10px 0px;         /* padding réduit */
+  padding: 10px 0px;
 }
 
 .shop h1 {
@@ -477,7 +421,7 @@ h2 {
   position: relative;
   transform-origin: center;
   text-align: center;
-  font-size: 48px; /* converti de 3em */
+  font-size: 48px;
   font-weight: bold;
   background: linear-gradient(135deg, #ED26C0, #BD22FB);
   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
@@ -491,13 +435,12 @@ h2 {
   margin-left: 60px;
 }
 
-
 .Grille-produits {
   display: flex;
   flex-direction: column;
-  gap: 50px;          /* espace vertical entre les cartes */
+  gap: 50px;
   align-items: center;
-  padding: 0 20px;    /* padding horizontal pour éviter que ça touche le bord */
+  padding: 0 20px;
   max-width: 1200px;
   margin: 50px auto 0;
 }
@@ -511,8 +454,6 @@ h2 {
   margin: 0 auto;
   padding: 0 20px;
 }
-
-
 
 .produit {
   position: relative;
@@ -529,16 +470,11 @@ h2 {
   text-align: center;
   box-shadow: 0 6px 30px black;
   backdrop-filter: blur(6px);
-
   opacity: 0;
   transition: all 0.8s ease-out;
-
   width: 30%;     
   transform: translateY(50px); 
-  transition: all 0.8s ease-out;
-
 }
-
 
 .produit-gauche {
   align-self: center;
@@ -547,16 +483,13 @@ h2 {
 
 .produit-droite {
   align-self: center;
-  transform: translateX(10%) translateY(50px); /* petit décalage à droite */
+  transform: translateX(10%) translateY(50px);
 }
-
 
 .produit.visible {
   opacity: 1;
   transform: rotate(0deg) translateX(0) translateY(0);
-  transform: translateY(0);
 }
-
 
 .produit img {
   width: 100%;
@@ -565,7 +498,6 @@ h2 {
   opacity: 0.8;
   transition: opacity 0.3s ease, transform 0.3s ease;
   border-radius: 18px;
-
 }
 
 .produit-texte {
@@ -582,7 +514,6 @@ h2 {
 .produit:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 0 25px #a64dffcc;
-  transform: rotate(0deg) scale(1.05);
 }
 
 .produit:hover img {
@@ -593,24 +524,14 @@ h2 {
   transform: translateY(0);
 }
 
-.produit-gauche { align-self: flex-start; transform: translateX(-50%) translateY(50px);
-}
-.produit-droite { align-self: flex-end; transform: translateX(10%) translateY(50px);
-}
-
-.produit.visible.produit-gauche,
-.produit.visible.produit-droite { transform: translateX(0) translateY(0);
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
 .explication {
-  /* sidebar inside .shop-content: sticky on desktop */
   position: sticky;
-  top: 120px; /* space for navbar */
+  top: 120px;
   width: 320px;
   max-width: 28%;
   padding: 18px;
@@ -622,23 +543,10 @@ h2 {
   height: fit-content;
 }
 
-/* Responsive: sur petits écrans, placer l'explication sous le contenu et pleine largeur */
-@media (max-width: 1024px) {
-  .explication {
-    position: static;
-    width: 100%;
-    max-width: none;
-    margin: 20px 0 0 0;
-    padding: 16px;
-    border-radius: 12px;
-  }
-}
-
-  /*================================*/
-/*========POP-UP===============*/
+/*================================*/
+/*========POP-UP==================*/
 /*================================*/
 
-/* POPUP (modal) */
 .popup {
   position: fixed;
   top: 0;
@@ -671,7 +579,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  transform: translateY(-2vh); /* Décale légèrement vers le haut pour un meilleur équilibre visuel */
+  transform: translateY(-2vh);
 }
 
 .popup-content img {
@@ -758,17 +666,11 @@ h2 {
     opacity: 1;
   }
 }
-/*================================*/
-/*========PRINCIPAL===============*/
-/*================================*/
 
 /*================================*/
-/*========FOOTER===============*/
+/*========FOOTER==================*/
 /*================================*/
 
-/* ========================================
-   10. FOOTER (fait par Sofiane et Mansourah)
-   ======================================== */
 footer {
   position: relative;
   z-index: 10;
@@ -778,7 +680,6 @@ footer {
   color: white;
 }
 
-/* conteneur global */
 .footer-contenu {
   display: flex;
   justify-content: space-between;
@@ -788,7 +689,6 @@ footer {
   gap: 40px;
 }
 
-/* --- PARTIE GAUCHE : personnages --- */
 .Personnages-reseaux {
   flex-direction: column;
   display: flex;
@@ -808,6 +708,9 @@ footer h2 {
   color: white;
   text-align: center;
   margin-bottom: 10px;
+  background: transparent;
+  box-shadow: none;
+  padding: 5px 0;
 }
 
 footer h3 {
@@ -822,7 +725,6 @@ footer h3 {
   background: none;
 }
 
-/* --- PARTIE CENTRALE --- */
 footer a {
   color: white;
   text-decoration: none;
@@ -847,7 +749,6 @@ footer a:hover {
   gap: 30px;
 }
 
-/* Grande box du haut */
 .liens {
   width: 80%;
   background-color: var(--violet-fonce);
@@ -876,14 +777,12 @@ footer a:hover {
   text-decoration: none;
 }
 
-/* Texte central */
 .footer-centre > p {
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
 }
 
-/* Les deux petites box */
 .footer-lois,
 .footer-gif {
   flex: 1;
@@ -910,7 +809,6 @@ footer a:hover {
   text-decoration: none;
 }
 
-/* --- RESEAUX SOCIAUX --- */
 .Reseaux_sociaux-general {
   right: 40px;
   top: 50%;
@@ -920,9 +818,10 @@ footer a:hover {
   gap: 20px;
 }
 
-.Reseaux_sociaux-general h3 {
+.Reseaux_sociaux-general h2 {
   color: white;
   text-align: center;
+  font-size: 15px;
 }
 
 .Reseaux_sociaux-general a img {
@@ -952,7 +851,6 @@ footer img {
   transform: scale(1.1);
 }
 
-/* crédits */
 .footer-credits {
   text-align: center;
   margin-top: 40px;
@@ -960,85 +858,151 @@ footer img {
   color: #ccc;
 }
 
+/*================================*/
+/*========RESPONSIVE==============*/
+/*================================*/
 
-/* ===========================
-   RESPONSIVE
-=========================== */
-/* Petits écrans / mobiles (largeur ≤ 768px) */
+@media (min-width: 769px) {
+  #burger-btn {
+    display: none;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .explication {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin: 20px 0 0 0;
+    padding: 16px;
+    border-radius: 12px;
+  }
+}
+
 @media (max-width: 768px) {
-  /* Navbar : centrer titre, cacher nav-left/right et afficher hamburger */
-  .nav-left, .nav-right { display: none; }
-  .nav-title { text-align: center; }
-  #burger-btn { display: block; }
+  #burger-btn {
+    display: flex;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .hamburger img {
+    width: 150px;
+    max-width: 60%;
+    height: auto;
+    opacity: 0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+  }
+
+  header > nav {
+    flex-direction: column;
+  }
+
+  header > nav > a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 5px 0;
+    border-radius: 0;
+  }
+
+  .shop h1 {
+    width: 90%;
+    font-size: 2em;
+    margin-top: 80px;
+  }
+
+  h2 {
+    width: 80%;
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .Grille-produits {
     padding: 0 20px;
+    gap: 30px;
   }
 
   .produit {
-    width: 90%;        /* carte presque pleine largeur */
-    align-self: center; /* toutes centrées */
+    width: 90%;
+    align-self: center;
     transform: translateX(0) translateY(50px);
   }
-  .produit-gauche, .produit-droite { transform: translateX(0) translateY(50px); }
+
+  .produit-gauche, .produit-droite {
+    transform: translateX(0) translateY(50px);
+  }
+
+  .produit.visible {
+    transform: translateX(0) translateY(0);
+  }
 
   .popup-content {
     width: 90%;
     max-width: 300px;
     padding: 15px;
   }
+
   .popup-content img {
     width: 100%;
     max-height: 180px;
   }
-  .popup-content h2 { font-size: 1em; }
-  .popup-price { font-size: 0.9em; }
-  .popup-buttons button { padding: 6px 12px; font-size: 0.8em; }
 
-  .popup-content {
-    width: 95%;
-    max-width: 250px;
-    padding: 10px;
+  .popup-content h2 {
+    font-size: 1em;
   }
-  .popup-content img {
+
+  .popup-price {
+    font-size: 0.9em;
+  }
+
+  .popup-buttons button {
+    padding: 8px 15px;
+    font-size: 0.8em;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .footer-centre-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Personnages-reseaux img {
+    display: none;
+  }
+
+  footer div {
     width: 100%;
-    max-height: 150px;
-  }
-  .popup-content h2 { font-size: 0.9em; }
-  .popup-price { font-size: 0.8em; }
-  .popup-buttons button { padding: 5px 10px; font-size: 0.75em; }
-
-    .produit { width: 100%; }
-  .produit-texte { padding: 10px; font-size: 0.9em; }
-  .popup-content { width: 95%; padding: 15px; }
-  .popup-content img { width: 100%; max-height: 200px; }
-  .popup-buttons button { padding: 8px 12px; font-size: 0.8em; }
-  .produit-gauche, .produit-droite {
-    align-self: center;
-    transform: rotate(0deg) translateX(0) translateY(25px);
-  }
-  .Grille-produits {
-    gap: 20px;
-    padding: 0 20px;
+    margin: 0px;
   }
 
-   .Grille-produits {
-    padding: 0 40px;
+  .footer-centre {
+    flex-direction: column;
   }
-  .produit {
-    width: 45%;
+
+  .Reseaux_sociaux-general {
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
   }
-  .produit-gauche { transform: translateX(-20%) translateY(50px); }
-  .produit-droite { transform: translateX(20%) translateY(50px); }
 
-  /* hide the side labels on tablet and smaller, stack instead */
-  .labels-column { display: none; }
-}
-
-@font-face {
-  src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
-    format("woff2");
-  font-family: "Meta";
-  font-style: normal;
-  font-weight: normal;
+  .liens {
+    width: 95%;
+    padding: 30px;
+  }
 }
