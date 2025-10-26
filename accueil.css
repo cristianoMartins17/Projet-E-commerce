@@ -181,19 +181,26 @@ body:hover .halo {
 
 /* Conteneur interne qui organise les éléments de la navbar */
 .nav-global {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 14px 20px;
-  position: relative;
+  gap: 20px;
 }
 
 /* Sections gauche et droite de la navbar */
-.nav-gauche, 
+.nav-gauche {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .nav-droite {
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 /* Style des liens de navigation */
@@ -241,10 +248,9 @@ body:hover .halo {
 
 /* Titre centré dans la navbar */
 .nav-titre {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Lien du titre contenant le texte et le logo */
