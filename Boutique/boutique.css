@@ -386,6 +386,7 @@ body:hover .animated-bg {
 /*================================*/
 
 body{
+  background: var(--sombre);
   color: #fff;
   font-family: "Space Grotesk", sans-serif;
   margin: 0;
@@ -403,12 +404,14 @@ body{
   padding: 10px 0px;
 }
 
-.titre_principale {
+.shop h1 {
+  width: 60%;
+  font-size: 3em;
   margin-top: 100px;
+  margin-bottom: 70px;
   justify-content: center;
   display: flex;
   transform-origin: center;
-  font-size: 3em;
   font-weight: bold;
   background: linear-gradient(135deg, #ED26C0, #BD22FB);
   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
@@ -417,31 +420,22 @@ body{
   color: white;
 }
 
-titre_principal{   
-    margin-bottom: 100px;
-    margin-top: 100px;
-    border: 1px solid white;
-    color: white;
-    background: linear-gradient(to right, var(--violet-fonce) 10%, #421868 90%);
-    width: 60%;
-    text-align: center;
-    text-justify: center;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 50px;
-}
-
 h2 {
+  position: relative;
+  transform-origin: center;
   text-align: center;
-  color: white;
-  font-size: 2.5rem;
+  font-size: 48px;
   font-weight: bold;
   background: linear-gradient(135deg, #ED26C0, #BD22FB);
   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
   border-radius: 10px;
-  padding: 1rem 2rem;
-  margin: 0 auto 3rem;
-  max-width: fit-content;
+  padding: 10px 0px;
+  color: white;
+  margin: 0;
+  font-size: 30px;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-left: 60px;
 }
 
 .Grille-produits {
@@ -744,6 +738,16 @@ footer h2 {
   color: white;
   text-align: center;
   margin-bottom: 10px;
+  background: transparent;
+  box-shadow: none;
+  padding: 5px 0;
+}
+
+footer h3 {
+  width: 100%;
+  font-size: 15px;
+  color: white;
+  text-align: center;
 }
 
 .nous {
@@ -893,7 +897,18 @@ footer img {
     display: none;
   }
   .hamburger {
-    display: none ;
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .explication {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin: 20px 0 0 0;
+    padding: 16px;
+    border-radius: 12px;
   }
 }
 
