@@ -11,12 +11,12 @@ Etudiant 3 :  [TACHERIFT Sofiane]()
 Etudiant 4 :  [SAMIL Omeyya]()
 
 ## Présentation du projet
-Ce dépôt correspond à un site web créé avec les languages HTML/CSS/JS dans le cadre d'un projet en Développement d'interface Web à l'IUT de Belfort-Montbéliard.
+Ce dépôt correspond à un site web créé avec les langages HTML/CSS/JS dans le cadre d'un projet en développement d'interface web à l'IUT de Belfort-Montbéliard.
 
-Nous devions réaliser un site web d'e-commerce d'après ces [consignes](https://projetdevwebs1.web.app/index.html).
+Nous devions créer un site web d'e-commerce d'après ces [consignes](https://projetdevwebs1.web.app/index.html).
 
-Nous avons décidez de réaliser un site web dans lequel nous "vendons" des NFT de nos professeurs au sein de l'IUT.
-Pour cela, nous avons demander leur autorisation pour utiliser leur image (photos trouvé sur Internet).
+Nous avons décidé de créer un site web sur lequel nous "vendons" des NFT de nos professeurs de l'IUT.
+Pour cela, nous avons demandé l'autorisation pour utiliser leur image (photos trouvées sur Internet).
 
 ## Choix de conception
 Pour la conception du site, nous nous sommes inspirés de différents designs trouvées sur Codepen, <a href="https://www.webdesign-inspiration.com/fr">Webdesign Inspiration </a> et <a href="https://www.awwwards.com/websites">Awwards</a>.
