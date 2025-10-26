@@ -1,182 +1,180 @@
-/*==============================*/
-/*=========background===========*/
-/*==============================*/
+/* ========================================
+   1. GLOBALITÉ
+   ======================================== */
 
-  :root{
-    --sombre: #070517;
-    --accent1: rgba(189,34,251,0.85);
-    --accent2: rgba(237,38,192,0.75);
-    --blur-size: 100px;
-    --intensity: 0.9;
-  }
-
-  html,body{
-    height:100%;
-    margin:0;
-    font-family: system-ui, Arial, sans-serif;
-  }
-
-  .animated-bg {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    z-index: -1;
-    background: var(--sombre);
-    pointer-events: none;
-  }
-
-  /* halos principaux d’origine */
-  .animated-bg::before,
-  .animated-bg::after {
-    content: "";
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    opacity: calc(var(--intensity) * 1);
-    will-change: transform;
-    pointer-events: none;
-  }
-
-  .animated-bg::before {
-    background:
-      radial-gradient(circle at 40% 40%,)
-        color-mix(in srgb, var(--accent1) 55%, transparent 0%),
-        transparent 15%, rgba(0,0,0,0) 35%;
-        animation: float1 14s linear infinite;
-        opacity: 0.8;
-  }
-
-  .animated-bg::after {
-    background:
-      radial-gradient(circle at 70% 60%,
-        color-mix(in srgb, var(--accent2) 55%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float2 18s linear infinite;
-    opacity: 0.7;
-  }
-
-  /* 2 halos supplémentaires */
-  .halo {
-    position: absolute;
-    inset: -20%;
-    filter: blur(var(--blur-size));
-    mix-blend-mode: screen;
-    pointer-events: none;
-    opacity: 0.6;
-    will-change: transform;
-  }
-
-  .halo:nth-child(2) {
-    background:
-      radial-gradient(circle at 25% 70%,
-        color-mix(in srgb, var(--accent1) 50%, transparent 0%),
-        transparent 30%,
-        rgba(0,0,0,0) 50%);
-    animation: float3 20s linear infinite;
-  }
-
-  .halo:nth-child(3) {
-    background:
-      radial-gradient(circle at 80% 20%,
-        color-mix(in srgb, var(--accent2) 60%, transparent 0%),
-        transparent 25%,
-        rgba(0,0,0,0) 45%);
-    animation: float4 26s linear infinite;
-  }
-
-  /* Lignes de fond visibles partout */
-  .animated-bg .lines {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.08) 0px,
-      rgba(255,255,255,0.08) 1px,
-      transparent 1px,
-      transparent 24px
-    );
-    opacity: 0.5;
-    mix-blend-mode: lighten;
-  }
-
-  /* animations */
-  @keyframes float1 {
-    0%   { transform: translate3d(-30%, -20%, 0) scale(1); }
-    25%  { transform: translate3d(25%, -25%, 0) scale(1.1); }
-    50%  { transform: translate3d(20%, 30%, 0)  scale(1.05); }
-    75%  { transform: translate3d(-25%, 25%, 0) scale(0.95); }
-    100% { transform: translate3d(-30%, -20%, 0) scale(1); }
-  }
-
-  @keyframes float2 {
-    0%   { transform: translate3d(35%, 25%, 0) scale(0.9); }
-    25%  { transform: translate3d(-20%, 35%, 0) scale(1.05); }
-    50%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    75%  { transform: translate3d(20%, -25%, 0) scale(1); }
-    100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
-  }
-
-  /* tu peux ajouter encore un halo : */
-  @keyframes float3 {
-    0%   { transform: translate3d(-40%, 40%, 0) scale(1); }
-    25%  { transform: translate3d(30%, -35%, 0) scale(1.05); }
-    50%  { transform: translate3d(40%, 35%, 0) scale(0.95); }
-    75%  { transform: translate3d(-35%, -30%, 0) scale(1.1); }
-    100% { transform: translate3d(-40%, 40%, 0) scale(1); }
-  }
-
-  @keyframes float4 {
-    0%   { transform: translate3d(-12%, 8%, 0) scale(1); }
-    25%  { transform: translate3d(10%, -6%, 0) scale(1.05); }
-    50%  { transform: translate3d(6%, 12%, 0) scale(0.9); }
-    75%  { transform: translate3d(-10%, -8%, 0) scale(1.08); }
-    100% { transform: translate3d(-12%, 8%, 0) scale(1); }
-  }
-
-  .page {
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:4rem;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 12px;
-    color: #fff;
-    max-width:420px;
-    text-align:center;
-    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
-    backdrop-filter: blur(6px);
-  }
-
-  .hint { opacity: 0.8; }
-
-  body:hover .animated-bg {
-    --intensity: 1.25;
-    filter: saturate(1.1);
-  }
-
-/*==============================*/
-/*=========background===========*/
-/*==============================*/
-
+/* Réinitialisation des marges et paddings pour tous les éléments */
 * { 
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
 
-/* ---------- NAVBAR de base ---------- */
+/* Variables CSS pour les couleurs du thème */
+:root {
+  --sombre: #070517;
+  --accent1: rgba(189, 34, 251, 0.85);
+  --accent2: rgba(237, 38, 192, 0.75);
+  --blur: 100px;
+}
+
+/* Configuration du body : fond sombre, hauteur minimale et centrage */
+body {
+  min-height: 100vh;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--sombre);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Titre principal de la page avec effet néon */
+.titre_principale {
+  margin-top: 100px;
+  justify-content: center;
+  display: flex;
+  transform-origin: center;
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ED26C0, #BD22FB);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Titre des sections du carrousel avec effet néon */
+h2 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ED26C0, #BD22FB);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 0 auto 3rem;
+  max-width: fit-content;
+}
+
+
+/* ========================================
+   2. FOND ANIMÉ
+   ======================================== */
+
+/* Conteneur principal du fond animé en arrière-plan */
+.fond-anime {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Lignes horizontales décoratives sur le fond */
+.fond-anime::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08) 0px,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
+
+/* Configuration de base pour les halos lumineux animés */
+.halo {
+  position: absolute;
+  inset: -20%;
+  filter: blur(var(--blur));
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+/* Premier halo : couleur accent1, animation lente */
+.halo:nth-child(1) {
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(189, 34, 251, 0.55) 0%,
+    transparent 15%
+  );
+  animation: float1 14s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+/* Deuxième halo : couleur accent2, vitesse moyenne */
+.halo:nth-child(2) {
+  background: radial-gradient(
+    circle at 70% 60%,
+    rgba(237, 38, 192, 0.55) 0%,
+    transparent 25%
+  );
+  animation: float2 18s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+/* Troisième halo : mélange des couleurs */
+.halo:nth-child(3) {
+  background: radial-gradient(
+    circle at 25% 70%,
+    rgba(189, 34, 251, 0.50) 0%,
+    transparent 30%
+  );
+  animation: float3 20s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+/* Animation du premier halo : mouvement fluide en diagonale */
+@keyframes float1 {
+  0%, 100% { transform: translate3d(-30%, -20%, 0) scale(1); }
+  25% { transform: translate3d(25%, -25%, 0) scale(1.1); }
+  50% { transform: translate3d(20%, 30%, 0) scale(1.05); }
+  75% { transform: translate3d(-25%, 25%, 0) scale(0.95); }
+}
+
+/* Animation du deuxième halo : trajectoire différente */
+@keyframes float2 {
+  0%, 100% { transform: translate3d(35%, 25%, 0) scale(0.9); }
+  25% { transform: translate3d(-20%, 35%, 0) scale(1.05); }
+  50% { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+  75% { transform: translate3d(20%, -25%, 0) scale(1); }
+}
+
+/* Animation du troisième halo : effet de rotation visuelle */
+@keyframes float3 {
+  0%, 100% { transform: translate3d(-40%, 40%, 0) scale(1); }
+  25% { transform: translate3d(30%, -35%, 0) scale(1.05); }
+  50% { transform: translate3d(40%, 35%, 0) scale(0.95); }
+  75% { transform: translate3d(-35%, -30%, 0) scale(1.1); }
+}
+
+/* Animation du quatrième halo : mouvements subtils */
+@keyframes float4 {
+  0%, 100% { transform: translate3d(-12%, 8%, 0) scale(1); }
+  25% { transform: translate3d(10%, -6%, 0) scale(1.05); }
+  50% { transform: translate3d(6%, 12%, 0) scale(0.9); }
+  75% { transform: translate3d(-10%, -8%, 0) scale(1.08); }
+}
+
+/* Intensification des halos au survol de la page */
+body:hover .halo {
+  filter: blur(var(--blur)) saturate(1.2);
+  opacity: 1;
+}
+
+
+/* ========================================
+   3. NAVBAR (Barre de navigation desktop)
+   ======================================== */
+
+/* Barre de navigation fixée en haut de la page */
 .navbar {
-  position: fixed;    /* toujours en haut */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -189,62 +187,76 @@
   transition: all 0.4s ease;
 }
 
-/* conteneur interne pour aligner éléments */
-.nav-inner {
+/* Conteneur interne qui organise les éléments de la navbar */
+.nav-global {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  position: relative; /* pour titre centré en absolute */
+  position: relative;
 }
 
-/* left / right simples */
-.nav-left, .nav-right {
+/* Sections gauche et droite de la navbar */
+.nav-gauche, 
+.nav-droite {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* liens de nav */
-.nav-link {
+/* Style des liens de navigation */
+.nav-lien {
   text-decoration: none;
-  color: white; /* texte blanc sur fond image */
+  color: white;
   font-weight: 600;
   font-size: 0.98rem;
   position: relative;
   padding: 8px 16px;
 }
 
-.nav-link::before {
+/* Effet au survol : fond noir apparaît derrière le texte */
+.nav-lien:hover {
+  background-color: #0D0723;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet néon qui apparaît au survol des liens */
+.nav-lien::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid white;
-  border-radius: 30px;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease;
+  box-shadow:
+    0 0 5px #BD22FB,
+    0 0 10px #BD22FB,
+    0 0 20px #ED26C0,
+    0 0 40px rgba(189, 34, 251, 0.6);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  border-radius: 30px;
 }
 
-.nav-link:hover::before {
+/* Activation de l'effet néon au survol */
+.nav-lien:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-/* ---------- TITRE centré (desktop) ---------- */
-.nav-title {
+/* Titre centré dans la navbar */
+.nav-titre {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: auto; /* autorise le hover */
 }
 
-/* lien titre : contient texte + logo */
-.title-link { 
+/* Lien du titre contenant le texte et le logo */
+.titre-lien { 
   display: inline-flex; 
   align-items: center; 
   justify-content: center;
@@ -252,16 +264,16 @@
   position: relative;
 }
 
-/* texte visible par défaut */
-.title-text {
+/* Texte du titre visible par défaut */
+.titre-texte {
   color: white;
   font-size: 1.25rem;
   font-weight: 700;
   transition: opacity 0.25s ease;
 }
 
-/* logo caché par défaut (on l'affiche au hover) */
-.title-logo {
+/* Logo caché par défaut, apparaît au survol */
+.titre-logo {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -273,16 +285,17 @@
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Au hover sur le titre : texte disparait, logo apparait */
-.nav-title:hover .title-text { opacity: 0; }
-.nav-title:hover .title-logo { 
+/* Au survol du titre : le texte disparaît et le logo apparaît */
+.nav-titre:hover .titre-texte { 
+  opacity: 0; 
+}
+
+.nav-titre:hover .titre-logo { 
   opacity: 1; 
   transform: translate(-50%, -50%) scale(1); 
 }
 
-
-/* ---------- SCROLL : changement de couleur ---------- */
-
+/* Changement de style de la navbar lors du scroll */
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
   background-size: 300% 300%;
@@ -290,7 +303,7 @@
   border-bottom: none;
 }
 
-/* Animation du glow pulsant */
+/* Animation de l'effet néon pulsant */
 @keyframes neonGlow {
   0% {
     box-shadow:
@@ -306,126 +319,712 @@
   }
 }
 
+/* Animation du dégradé qui se déplace */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ---------- NAVBAR hamburger (mobile) ---------- */
-/* Bouton burger (le seul visible au départ) */
+/* Animation du pouls néon pour les boutons et liens */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 5px #BD22FB,
+      0 0 10px #ED26C0,
+      0 0 20px rgba(237, 38, 192, 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 10px #BD22FB,
+      0 0 20px #ED26C0,
+      0 0 40px rgba(189, 34, 251, 0.8);
+  }
+}
+
+
+/* ========================================
+   4. BARRE BURGER (Menu hamburger mobile)
+   ======================================== */
+
+/* Bouton burger circulaire en haut à gauche */
 #burger-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    font-size: 26px;           /* Taille du symbole ☰ */
-    color: black;              /* Couleur du symbole burger */
-    background-color: #BD22FB;   /* Fond violet */
-    border: none;
-    border-radius: 50%;        /* Rend le bouton circulaire */
-    width: 45px;               /* Largeur du cercle */
-    height: 45px;              /* Hauteur du cercle */
-    display: flex;             /* Pour centrer le symbole */
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-    cursor: pointer;
-    transition: 0.3s; 
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  font-size: 26px;
+  color: black;
+  background-color: #BD22FB;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  cursor: pointer;
+  transition: 0.3s; 
 }
 
-/* Petit effet au survol */
+/* Effet d'agrandissement au survol du bouton burger */
 #burger-btn:hover {
-    transform: scale(1.1);
-    background-color: #f0f0f0; /* léger gris au survol */
+  transform: scale(1.1);
+  background-color: #f0f0f0;
 }
 
-/* Le menu (fermé par défaut) */
+/* Menu hamburger caché par défaut (largeur 0) */
 .hamburger {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100vh;
-    background-color: #000000;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-right: 5px groove #41156A;
-    border-radius: 0 10px 10px 0;
-    transition: width 0.5s ease;
-    animation: neonGlow 3s infinite alternate;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 5px groove #41156A;
+  border-radius: 0 10px 10px 0;
+  transition: width 0.5s ease;
+  animation: neonGlow 3s infinite alternate;
+  z-index: 999;
 }
 
-/* Quand le menu est "ouvert" (classe ajoutée par JS) */
+/* Menu ouvert : prend toute la largeur de l'écran */
 .hamburger.open {
-    width: 100%;
+  width: 100%;
 }
 
-/* Contenu du menu (liens, logo) */
+/* Logo dans le menu hamburger (invisible au départ) */
 .hamburger img {
-    width: 100px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    opacity: 0;
-    transition: opacity 0.5s;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-/* Liens du menu */
+/* Liens du menu hamburger (invisibles au départ) */
 .hamburger a {
-    opacity: 0;
-    color: white;
-    background-color: #41156A;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: opacity 0.5s, background 0.3s;
+  opacity: 0;
+  color: white;
+  background-color: #41156A;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: opacity 0.5s, background 0.3s;
 }
 
+/* Changement de couleur au survol des liens du menu */
 .hamburger a:hover {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
 
-/* Quand le menu est ouvert, on rend tout visible */
+/* Rendre visible le contenu quand le menu est ouvert */
 .hamburger.open a,
 .hamburger.open img {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Lien actif */
+/* Style pour le lien actif dans le menu */
 .hamburger > .actif {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
 
-/* Option : cacher le menu sur grand écran si tu veux */
+
+/* ========================================
+   5. TITRE EN DIAGONAL
+   ======================================== */
+
+/* Conteneur principal pour le titre et la carte */
+.contenue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Titre incliné avec effet néon */
+.titre-diagonal {
+  position: relative;
+  display: inline-block;
+  transform: rotate(-6deg);
+  transform-origin: center;
+  font-size: 3em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ED26C0, #BD22FB);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  margin: 0;
+}
+
+
+/* ========================================
+   6. CARTE (Carte interactive NFT)
+   ======================================== */
+
+/* Variables de couleur pour la carte */
+.contenue-Carte {
+  --hue: 150;
+  --primary: hsl(var(--hue), 50%, 50%);
+  --white-1: hsl(0, 0%, 90%);
+  --white-2: hsl(0, 0%, 80%);
+  --dark: hsl(var(--hue), 25%, 10%);
+  --grey: hsl(0, 0%, 50%);
+
+  width: 310px;
+  height: 500px;
+  margin: 40px;
+  perspective: 1000px;
+}
+
+/* Configuration de la carte avec effet 3D */
+.Carte {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+/* Rotation de la carte au survol ou au focus */
+.contenue-Carte:hover .Carte,
+.contenue-Carte:focus-within .Carte {
+  transform: rotateY(180deg);
+}
+
+/* Style commun pour l'avant et l'arrière de la carte */
+.avant-Carte,
+.arriere-Carte {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Face avant de la carte (visible par défaut) */
+.avant-Carte {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* Face arrière de la carte (retournée) */
+.arriere-Carte {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Conteneur de l'image dans la carte */
+figure {
+  z-index: -1;
+}
+
+/* Image et fond de l'image prennent toute la carte */
+figure,
+.img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image avec coins arrondis */
+img {
+  height: 100%;
+  border-radius: 24px;
+}
+
+/* Nom affiché sur la carte */
+figcaption {
+  display: block;
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+/* Fond semi-transparent sur l'image */
+.img-bg {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+/* Découpe en forme de polygone sur la face avant */
+.avant-Carte .img-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+/* Ligne décorative sur la face avant */
+.avant-Carte .img-bg::before {
+  content: "";
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(18deg);
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--primary);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transition: .1s;
+}
+
+/* Découpe différente sur la face arrière */
+.arriere-Carte .img-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+/* Animation de la ligne au survol */
+.contenue-Carte:hover .avant-Carte .img-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+
+/* Bouton "Voir" sur la face arrière de la carte */
+.btn-lien {
+  display: inline-block;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--white-1);
+  letter-spacing: 2px;
+  padding: 9px 20px;
+  border: 1px solid var(--grey);
+  border-radius: 1000px;
+  background: #0D0723;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet néon au survol du bouton */
+.btn-lien:hover,
+.btn-lien:focus {
+  color: #fff;
+  border-color: #BD22FB;
+  background: #0D0723;
+  box-shadow:
+    0 0 5px #BD22FB,
+    0 0 10px #BD22FB,
+    0 0 20px #ED26C0,
+    0 0 40px rgba(189, 34, 251, 0.6);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   7. PARAGRAPHE (Boîte de texte NFT)
+   ======================================== */
+
+/* Boîte contenant le texte explicatif */
+.box-paragraphe {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  padding: 20px;
+  background: rgba(13, 7, 35, 0.6);
+  border: 2px solid rgba(189, 34, 251, 0.4);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Titre de la boîte avec animation de battement */
+.titre-box {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #BD22FB, 0 0 20px #ED26C0;
+  margin-bottom: 15px;
+  animation: beat 10s ease-in-out infinite;
+}
+
+/* Animation de battement du titre (grossit et rétrécit) */
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #BD22FB, 0 0 20px #ED26C0;
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #ED26C0, 0 0 40px #BD22FB;
+  }
+}
+
+/* Texte en rose et gras pour mettre en valeur */
+.grasRose {
+  color: #ED26C0;
+  font-weight: bold;
+}
+
+
+/* ========================================
+   8. DESCRIPTION (Section Not For Teachers)
+   ======================================== */
+
+/* Section complète de description */
+.Description {
+  width: 100%;
+  padding: 80px 8%;
+  border-top: 2px solid rgba(189, 34, 251, 0.4);
+  border-bottom: 2px solid rgba(189, 34, 251, 0.2);
+  overflow-x: hidden;
+}
+
+/* Conteneur flex pour organiser titre et paragraphe */
+.Description-contenue {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Partie gauche contenant le titre */
+.Description-gauche {
+  flex: 1 1 40%;
+}
+
+/* Grand titre avec effet dégradé */
+.Description-titre {
+  font-size: 3.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ED26C0, #BD22FB);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(189, 34, 251, 0.4);
+  margin: 0;
+}
+
+/* Petite barre décorative sous le titre */
+.Description-titre::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #BD22FB, #ED26C0);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Partie droite contenant le paragraphe */
+.Description-droite {
+  flex: 1 1 55%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Paragraphe aligné à droite et justifié */
+.Description-droite .box-paragraphe {
+  width: 90%;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: justify;
+}
+
+/* Style des liens dans la description */
+.lien {
+  color: #0D0723;
+  background-color: #BD22FB;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 8px 20px;
+}
+
+/* Effet néon au survol des liens */
+.lien:hover {
+  background-color: #ED26C0;
+  box-shadow:
+    0 0 5px #BD22FB,
+    0 0 10px #ED26C0,
+    0 0 20px rgba(237, 38, 192, 0.4);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   9. CARROUSEL (Galerie d'images NFT)
+   ======================================== */
+
+/* Conteneur principal du carrousel */
+.carrousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chaque image du carrousel avec position absolue */
+.image {
+  position: absolute;
+  width: 280px;
+  height: 360px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Images couvrent entièrement leur conteneur */
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.4s;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Zoom léger des images au survol */
+.image:hover img {
+  transform: scale(1.05);
+}
+
+/* Boutons de navigation du carrousel (< et >) */
+.btn-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: rgba(189, 34, 251, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+/* Effet au survol des boutons de navigation */
+.btn-nav:hover {
+  background: rgba(189, 34, 251, 0.5);
+  border-color: #BD22FB;
+  box-shadow: 0 0 20px #BD22FB;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Effet au clic des boutons */
+.btn-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Positionnement du bouton gauche */
+#avant {
+  left: 5%;
+}
+
+/* Positionnement du bouton droit */
+#apres {
+  right: 5%;
+}
+
+/* Overlay pour afficher l'image en grand */
+.image-zoom {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+/* Affichage de l'overlay quand actif */
+.image-zoom.active {
+  display: flex;
+}
+
+/* Image agrandie dans l'overlay avec effet néon */
+.image-zoom img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #BD22FB, 0 0 50px #ED26C0;
+  animation: zoomIn 0.4s ease;
+  cursor: default;
+}
+
+/* Animation d'apparition de l'image agrandie */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Conteneur des indicateurs de position du carrousel */
+.indicateurs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+/* Chaque point indicateur */
+.indicateur {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* Indicateur actif (image actuellement affichée) */
+.indicateur.actif {
+  background: #BD22FB;
+  border-color: #ED26C0;
+  box-shadow: 0 0 10px #BD22FB;
+  transform: scale(1.3);
+}
+
+
+/* ========================================
+   10. RESPONSIVE (Adaptations mobiles)
+   ======================================== */
+
+/* Sur grand écran : on cache le menu burger */
 @media (min-width: 768px) {
-    #burger-btn {
-        display: none;
-    }
-    .hamburger {
-        display: none;
-    }
+  #burger-btn {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
 }
 
+/* Sur mobile : on cache la navbar classique et affiche le burger */
 @media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
+  .navbar {
+    display: none;
+  }
 
-    header>nav {
-        flex-direction: column;
-    }
+  header > nav {
+    flex-direction: column;
+  }
 
-    header>nav>a {
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-size: 4vw;
-        padding: 5px 0;
-        border-radius: 0; /* on désactive les bordures arrondies */
-    }
+  header > nav > a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 5px 0;
+    border-radius: 0;
+  }
+
+  /* Adaptation du carrousel sur mobile */
+  .carrousel {
+    height: 350px;
+  }
+
+  .image {
+    width: 220px;
+    height: 280px;
+  }
+
+  .btn-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Adaptation de la section Description sur petit écran */
+@media (max-width: 900px) {
+  .Description-contenue {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Description-gauche, 
+  .Description-droite {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .Description-titre {
+    font-size: 2.8rem;
+  }
+
+  .Description-titre::after {
+    margin: 10px auto 0;
+  }
+
+  .box-paragraphe {
+    width: 100%;
+    max-width: 90%;
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .Description-droite {
+    justify-content: center;
+  }
+
+  .Description-droite .box-paragraphe {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
