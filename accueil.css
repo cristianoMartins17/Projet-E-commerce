@@ -943,7 +943,7 @@ footer {
   padding: 40px 20px;
   background-color: var(--sombre);
   overflow: hidden;
-  color: white; /* AJOUT : texte en blanc */
+  color: white;
 }
 
 /* conteneur global */
@@ -965,32 +965,29 @@ footer {
   gap: 15px;
 }
 
+.nom-Personnages {
+  text-align: center;
+  width: 100%;
+}
+
 footer h3 {
-   width: 100%;
-   font-size: 15px;
-   margin-bottom: 20px;
-   background-color: var(--violet-clair);
-   color: white;
-   padding: 10px;
-   border-radius: 10px;
-   text-align: center;
+  width: 100%;
+  font-size: 15px;
+  color: white;
+  text-align: center;
 }
 
 footer h2 {
-   font-size: 13px;
-   width: 100%;
-   position: relative;
-   transform-origin: center;
-   text-align: center;
-   font-size: 3em;
-   font-weight: bold;
-   background: linear-gradient(135deg, #ED26C0, #BD22FB);
-   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
-   border-radius: 10px;
-   padding: 10px 20px;
-   color: white;
-   margin: 0;
-   margin-bottom: 20px;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ED26C0, #BD22FB);
+  box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: white;
+  margin: 0 0 15px 0;
 }
 
 .nous {
@@ -999,6 +996,14 @@ footer h2 {
 }
 
 /* --- PARTIE CENTRALE --- */
+footer a {
+  color: white;
+  text-decoration: none; /* Pas de soulignement */
+}
+
+footer a:hover {
+  text-decoration: none; /* Pas de soulignement au survol non plus */
+}
 
 .footer-centre-principal {
   flex-direction: row;
@@ -1025,14 +1030,14 @@ footer h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* AJOUT : espacement entre les colonnes */
+  gap: 20px;
 }
 
 .liens-A,
 .liens-B {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* AJOUT : espacement entre les liens */
+  gap: 10px;
 }
 
 .liens a {
@@ -1040,12 +1045,15 @@ footer h2 {
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  color: white;
+  text-decoration: none;
 }
 
 /* Texte central */
 .footer-centre > p {
   font-weight: bold;
   letter-spacing: 2px;
+  color: white;
 }
 
 /* Les deux petites box */
@@ -1066,23 +1074,37 @@ footer h2 {
 }
 
 .footer-lois a {
-  color: white; /* AJOUT */
-  margin: 5px 0; /* AJOUT : espacement */
+  color: white;
+  text-decoration: none; /* Pas de soulignement */
+  margin: 5px 0;
+}
+
+.footer-lois a:hover {
+  text-decoration: none; /* Pas de soulignement au survol */
 }
 
 /* --- RESEAUX SOCIAUX --- */
 .Reseaux_sociaux-general {
-  right: 40px;
-  top: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Horizontal */
   align-items: center;
+  justify-content: center;
   gap: 20px;
+  background-color: var(--violet-fonce);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.Reseaux_sociaux-general h3 {
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 0;
 }
 
 .Reseaux_sociaux-general a img {
-  width: 25px;
-  height: auto;
+  width: 30px; /* Taille ajustée pour pas couper */
+  height: 30px;
+  object-fit: contain; /* Pour ne pas déformer/couper l'image */
 }
 
 .Reseaux_sociaux-general a {
