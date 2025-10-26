@@ -485,7 +485,6 @@ body:hover .halo {
    width: inherit;
    height: inherit;
    position: relative;
-   background: transparent ;
    transform-style: preserve-3d;
    transition: .6s .1s;
 }
@@ -515,14 +514,15 @@ body:hover .halo {
 
 /* Face avant de la carte (visible par défaut) */
 .avant-Carte {
-  transform: rotateY(0deg);
-  z-index: 2;
+   transform: rotateY(0deg);
+   background: transparent ;
+   z-index: 2;
 }
 
 /* Face arrière de la carte (retournée) */
 .arriere-Carte {
-  transform: rotateY(180deg);
-  z-index: 1;
+   transform: rotateY(180deg);
+   z-index: 1;
 }
 
 /* Conteneur de l'image dans la carte */
@@ -533,17 +533,19 @@ figure {
 /* Image et fond de l'image prennent toute la carte */
 figure,
 .img-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+   position: absolute;
+   background: transparent ;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
 }
 
 /* Image avec coins arrondis */
 img {
-  height: 100%;
-  border-radius: 24px;
+   height: 100%;
+   background: transparent ;
+   border-radius: 24px;
 }
 
 /* Nom affiché sur la carte */
