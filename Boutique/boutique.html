@@ -25,14 +25,12 @@
       <header>
         <nav class="navbar" id="mainNav">
           <div class="nav-inner">
-            <!-- gauche : boutique + panier (sur mobile on cache) -->
-            <div class="nav-left">
-              <a href="Boutique/boutique.html" class="nav-link">Boutique</a>
-              <a href="Panier/panier.html" class="nav-link">Panier</a>
-            </div>
+
+                        <div class="nav-left">
+                            <a href="Boutique/boutique.html" class="nav-link">Boutique</a>
+                            <a href="Panier/panier.html" class="nav-link">Panier</a>
+                        </div>
     
-            <!-- titre : centré sur ordi, gauche sur mobile.
-                 Contient texte + logo (on swap par hover via CSS) -->
             <div class="nav-title">
               <a href="" class="title-link" aria-label="Accueil">
                 <span class="title-text">Not For Teachers</span>
@@ -40,7 +38,7 @@
               </a>
             </div>
     
-            <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
+        
             <div class="nav-right">
               <a href="A_propos/propos.html" class="nav-link">À propos</a>
             </div>
@@ -60,55 +58,44 @@
 
            
     <main>
-        <section class="shop">
+    <section class="shop">
 
             <h1>BOUTIQUE</h1>
             <h2>COLLECTION</h2>
 
-            <div class="Grille-produits">
-                    <!-- Premier produit avec son texte -->
-                    <div class="produit-container">
-                        <div class="produit" onclick="openModal('prof/hildenbrand.png', 'Mr.Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
-                            <div class="produit-image-texte">
-                                <img src="image/hildenbrand-bg.png" alt="Prof Hildenbrand" />
-                                <div class="produit-texte">
-                                    <h3>Mr.Hildenbrand</h3>
-                                    <p class="price">0.1 NFT</p>
-                                    <p class="description">Le maître des racines carrées.</p>
-                                </div>
+            <div class="shop-content">
+                <div class="Grille-produits">
+                    <!-- Exemple de carte -->
+                    <div class="produit produit-gauche" onclick="openModal('prof/hildenbrand.png', 'Mr.Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                        <div class="produit-image-texte">
+                            <img src="prof/hildenbrand-bg.png" alt="Prof Hildenbrand" />
+                            <div class="produit-texte">
+                                <h3>Mr.Hildenbrand</h3>
+                                <p class="price">0.1 NFT</p>
+                                <p class="description">Le maître des racines carrées.</p>
                             </div>
                         </div>
-                        <div class="section-texte">
-                            <h2>Professeur de Mathématiques</h2>
-                            <p>Expert en équations et en résolution de problèmes complexes, Mr.Hildenbrand est réputé pour sa rigueur et sa passion pour les mathématiques.</p>
-                            <ul>
-                                <li>Spécialité : Algèbre avancée</li>
-                                <li>Expérience : 15 ans</li>
-                                <li>Note des étudiants : ★★★★☆</li>
-                            </ul>
+                    </div>
+
+                    
+                    
+
+
+                    <div class="produit produit-droite" onclick="openModal('prof/salomon-bg.png', 'Mr Salomon', 'Le maître des racines carrées.', '0.1 NFT')">
+                        <div class="produit-image-texte">
+                            <img src="prof/salomon-bg.png" alt="Prof Hildenbrand" />
+                            <div class="produit-texte">
+                                <h3>Mr Salomon</h3>
+                                <p class="price">0.1 NFT</p>
+                                <p class="description">Le maître des racines carrées.</p>
+                            </div>
                         </div>
                     </div>
 
-                </div>
 
-                <div class="produit produit-droite" onclick="openModal('prof/Salomon-bg.png', 'Mr Salomon', 'Le maître des racines carrées.', '0.1 NFT')">
+                <div class="produit produit-gauche" onclick="openModal('prof/Martinet.png', 'Prof. Martinet', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="prof/salomon-bg.png" alt="Salomon" />
-                        <div class="produit-texte">
-                            <h3>Mr Salomon</h3>
-                            <p class="price">0.1 NFT</p>
-                            <p class="description">Le maître des racines carrées.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="TXT">
-                    <p>DECOUVREZ</p>
-                </div>
-
-                <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
-                    <div class="produit-image-texte">
-                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
+                        <img src="prof/Martinet.png" alt="Prof Martinet" />
                         <div class="produit-texte">
                             <h3>Mr Martinet</h3>
                             <p class="price">0.1 NFT</p>
@@ -117,30 +104,36 @@
                     </div>
                 </div>
 
-                <div class="TXT">
-                    <p>DECOUVREZ</p>
-                    </div>
-
-                <div class="produit produit-droite" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                <div class="produit produit-droite" onclick="openModal('prof/paterlini.png', 'Mme Paterlini', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
+                        <img src="prof/paterlini.png" alt="Prof Paterlini" />
+                        <div class="produit-texte">
+                            <h3>Mme Paterlini</h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="produit produit-gauche" onclick="openModal('prof/prof/picture-940-1547634972.jpg', 'Mr Lassabe', 'Le maître des racines carrées.', '0.1 NFT')">
+                    <div class="produit-image-texte">
+                        <img src="prof/prof/picture-940-1547634972.jpg" alt="Mr Lassabe" />
                         <div class="produit-texte">
                             <h3>Mr Lassabe</h3>
                             <p class="price">0.1 NFT</p>
                             <p class="description">Le maître des racines carrées.</p>
                         </div>
-                    </div>
-                </div>
+        </div>
+    </div>
 
                 <div class="TXT">
                     <p>DECOUVREZ</p>
                 </div>
 
-                <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                <div class="produit produit-droite" onclick="openModal('prof/Jean-claude_Charr.jpeg', 'Mr Charr', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
+                        <img src="prof/Jean-claude_Charr.jpeg" alt="Mr Charr" />
                         <div class="produit-texte">
-                            <h3>Mme Paterlini </h3>
+                            <h3>Mr Charr</h3>
                             <p class="price">0.1 NFT</p>
                             <p class="description">Le maître des racines carrées.</p>
                         </div>
@@ -150,22 +143,7 @@
                 <div class="TXT">
                     <p>DECOUVREZ</p>
                 </div>
-
-                <div class="produit produit-droite" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
-                    <div class="produit-image-texte">
-                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
-                        <div class="produit-texte">
-                            <h3>Mme Deschinkel</h3>
-                            <p class="price">0.1 NFT</p>
-                            <p class="description">Le maître des racines carrées.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="TXT">
-                    <p>DECOUVREZ</p>
-                </div>
-
+    
                 <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
                         <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
@@ -191,23 +169,32 @@
                     <p>DECOUVREZ</p>
                 </div>
 
-                    <!-- Fenêtre popup (modal) -->
-                <div id="popup" class="popup">
-                    <div class="popup-content">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <img id="popupImg" src="" alt="">
-                        <h2 id="popupTitle"></h2>
-                        <p id="popupDesc"></p>
-                        <p class="popup-price" id="popupPrice"></p>
+                    <!-- close Grille-produits -->
+                </div>
 
-                        <div class="popup-buttons">
-                            <button class="buy">🛒 Ajouter au panier</button>
-                            <button class="buy-now">💰 Acheter maintenant</button>
-                        </div>
+                <aside class="explication">
+                    <h3>Explication</h3>
+                    <p>Texte indépendant des images. Vous pouvez mettre ici des informations générales, des liens ou des explications sur la collection.</p>
+                </aside>
+
+                    <!-- Fenêtre popup (modal) -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img id="popupImg" src="" alt="">
+                    <h2 id="popupTitle"></h2>
+                    <p id="popupDesc"></p>
+                    <p class="popup-price" id="popupPrice"></p>
+
+                    <div class="popup-buttons">
+                        <button class="buy">🛒 Ajouter au panier</button>
+                        <button class="buy-now">💰 Acheter maintenant</button>
                     </div>
                 </div>
             </div>
-        </section>
+
+        </div>
+    </section>
 
             
     </main>
