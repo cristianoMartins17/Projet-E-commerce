@@ -1,4 +1,4 @@
-/* ==================== RESET GLOBAL ==================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ==================== FOND ANIMÉ ==================== */
+
 :root {
   --x: 50%;
   --y: 50%;
@@ -70,7 +70,7 @@ html, body {
   100% { transform: translate(4%, 6%) scale(0.95); }
 }
 
-/* ==================== TRAÎNÉE DU CURSEUR ==================== */
+
 .cursor-glow {
   position: fixed;
   top: 0;
@@ -90,7 +90,7 @@ html, body {
   transition: opacity 0.3s ease;
 }
 
-/* ==================== NAVBAR ==================== */
+
 .navbar {
   position: fixed;
   top: 0; left: 0;
@@ -127,7 +127,7 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* Effet néon */
+
 .nav-link::before {
   content: '';
   position: absolute;
@@ -173,7 +173,7 @@ html, body {
 .nav-title:hover .title-text { opacity: 0; }
 .nav-title:hover .title-logo { opacity: 1; transform: scale(1); }
 
-/* Scroll effect */
+
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
   background-size: 300% 300%;
@@ -186,7 +186,6 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* ==================== MENU BURGER ==================== */
 #burger-btn {
   position: fixed;
   top: 15px;
@@ -247,7 +246,7 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* Effet néon comme la navbar */
+
 .hamburger a::before {
   content: "";
   position: absolute;
@@ -281,7 +280,7 @@ html, body {
   #burger-btn, .hamburger { display: none !important; }
 }
 
-/* ==================== PANIER ==================== */
+
 .panier-section {
   text-align: center;
   margin-top: 140px;
