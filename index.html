@@ -8,37 +8,29 @@
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-    <!-- background -->
-<div class="animated-bg">
-  <div class="lines"></div>
-  <div class="halo"></div>
-  <div class="halo"></div>
-</div> 
-  <!-- background -->
 
-  
   <!-- NAVBAR -->
   <header>
     <nav class="navbar" id="mainNav">
-      <div class="nav-inner">
+      <div class="nav-global">
         <!-- gauche : boutique + panier (sur mobile on cache) -->
-        <div class="nav-left">
-          <a href="Boutique/boutique.html" class="nav-link">Boutique</a>
-          <a href="Panier/panier.html" class="nav-link">Panier</a>
+        <div class="nav-gauche">
+          <a href="/boutique" class="nav-lien">Boutique</a>
+          <a href="/panier" class="nav-lien">Panier</a>
         </div>
 
         <!-- titre : centré sur ordi, gauche sur mobile.
              Contient texte + logo (on swap par hover via CSS) -->
-        <div class="nav-title">
-          <a href="" class="title-link" aria-label="Accueil">
-            <span class="title-text">Not For Teachers</span>
-            <img src="error.gif" alt="Logo" class="title-logo">
+        <div class="nav-titre">
+          <a href="/" class="titre-lien" aria-label="Accueil">
+            <span class="titre-texte">Not For Teachers</span>
+            <img src="error.gif" alt="Logo" class="titre-logo">
           </a>
         </div>
 
         <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
-        <div class="nav-right">
-          <a href="A_propos/propos.html" class="nav-link">À propos</a>
+        <div class="nav-droite">
+          <a href="/a-propos" class="nav-lien">À propos</a>
         </div>
       </div>
     </nav>
@@ -48,19 +40,112 @@
   <nav class="hamburger" id="menu">
       <img src="Images/logo_nft.jpg" alt="logo nft">
       <a href="" class="actif">Accueil</a>
-      <a href="Boutique/boutique.html">Boutique</a>
-      <a href="Panier/panier.html">Panier</a>
-      <a href="A_propos/propos.html">À propos</a>
+      <a href="">Boutique</a>
+      <a href="page_production.html">Panier</a>
+      <a href="">À propos</a>
   </nav>  
   </header>
 
-  <!-- Contenu fictif pour permettre le scroll -->
+  <!-- Fond -->
+  <div class="fond-anime">
+    <div class="halo"></div>
+    <div class="halo"></div>
+    <div class="halo"></div>
+  </div>
+
+
+
+
   <main>
-    <section style="height:1500px; padding:2rem;">
-      <h1>Contenu de la page</h1>
-      <p>Fais défiler pour voir la barre changer de couleur.</p>
-    </section>
-  </main>
+    <h1 class="titre_principale">Not For Teacher :</h1> <br>
+    <div class="contenue">
+      <h1 class="titre-diagonal">Obtient tes profs !</h1>
+      <!-- Carte -->
+      <div class="contenue-Carte">
+        <div class="Carte">
+
+          <div class="avant-Carte">
+            <figure>  
+              <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Melvyn Pirolley">
+              <figcaption>Melvyn Pirolley</figcaption> <!-- utilisé pour mettre du texte dans la "figure" -->
+            </figure>
+          </div>
+
+          <div class="arriere-Carte">
+            <figure>
+              <div class="img-bg"></div>
+              <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Melvyn Pirolley">
+            </figure>
+
+            <a href="LIEN" class="btn-lien">Voir</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="height:500px;"></div>
+
+      <div class="box-paragraphe">
+        <h2 class="titre-box">Qu'est-ce qu'un NFT ?</h2>
+        <p>
+          Un <span class="grasRose">NFT (Non-Fungible Token)</span> est un type spécial de jeton cryptographique qui représente la propriété d'un 
+          <span class="grasRose">objet unique</span>, souvent numérique, comme une œuvre d'art, une musique ou une vidéo. Contrairement aux crypto-monnaies 
+          traditionnelles comme le Bitcoin ou l'Ethereum, qui sont fongibles et peuvent être échangées de manière interchangeable, <span class="grasRose">les NFT 
+            sont uniques et ne peuvent pas être échangés à l'identique.</span> Chaque NFT est enregistré sur une blockchain, ce qui garantit son authenticité et sa traçabilité. 
+            Les NFT ont gagné en popularité dans le monde de l'art numérique et des objets de collection, permettant aux artistes de vendre leurs œuvres directement aux acheteurs sans intermédiaires.
+        </p>
+      </div>
+
+      <div style="height:300px;"></div>
+
+      <section class="Description">
+        <div class="Description-contenue">
+            <div class="Description-gauche">
+              <h3 class="Description-titre">Not For Teachers</h3>
+            </div>
+            <div class="Description-droite">
+                <div class="box-paragraphe">
+                    <p>
+                        <strong>Pourquoi choisir <span class="grasRose">Not For Teachers</span> ?</strong>
+                        <br>
+                        Car avec nous, vous ne trouverez pas seulement des NFT uniques et de haute qualité, mais aussi des souvenirs, des émotions.
+                        Comment ne pas avoir envie de posséder une image <span class="grasRose">des personnes qui ont marqué notre vie scolaire</span> ? Ils ont su nous inspirer, nous motiver et parfois même nous faire rire.
+                        <br>
+                        Alors pourquoi ne pas <span class="grasRose">les avoir à nos côtés</span>, même après les cours ? Avec <span class="highlight">Not For Teachers</span>, vous pouvez immortaliser ces moments précieux et les garder près de vous, tout en investissant dans l'avenir numérique.
+                        <br><br>
+                        Si vous souhaitez en savoir plus sur notre équipe et notre mission, n'hésitez pas à visiter notre page <a href="/a-propos" class="lien">À propos</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <div style="height:400px;"></div>
+
+      <h2>Quelques-unes de nos NFT :</h2>
+      <div class="carrousel">
+          <div class="image"><img src="https://picsum.photos/id/1015/600/400" alt="NFT 1"></div>
+          <div class="image"><img src="https://picsum.photos/id/1025/600/400" alt="NFT 2"></div>
+          <div class="image"><img src="https://picsum.photos/id/1035/600/400" alt="NFT 3"></div>
+          <div class="image"><img src="https://picsum.photos/id/1045/600/400" alt="NFT 4"></div>
+          <div class="image"><img src="https://picsum.photos/id/1055/600/400" alt="NFT 5"></div>
+
+          <button class="btn-nav" id="avant">&lt;</button>
+          <button class="btn-nav" id="apres">&gt;</button>
+        </div>
+
+        <div class="indicateurs" id="indicateurs"></div>
+
+        <div class="image-zoom" id="imageZoom">
+          <img id="zoom" src="" alt="Image agrandie">
+        </div>
+
+      <!-- Bouton vers la boutique -->
+      <a href="/boutique" class="lien">Découvrir la boutique</a>
+
+    <div style="height:300px;"></div>
+    </main>
   
   <script src="accueil.js"></script>
 </body>
