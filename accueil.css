@@ -943,6 +943,7 @@ footer {
   padding: 40px 20px;
   background-color: var(--sombre);
   overflow: hidden;
+  color: white; /* AJOUT : texte en blanc */
 }
 
 /* conteneur global */
@@ -963,15 +964,17 @@ footer {
   justify-content: center;
   gap: 15px;
 }
+
 footer h3 {
   width: 100%;
   font-size: 15px;
+  color: white; /* AJOUT */
 }
 
 footer h2 {
   font-size: 13px;
   width: 100%;
-
+  color: white; /* AJOUT */
 }
 
 .nous {
@@ -981,7 +984,7 @@ footer h2 {
 
 /* --- PARTIE CENTRALE --- */
 
-a{
+footer a {  /* MODIFICATION : cibler spécifiquement les liens du footer */
   color: white;
   text-decoration: none;
 }
@@ -1011,25 +1014,30 @@ a{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 20px; /* AJOUT : espacement entre les colonnes */
 }
 
+.liens-A,
+.liens-B {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* AJOUT : espacement entre les liens */
+}
 
-
-.liens a{
+.liens a {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  color: white; /* AJOUT */
 }
 
 /* Texte central */
 .footer-centre > p {
   font-weight: bold;
   letter-spacing: 2px;
+  color: white; /* AJOUT */
 }
-
-/* Deux box du bas alignées */
-
 
 /* Les deux petites box */
 .footer-lois,
@@ -1048,8 +1056,10 @@ a{
   text-align: center;
 }
 
-/* GIF ajusté */
-
+.footer-lois a {
+  color: white; /* AJOUT */
+  margin: 5px 0; /* AJOUT : espacement */
+}
 
 /* --- RESEAUX SOCIAUX --- */
 .Reseaux_sociaux-general {
@@ -1061,10 +1071,13 @@ a{
   gap: 20px;
 }
 
+.Reseaux_sociaux-general h3 {
+  color: white; /* AJOUT */
+}
+
 .Reseaux_sociaux-general a img {
   width: 25px;
   height: auto;
-  color: var(--violet-fonce);
 }
 
 .Reseaux_sociaux-general a {
