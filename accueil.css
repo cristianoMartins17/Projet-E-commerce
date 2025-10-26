@@ -59,7 +59,7 @@ h2 {
 
 
 /* ========================================
-   2. FOND ANIMÉ
+   2. FOND ANIMÉ (PAR MANSOURAH AVEC QUELQUES MODIF PAR MOI)
    ======================================== */
 
 /* Conteneur principal du fond animé en arrière-plan */
@@ -339,6 +339,10 @@ body:hover .halo {
    4. BARRE BURGER (Menu hamburger mobile)
    ======================================== */
 
+/* ========================================
+   4. BARRE BURGER (Menu hamburger mobile)
+   ======================================== */
+
 /* Bouton burger circulaire en haut à gauche */
 #burger-btn {
   position: fixed;
@@ -352,7 +356,7 @@ body:hover .halo {
   border-radius: 50%;
   width: 45px;
   height: 45px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.2); 
