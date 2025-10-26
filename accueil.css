@@ -161,10 +161,10 @@ body:hover .halo {
 
 
 /* ========================================
-   3. NAVBAR (Barre de navigation desktop)
+   3. NAVBAR (Barre de navigation PC)
    ======================================== */
 
-/* Barre de navigation fixée en haut de la page */
+/* Barre de nav */
 .navbar {
   position: fixed;
   top: 0;
