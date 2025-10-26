@@ -1003,6 +1003,7 @@ hr {
 }
 
 #caniotte>div>div {
+  border:1px solid var(--rose);
   grid-column: 2/2;
   box-shadow: 0 6px 30px black;
   background-color: var(--sombre);
@@ -1377,6 +1378,15 @@ footer img {
     width: 100%;
   }
 
+  #caniotte>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #caniotte img {
+    max-width: 250px;
+    display: flex;
+  }
   #actualites {
     justify-content: center;
     margin-right: 0%;
@@ -1433,4 +1443,6 @@ footer img {
     flex-direction: column;
 
   }
+
+
 }
