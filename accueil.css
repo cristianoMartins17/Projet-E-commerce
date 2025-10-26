@@ -931,9 +931,13 @@ figcaption {
 /* ========================================
    10. RESPONSIVE (Adaptations mobiles)
    ======================================== */
-
-/* Sur grand écran : on cache le menu burger */
 @media (min-width: 769px) {
+     #burger-btn {
+       display: none;
+  }
+   
+/* Sur grand écran : on cache le menu burger */
+@media (max-width: 769px) {
   #burger-btn {
     display: flex;
   }
