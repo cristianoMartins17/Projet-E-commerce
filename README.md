@@ -37,7 +37,7 @@ Pour la conception du site, nous nous sommes inspirés de différents designs tr
 <strong>Page d'accueil<br>
 Auteur : MARTINS Cristiano</strong><br>
 Vérification W3C :
-![screenW3S]()
+![screenW3S](image/Verif_Accueil.png)
 
 <br><br>
 <strong>Page panier<br>
