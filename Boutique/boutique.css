@@ -176,204 +176,8 @@
 /*========NAVBAR==================*/
 /*================================*/
 
-Dadart
-mr.lart
-Invisible
-
-s — Yesterday at 16:48
-je met qui tout en haut qui en bas qui au millieu
-Darcusse — Yesterday at 16:55
-Y a pas d’ordre précise des images
-s — Yesterday at 16:55
-jmet le moins cher au martinnet
-Darcusse — Yesterday at 16:55
-Oui 👍
-kishiro
-
- — 00:05
-Btw on est bien d'accord c'est @s et @Dadart qui font le footer ?
-Il est finie ? si c'est le cas, mettez le dans un fichier à part et envoyer ici qu'on reprenne facilement svpppp
-s — 00:09
-prend celui a mansourah
-kishiro
-
- — 00:10
-Vous avez fini vos pages ?
-oubliez pas la verif W3s (pour un bon code)
-s — 00:12
-Moi pas encore
-Darcusse — 00:12
-Oe
-Normalement @s l’a mis sur Github
-s — 00:13
-oe
-Darcusse — 00:13
-Ça marche ?
-s — 00:13
-Image
-kishiro
-
- — 00:13
-t'as verif ton code ?
-Darcusse — 00:14
-J’ai pas eu le temps chef
-J’essaye de le faire demain
-Mais j’ai tryharde le truc
-kishiro
-
- — 00:15
-je dis ça pour toi après
-ça influence pas ma note donc bon
-Darcusse — 00:17
-Oe
-J’essaye de le faire demain
-Darcusse — 11:04
-@everyone
-qq peux m'envoyer le line de w3c ?
-kishiro
-
- — 11:06
-t'asvrm juste à ecrire validateur W3s
-html et après css
-Darcusse — 11:08
-c est bon j ai trouvé
-Image
-kishiro
-
- — 11:08
-essaye de voir pour qu'il t'affiche rien jpense
-mmm si c'est pas des erreurs ou warning
-Darcusse — 11:14
-mais c'est pas des erreurs
-kishiro
-
- — 11:15
-js mais comme tu veux
-Darcusse — 11:19
-Dac
-Moi je préfère laisser comme ça
-Je suis ko
-kishiro
-
- — 11:22
-Pour vos titres, on vas garder un style similaire pour la cohérence du design
-h2 {
-    position: relative;
-    transform-origin: center;
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-    background: linear-gradient(135deg, #ED26C0, #BD22FB);
-    box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
-    border-radius: 10px;
-    padding: 10px 20px;
-    color: white;
-    margin: 0;
-}
-c'est mes titres, normalemet ya tt pour que le titre soir rose (c'est un gradient de nos 2 roses)
-avec l'écriture blanche
-si vous avez des paragraphes de textes, jpense on devrait aussi garder le mm style
-.box-paragraph {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 20px;
-    background: rgba(13, 7, 35, 0.6);
-    border: 2px solid rgba(189, 34, 251, 0.4);
-    box-shadow: 0 0 20px rgba(237, 38, 192, 0.3);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-sinon si vous voulez une an imation comme le prof (titre qui fait des battements)
-/* Animation du titre : effet de battement /
-.titre-box {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px #BD22FB, 0 0 20px #ED26C0;
-  margin-bottom: 15px;
-  / Joue l’animation beat en boucle toutes les 10 secondes /
-  animation: beat 10s ease-in-out infinite;
-  / "ease-in-out" rend la transition fluide (pas saccadée) /
-  / infinite = l’animation se répète sans arrêt */
-}
-/* Définition de l'animation /
-@keyframes beat {
-  0%, 100% {
-    / Le titre grossit légèrement au milieu du cycle /
-    transform: scale(1);
-    / Accentue la lueur néon pendant le battement */
-    text-shadow: 0 0 10px #BD22FB, 0 0 20px #ED26C0;
-  }
-  50% {
-    transform: scale(1.1);
-    text-shadow: 0 0 20px #ED26C0, 0 0 40px #BD22FB;
-  }
-}
-s — 15:16
-Omeya regarde si ca t'a mis tes modifs de ton dernier push psk jcrois ca les a pas compté
-Darcusse — 15:24
-J’ai r modifié
-J’ai juste enlevé
-Les films
-Comms
-s — 15:29
-Ah vzy
-kishiro
-
- — 16:19
-C'est un bordel les images que vous avez ajoutez
-pensez à supprimer celles inutiles, ya au moins trois logo nft, 2 fois le mm gif, des images en doubles...
-Il vas falloir plus d'nft aussi (avec des noms logiques
-J'ai rapidement modif ma barre de nav btw
-Le hover avait un problème mb
-je vais vous renvoyer le css pour que vous puissiez modif simplement
---------- HTML
-<!-- NAVBAR -->
-  <header>
-    <nav class="navbar" id="mainNav">
-      <div class="nav-global">
-        <!-- gauche : boutique + panier (sur mobile on cache) -->
-        <div class="nav-gauche">
-          <a href="/boutique" class="nav-lien">Boutique</a>
-          <a href="/panier" class="nav-lien">Panier</a>
-        </div>
-
-        <!-- titre : centré sur ordi, gauche sur mobile.
-             Contient texte + logo (on swap par hover via CSS) -->
-        <div class="nav-titre">
-          <a href="/" class="titre-lien" aria-label="Accueil">
-            <span class="titre-texte">Not For Teachers</span>
-            <img src="error.gif" alt="Logo" class="titre-logo">
-          </a>
-        </div>
-
-        <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
-        <div class="nav-droite">
-          <a href="/a-propos" class="nav-lien">À propos</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Menu burger -->
-  <button id="burger-btn">&#9776;</button>
-  <nav class="hamburger" id="menu">
-      <img src="Images/logo_nft.jpg" alt="logo nft">
-      <a href="" class="actif">Accueil</a>
-      <a href="">Boutique</a>
-      <a href="page_production.html">Panier</a>
-      <a href="">À propos</a>
-  </nav>
-  </header>
-/* ========================================
-   3. NAVBAR (Barre de navigation desktop)
-   ======================================== */
-
-/* Barre de navigation fixée en haut de la page */
 .navbar {
-  position: fixed;
+  position: fixed;    /* toujours en haut */
   top: 0;
   left: 0;
   width: 100%;
@@ -386,76 +190,62 @@ je vais vous renvoyer le css pour que vous puissiez modif simplement
   transition: all 0.4s ease;
 }
 
-/* Conteneur interne qui organise les éléments de la navbar */
-.nav-global {
+/* conteneur interne pour aligner éléments */
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  position: relative;
+  position: relative; /* pour titre centré en absolute */
 }
 
-/* Sections gauche et droite de la navbar */
-.nav-gauche, 
-.nav-droite {
+/* left / right simples */
+.nav-left, .nav-right {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* Style des liens de navigation */
-.nav-lien {
+/* liens de nav */
+.nav-link {
   text-decoration: none;
-  color: white;
+  color: white; /* texte blanc sur fond image */
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 16px; /* converti de 0.98rem */
   position: relative;
   padding: 8px 16px;
 }
 
-/* Effet au survol : fond noir apparaît derrière le texte */
-.nav-lien:hover {
-  background-color: #0D0723;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-}
-
-/* Effet néon qui apparaît au survol des liens */
-.nav-lien::before {
+.nav-link::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: 2px solid white;
+  border-radius: 30px;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease;
-  box-shadow:
-    0 0 5px #BD22FB,
-    0 0 10px #BD22FB,
-    0 0 20px #ED26C0,
-    0 0 40px rgba(189, 34, 251, 0.6);
-  animation: neonPulse 2s ease-in-out infinite alternate;
-  border-radius: 30px;
 }
 
-/* Activation de l'effet néon au survol */
-.nav-lien:hover::before {
+.nav-link:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-/* Titre centré dans la navbar */
-.nav-titre {
+/* ---------- TITRE centré (desktop) ---------- */
+.nav-title {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: auto; /* autorise le hover */
 }
 
-/* Lien du titre contenant le texte et le logo */
-.titre-lien { 
+/* lien titre : contient texte + logo */
+.title-link { 
   display: inline-flex; 
   align-items: center; 
   justify-content: center;
@@ -463,159 +253,37 @@ je vais vous renvoyer le css pour que vous puissiez modif simplement
   position: relative;
 }
 
-/* Texte du titre visible par défaut */
-.titre-texte {
-  color: white;
-  font-size: 1.25rem;
-... (168 lines left)
-Collapse
-message.txt
-6 KB
-kishiro
-
- — 16:26
-@everyone
-pensez à verif vos liens et images (par exemple celle de la nav bar
-s — 16:33
-mais attend c'est quoi la diff entre le fichier et ce que t'a envoyé en texte
-kishiro
-
- — 16:34
-html 
-css
-kishiro
-
- — 16:41
-par pitié réglé ça jpp finir ma page sinon
-﻿
-/* ========================================
-   3. NAVBAR (Barre de navigation desktop)
-   ======================================== */
-
-/* Barre de navigation fixée en haut de la page */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 60;
-  background: rgba(13, 7, 35, 0.8);
-  border-bottom: 2px solid rgba(189, 34, 251, 0.4);
-  box-shadow: 0 0 20px rgba(237, 38, 192, 0.3);
-  backdrop-filter: blur(8px);
-  animation: neonGlow 3s infinite alternate;
-  transition: all 0.4s ease;
-}
-
-/* Conteneur interne qui organise les éléments de la navbar */
-.nav-global {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  position: relative;
-}
-
-/* Sections gauche et droite de la navbar */
-.nav-gauche, 
-.nav-droite {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-/* Style des liens de navigation */
-.nav-lien {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  font-size: 0.98rem;
-  position: relative;
-  padding: 8px 16px;
-}
-
-/* Effet au survol : fond noir apparaît derrière le texte */
-.nav-lien:hover {
-  background-color: #0D0723;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-}
-
-/* Effet néon qui apparaît au survol des liens */
-.nav-lien::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.3s ease;
-  box-shadow:
-    0 0 5px #BD22FB,
-    0 0 10px #BD22FB,
-    0 0 20px #ED26C0,
-    0 0 40px rgba(189, 34, 251, 0.6);
-  animation: neonPulse 2s ease-in-out infinite alternate;
-  border-radius: 30px;
-}
-
-/* Activation de l'effet néon au survol */
-.nav-lien:hover::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Titre centré dans la navbar */
-.nav-titre {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Lien du titre contenant le texte et le logo */
-.titre-lien { 
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center;
-  text-decoration: none;
-  position: relative;
-}
-
-/* Texte du titre visible par défaut */
-.titre-texte {
+/* texte visible par défaut */
+.title-text {
   color: white;
   font-size: 1.25rem;
   font-weight: 700;
   transition: opacity 0.25s ease;
 }
 
-/* Logo caché par défaut, apparaît au survol */
-.titre-logo {
+/* logo caché par défaut (on l'affiche au hover) */
+.title-logo {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   height: 34px;
-  width: 34px;
+  width: 45px;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Au survol du titre : le texte disparaît et le logo apparaît */
-.nav-titre:hover .titre-texte { 
-  opacity: 0; 
-}
-
-.nav-titre:hover .titre-logo { 
+/* Au hover sur le titre : texte disparait, logo apparait */
+.nav-title:hover .title-text { opacity: 0; }
+.nav-title:hover .title-logo { 
   opacity: 1; 
   transform: translate(-50%, -50%) scale(1); 
 }
 
-/* Changement de style de la navbar lors du scroll */
+
+/* ---------- SCROLL : changement de couleur ---------- */
+
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
   background-size: 300% 300%;
@@ -623,7 +291,7 @@ par pitié réglé ça jpp finir ma page sinon
   border-bottom: none;
 }
 
-/* Animation de l'effet néon pulsant */
+/* Animation du glow pulsant */
 @keyframes neonGlow {
   0% {
     box-shadow:
@@ -639,124 +307,130 @@ par pitié réglé ça jpp finir ma page sinon
   }
 }
 
-/* Animation du dégradé qui se déplace */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Animation du pouls néon pour les boutons et liens */
-@keyframes neonPulse {
-  0% {
-    box-shadow:
-      0 0 5px #BD22FB,
-      0 0 10px #ED26C0,
-      0 0 20px rgba(237, 38, 192, 0.4);
-  }
-  100% {
-    box-shadow:
-      0 0 10px #BD22FB,
-      0 0 20px #ED26C0,
-      0 0 40px rgba(189, 34, 251, 0.8);
-  }
-}
-
-
-/* ========================================
-   4. BARRE BURGER (Menu hamburger mobile)
-   ======================================== */
-
-/* Bouton burger circulaire en haut à gauche */
+/* ---------- NAVBAR hamburger (mobile) ---------- */
+/* Bouton burger (le seul visible au départ) */
 #burger-btn {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1000;
-  font-size: 26px;
-  color: black;
-  background-color: #BD22FB;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-  cursor: pointer;
-  transition: 0.3s; 
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    font-size: 26px;           /* Taille du symbole ☰ */
+    color: black;              /* Couleur du symbole burger */
+    background-color: #BD22FB;   /* Fond violet */
+    border: none;
+    border-radius: 50%;        /* Rend le bouton circulaire */
+    width: 45px;               /* Largeur du cercle */
+    height: 45px;              /* Hauteur du cercle */
+    display: flex;             /* Pour centrer le symbole */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+    cursor: pointer;
+    transition: 0.3s; 
 }
 
-/* Effet d'agrandissement au survol du bouton burger */
+/* Petit effet au survol */
 #burger-btn:hover {
-  transform: scale(1.1);
-  background-color: #f0f0f0;
+    transform: scale(1.1);
+    background-color: #f0f0f0; /* léger gris au survol */
 }
 
-/* Menu hamburger caché par défaut (largeur 0) */
+/* Le menu (fermé par défaut) */
 .hamburger {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 100vh;
-  background-color: #000000;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-right: 5px groove #41156A;
-  border-radius: 0 10px 10px 0;
-  transition: width 0.5s ease;
-  animation: neonGlow 3s infinite alternate;
-  z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 800px; /* converti de 100vh */
+    background-color: #000000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px groove #41156A;
+    border-radius: 0 10px 10px 0;
+    transition: width 0.5s ease;
+    animation: neonGlow 3s infinite alternate;
+    z-index: 999;
 }
 
-/* Menu ouvert : prend toute la largeur de l'écran */
+/* Quand le menu est "ouvert" (classe ajoutée par JS) */
 .hamburger.open {
-  width: 100%;
+    width: 100%;
 }
 
-/* Logo dans le menu hamburger (invisible au départ) */
+/* Contenu du menu (liens, logo) */
 .hamburger img {
-  width: 100px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  opacity: 0;
-  transition: opacity 0.5s;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-/* Liens du menu hamburger (invisibles au départ) */
+/* Liens du menu */
 .hamburger a {
-  opacity: 0;
-  color: white;
-  background-color: #41156A;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin: 10px;
-  border-radius: 10px;
-  transition: opacity 0.5s, background 0.3s;
+    opacity: 0;
+    color: white;
+    background-color: #41156A;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: opacity 0.5s, background 0.3s;
 }
 
-/* Changement de couleur au survol des liens du menu */
 .hamburger a:hover {
-  background-color: #BD22FB;
+    background-color: #BD22FB;
 }
 
-/* Rendre visible le contenu quand le menu est ouvert */
+/* Quand le menu est ouvert, on rend tout visible */
 .hamburger.open a,
 .hamburger.open img {
-  opacity: 1;
+    opacity: 1;
 }
 
-/* Style pour le lien actif dans le menu */
+/* Lien actif */
 .hamburger > .actif {
-  background-color: #BD22FB;
+    background-color: #BD22FB;
 }
-message.txt
-6 KB
+
+/* Option : cacher le menu sur grand écran si tu veux */
+@media (min-width: 768px) {
+    #burger-btn {
+        display: none;
+    }
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    header>nav {
+        flex-direction: column;
+    }
+
+    header>nav>a {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 16px; /* converti de 4vw */
+        padding: 5px 0;
+        border-radius: 0; /* on désactive les bordures arrondies */
+    }
+}
+
 
 /*================================*/
 /*========NAVBAR==================*/
@@ -852,7 +526,6 @@ h2 {
   width: 30%;     
   transform: translateY(50px); 
   transition: all 0.8s ease-out;
-
 }
 
 
