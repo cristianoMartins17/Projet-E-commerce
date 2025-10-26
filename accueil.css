@@ -937,22 +937,21 @@ figcaption {
   #burger-btn {
     display: none;
   }
+
+   
+  header>nav {
+    flex-direction: column;
+  }
+   
   .hamburger {
     display: none;
+    height: 100vh;
+    height: 100dvh; /* Pour les mobiles modernes */
   }
-}
-
-/* Sur mobile : on cache la navbar classique et affiche le burger */
-@media (max-width: 768px) {
+   
   /* Cache la navbar desktop */
   .navbar {
     display: none;
-  }
-
-  /* Menu burger prend toute la hauteur */
-  .hamburger {
-    height: 100vh;
-    height: 100dvh; /* Pour les mobiles modernes */
   }
 
   /* Correction du body pour éviter les débordements */
@@ -1116,48 +1115,5 @@ figcaption {
     margin: 20px auto;
     display: block;
     text-align: center;
-  }
-}
-
-/* Pour les très petits écrans (moins de 400px) */
-@media (max-width: 400px) {
-  .titre_principale {
-    font-size: 1.5em;
-  }
-
-  .titre-diagonal {
-    font-size: 1.5em;
-  }
-
-  .contenue-Carte {
-    width: 250px;
-  }
-
-  .Carte {
-    width: 250px;
-    height: 420px;
-  }
-
-  .Description-titre {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .carrousel {
-    height: 300px;
-  }
-
-  .image {
-    width: 180px;
-    height: 240px;
-  }
-
-  .btn-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
   }
 }
