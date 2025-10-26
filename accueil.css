@@ -935,10 +935,18 @@ figcaption {
 /* Sur grand écran : on cache le menu burger */
 @media (min-width: 769px) {
   #burger-btn {
+    display: flex;
+  }
+
+  .navbar {
     display: none;
   }
 
-   header>nav>a {
+  header>nav {
+    flex-direction: column;
+  }
+
+  header>nav>a {
     width: 100%;
     text-align: center;
     color: white;
@@ -948,21 +956,6 @@ figcaption {
     /* on désactive les bordures arrondies */
   }
    
-  header>nav {
-    flex-direction: column;
-  }
-   
-  .hamburger {
-    display: none;
-    height: 100vh;
-    height: 100dvh; /* Pour les mobiles modernes */
-  }
-   
-  /* Cache la navbar desktop */
-  .navbar {
-    display: none;
-  }
-
   /* Correction du body pour éviter les débordements */
   body {
     padding: 1rem;
