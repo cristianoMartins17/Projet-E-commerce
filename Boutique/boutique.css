@@ -964,22 +964,6 @@ footer img {
 /* ===========================
    RESPONSIVE
 =========================== */
-
-/* Tablettes (largeur ≤ 1024px) */
-@media (max-width: 1024px) {
-  .Grille-produits {
-    padding: 0 40px;
-  }
-  .produit {
-    width: 45%;
-  }
-  .produit-gauche { transform: translateX(-20%) translateY(50px); }
-  .produit-droite { transform: translateX(20%) translateY(50px); }
-
-  /* hide the side labels on tablet and smaller, stack instead */
-  .labels-column { display: none; }
-}
-
 /* Petits écrans / mobiles (largeur ≤ 768px) */
 @media (max-width: 768px) {
   /* Navbar : centrer titre, cacher nav-left/right et afficher hamburger */
@@ -997,30 +981,7 @@ footer img {
     transform: translateX(0) translateY(50px);
   }
   .produit-gauche, .produit-droite { transform: translateX(0) translateY(50px); }
-}
 
-/* Très petits écrans (≤ 480px) */
-@media (max-width: 480px) {
-  .produit { width: 100%; }
-  .produit-texte { padding: 10px; font-size: 0.9em; }
-  .popup-content { width: 95%; padding: 15px; }
-  .popup-content img { width: 100%; max-height: 200px; }
-  .popup-buttons button { padding: 8px 12px; font-size: 0.8em; }
-
-
-}
-  @media (max-width: 768px) {
-  .produit-gauche, .produit-droite {
-    align-self: center;
-    transform: rotate(0deg) translateX(0) translateY(25px);
-  }
-  .Grille-produits {
-    gap: 20px;
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 768px) {
   .popup-content {
     width: 90%;
     max-width: 300px;
@@ -1033,9 +994,7 @@ footer img {
   .popup-content h2 { font-size: 1em; }
   .popup-price { font-size: 0.9em; }
   .popup-buttons button { padding: 6px 12px; font-size: 0.8em; }
-}
 
-@media (max-width: 480px) {
   .popup-content {
     width: 95%;
     max-width: 250px;
@@ -1048,6 +1007,32 @@ footer img {
   .popup-content h2 { font-size: 0.9em; }
   .popup-price { font-size: 0.8em; }
   .popup-buttons button { padding: 5px 10px; font-size: 0.75em; }
+
+    .produit { width: 100%; }
+  .produit-texte { padding: 10px; font-size: 0.9em; }
+  .popup-content { width: 95%; padding: 15px; }
+  .popup-content img { width: 100%; max-height: 200px; }
+  .popup-buttons button { padding: 8px 12px; font-size: 0.8em; }
+  .produit-gauche, .produit-droite {
+    align-self: center;
+    transform: rotate(0deg) translateX(0) translateY(25px);
+  }
+  .Grille-produits {
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+   .Grille-produits {
+    padding: 0 40px;
+  }
+  .produit {
+    width: 45%;
+  }
+  .produit-gauche { transform: translateX(-20%) translateY(50px); }
+  .produit-droite { transform: translateX(20%) translateY(50px); }
+
+  /* hide the side labels on tablet and smaller, stack instead */
+  .labels-column { display: none; }
 }
 
 @font-face {
