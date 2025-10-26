@@ -965,16 +965,14 @@ footer {
   gap: 15px;
 }
 
-footer h3 {
+footer>h3 {
   width: 100%;
   font-size: 15px;
-  color: white; /* AJOUT */
 }
 
-footer h2 {
+footer>h2 {
   font-size: 13px;
   width: 100%;
-  color: white; /* AJOUT */
 }
 
 .nous {
@@ -984,7 +982,7 @@ footer h2 {
 
 /* --- PARTIE CENTRALE --- */
 
-footer a {  /* MODIFICATION : cibler spécifiquement les liens du footer */
+footer>a { 
   color: white;
   text-decoration: none;
 }
@@ -1029,14 +1027,12 @@ footer a {  /* MODIFICATION : cibler spécifiquement les liens du footer */
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  color: white; /* AJOUT */
 }
 
 /* Texte central */
 .footer-centre > p {
   font-weight: bold;
   letter-spacing: 2px;
-  color: white; /* AJOUT */
 }
 
 /* Les deux petites box */
@@ -1069,10 +1065,6 @@ footer a {  /* MODIFICATION : cibler spécifiquement les liens du footer */
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
-
-.Reseaux_sociaux-general h3 {
-  color: white; /* AJOUT */
 }
 
 .Reseaux_sociaux-general a img {
