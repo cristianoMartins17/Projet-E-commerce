@@ -36,7 +36,7 @@
             <div class="nav-title">
               <a href="" class="title-link" aria-label="Accueil">
                 <span class="title-text">Not For Teachers</span>
-                <img src="image/logo-nft_rond.png" alt="Logo" class="title-logo">
+                <img src="c:\Users\maham\OneDrive\Documents\S1\dev-web\Pirolley\E-commerce\logo-nft\Logo_NF_bgrm.png" alt="Logo" class="title-logo">
               </a>
             </div>
     
@@ -59,136 +59,165 @@
     </header>
 
            
-        <h1>Bienvenue dans notre Boutique</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-        
+    <main>
         <section class="shop">
-            <h2>Notre Boutique</h2>
+
+            <h1>BOUTIQUE</h1>
+            <h2>COLLECTION</h2>
 
             <div class="Grille-produits">
-        
-                <div class="produit">
-                    <div class="produit-image-texte">
-                        <img src="Hildenbrand.jpg" alt="Nom du produit 1">
-                        <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
+                    <!-- Premier produit avec son texte -->
+                    <div class="produit-container">
+                        <div class="produit" onclick="openModal('prof/hildenbrand.png', 'Mr.Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                            <div class="produit-image-texte">
+                                <img src="prof/hildenbrand-bg.png" alt="Prof Hildenbrand" />
+                                <div class="produit-texte">
+                                    <h3>Mr.Hildenbrand</h3>
+                                    <p class="price">0.1 NFT</p>
+                                    <p class="description">Le maître des racines carrées.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-texte">
+                            <h2>Professeur de Mathématiques</h2>
+                            <p>Expert en équations et en résolution de problèmes complexes, Mr.Hildenbrand est réputé pour sa rigueur et sa passion pour les mathématiques.</p>
+                            <ul>
+                                <li>Spécialité : Algèbre avancée</li>
+                                <li>Expérience : 15 ans</li>
+                                <li>Note des étudiants : ★★★★☆</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
+
+                </div>
+
+                    <!-- Deuxième produit avec son texte -->
+                    <div class="produit-container">
+                        <div class="produit" onclick="openModal('prof/Salomon-bg.png', 'Mr Salomon', 'Le maître des racines carrées.', '0.1 NFT')">
+                            <div class="produit-image-texte">
+                                <img src="prof/salomon-bg.png" alt="Salomon" />
+                                <div class="produit-texte">
+                                    <h3>Mr Salomon</h3>
+                                    <p class="price">0.1 NFT</p>
+                                    <p class="description">Le maître des racines carrées.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-texte">
+                            <h2>Professeur d'Informatique</h2>
+                            <p>Spécialiste en développement et architecture logicielle, Mr Salomon apporte une approche pratique à l'enseignement de l'informatique.</p>
+                            <ul>
+                                <li>Spécialité : Programmation avancée</li>
+                                <li>Projets réalisés : 150+</li>
+                                <li>Technologies maîtrisées : Java, Python, C++</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                    <div class="produit-image-texte">
+                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
+                        <div class="produit-texte">
+                            <h3>Mr Martinet</h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="produit">
-                    <div class="produit-image-texte">
-                        <img src="Lassabe.jpg" alt="Nom du produit 1">
-                        <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
-                        </div>
+                <div class="TXT">
+                    <p>DECOUVREZ</p>
                     </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
+
+                <div class="produit produit-droite" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
+                    <div class="produit-image-texte">
+                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
+                        <div class="produit-texte">
+                            <h3>Mr Lassabe</h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="produit">
+                <div class="TXT">
+                    <p>DECOUVREZ</p>
+                </div>
+
+                <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="Paterlini.jpg" alt="Nom du produit 1">
+                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
                         <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
+                            <h3>Mme Paterlini </h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
                         </div>
-                    </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
                     </div>
                 </div>
 
-                <div class="produit">
+                <div class="TXT">
+                    <p>DECOUVREZ</p>
+                </div>
+
+                <div class="produit produit-droite" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="Deschinkel.jpg" alt="Nom du produit 1">
+                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
                         <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
+                            <h3>Mme Deschinkel</h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
                         </div>
-                    </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
                     </div>
                 </div>
 
-                <div class="produit">
+                <div class="TXT">
+                    <p>DECOUVREZ</p>
+                </div>
+
+                <div class="produit produit-gauche" onclick="openModal('Hildenbrand.jpg', 'Prof. Hildenbrand', 'Le maître des racines carrées.', '0.1 NFT')">
                     <div class="produit-image-texte">
-                        <img src="Martinet.jpg" alt="Nom du produit 1">
+                        <img src="Hildenbrand.jpg" alt="Prof Hildenbrand" />
                         <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
+                            <h3>Mr Charr </h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
                         </div>
                     </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
+                </div>
+                <div class="produit produit-droite" onclick="openModal('prof/MR_Pirolley.png', 'Mr Pirolley', 'Le maître des racines carrées.', '0.1 NFT')">
+                    <div class="produit-image-texte">
+                        <img src="prof/MR_Pirolley.png" alt="Prof Hildenbrand" />
+                        <div class="produit-texte">
+                            <h3>Mr Pirolley</h3>
+                            <p class="price">0.1 NFT</p>
+                            <p class="description">Le maître des racines carrées.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="produit">
-                    <div class="produit-image-texte">
-                        <img src="Charr.jpg" alt="Nom du produit 1">
-                        <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
-                        </div>
-                    </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
-                    </div>
+                <div class="TXT">
+                    <p>DECOUVREZ</p>
                 </div>
 
-                <div class="produit">
-                    <div class="produit-image-texte">
-                        <img src="Pirolley.jpg" alt="Nom du produit 1">
-                        <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
+                    <!-- Fenêtre popup (modal) -->
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img id="popupImg" src="" alt="">
+                        <h2 id="popupTitle"></h2>
+                        <p id="popupDesc"></p>
+                        <p class="popup-price" id="popupPrice"></p>
+
+                        <div class="popup-buttons">
+                            <button class="buy">🛒 Ajouter au panier</button>
+                            <button class="buy-now">💰 Acheter maintenant</button>
                         </div>
                     </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
-                    </div>
                 </div>
-
-                <div class="produit">
-                    <div class="produit-image-texte">
-                        <img src="Millet.jpg" alt="Nom du produit 1">
-                        <div class="produit-texte">
-                            <h3>Nom du produit 1</h3>
-                            <p class="price">29,99 €</p>
-                            <p class="description">Description courte du produit 1.</p>
-                        </div>
-                    </div>
-                    <div class="bouton">
-                        <button><img src="panier.jpg" alt="Ajouter au panier">//panier//</button>
-                        <button><img src="favoris.jpg" alt="Ajouter aux favoris">//favoris//</button>
-                    </div>
-                </div>
-
             </div>
         </section>
+
+            
     </main>
 
 <!-- =================================================== -->
@@ -254,7 +283,7 @@
     <p>&copy; 2024 Boutique. Tous droits réservés.</p>
   </div>
 </footer>
-
+    <script src="boutique.js"></script>
 </body>
 </html>
 
