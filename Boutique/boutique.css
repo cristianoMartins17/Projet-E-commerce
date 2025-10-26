@@ -176,8 +176,13 @@
 /*========NAVBAR==================*/
 /*================================*/
 
+/* ========================================
+   3. NAVBAR (Barre de navigation desktop)
+   ======================================== */
+
+/* Barre de navigation fixée en haut de la page */
 .navbar {
-  position: fixed;    /* toujours en haut */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -190,62 +195,76 @@
   transition: all 0.4s ease;
 }
 
-/* conteneur interne pour aligner éléments */
-.nav-inner {
+/* Conteneur interne qui organise les éléments de la navbar */
+.nav-global {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  position: relative; /* pour titre centré en absolute */
+  position: relative;
 }
 
-/* left / right simples */
-.nav-left, .nav-right {
+/* Sections gauche et droite de la navbar */
+.nav-gauche, 
+.nav-droite {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-/* liens de nav */
-.nav-link {
+/* Style des liens de navigation */
+.nav-lien {
   text-decoration: none;
-  color: white; /* texte blanc sur fond image */
+  color: white;
   font-weight: 600;
-  font-size: 16px; /* converti de 0.98rem */
+  font-size: 0.98rem;
   position: relative;
   padding: 8px 16px;
 }
 
-.nav-link::before {
+/* Effet au survol : fond noir apparaît derrière le texte */
+.nav-lien:hover {
+  background-color: #0D0723;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet néon qui apparaît au survol des liens */
+.nav-lien::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid white;
-  border-radius: 30px;
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.3s ease;
+  box-shadow:
+    0 0 5px #BD22FB,
+    0 0 10px #BD22FB,
+    0 0 20px #ED26C0,
+    0 0 40px rgba(189, 34, 251, 0.6);
+  animation: neonPulse 2s ease-in-out infinite alternate;
+  border-radius: 30px;
 }
 
-.nav-link:hover::before {
+/* Activation de l'effet néon au survol */
+.nav-lien:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-/* ---------- TITRE centré (desktop) ---------- */
-.nav-title {
+/* Titre centré dans la navbar */
+.nav-titre {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: auto; /* autorise le hover */
 }
 
-/* lien titre : contient texte + logo */
-.title-link { 
+/* Lien du titre contenant le texte et le logo */
+.titre-lien { 
   display: inline-flex; 
   align-items: center; 
   justify-content: center;
@@ -253,37 +272,38 @@
   position: relative;
 }
 
-/* texte visible par défaut */
-.title-text {
+/* Texte du titre visible par défaut */
+.titre-texte {
   color: white;
   font-size: 1.25rem;
   font-weight: 700;
   transition: opacity 0.25s ease;
 }
 
-/* logo caché par défaut (on l'affiche au hover) */
-.title-logo {
+/* Logo caché par défaut, apparaît au survol */
+.titre-logo {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   height: 34px;
-  width: 45px;
+  width: 34px;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Au hover sur le titre : texte disparait, logo apparait */
-.nav-title:hover .title-text { opacity: 0; }
-.nav-title:hover .title-logo { 
+/* Au survol du titre : le texte disparaît et le logo apparaît */
+.nav-titre:hover .titre-texte { 
+  opacity: 0; 
+}
+
+.nav-titre:hover .titre-logo { 
   opacity: 1; 
   transform: translate(-50%, -50%) scale(1); 
 }
 
-
-/* ---------- SCROLL : changement de couleur ---------- */
-
+/* Changement de style de la navbar lors du scroll */
 .navbar--scrolled {
   background: linear-gradient(90deg, #41156A, #BD22FB, #ED26C0);
   background-size: 300% 300%;
@@ -291,7 +311,7 @@
   border-bottom: none;
 }
 
-/* Animation du glow pulsant */
+/* Animation de l'effet néon pulsant */
 @keyframes neonGlow {
   0% {
     box-shadow:
@@ -307,130 +327,122 @@
   }
 }
 
+/* Animation du dégradé qui se déplace */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ---------- NAVBAR hamburger (mobile) ---------- */
-/* Bouton burger (le seul visible au départ) */
+/* Animation du pouls néon pour les boutons et liens */
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 5px #BD22FB,
+      0 0 10px #ED26C0,
+      0 0 20px rgba(237, 38, 192, 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 10px #BD22FB,
+      0 0 20px #ED26C0,
+      0 0 40px rgba(189, 34, 251, 0.8);
+  }
+}
+
+
+/* ========================================
+   4. BARRE BURGER (Menu hamburger mobile)
+   ======================================== */
+
+/* Bouton burger circulaire en haut à gauche */
 #burger-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    font-size: 26px;           /* Taille du symbole ☰ */
-    color: black;              /* Couleur du symbole burger */
-    background-color: #BD22FB;   /* Fond violet */
-    border: none;
-    border-radius: 50%;        /* Rend le bouton circulaire */
-    width: 45px;               /* Largeur du cercle */
-    height: 45px;              /* Hauteur du cercle */
-    display: flex;             /* Pour centrer le symbole */
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-    cursor: pointer;
-    transition: 0.3s; 
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  font-size: 26px;
+  color: black;
+  background-color: #BD22FB;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  cursor: pointer;
+  transition: 0.3s; 
 }
 
-/* Petit effet au survol */
+/* Effet d'agrandissement au survol du bouton burger */
 #burger-btn:hover {
-    transform: scale(1.1);
-    background-color: #f0f0f0; /* léger gris au survol */
+  transform: scale(1.1);
+  background-color: #f0f0f0;
 }
 
-/* Le menu (fermé par défaut) */
+/* Menu hamburger caché par défaut (largeur 0) */
 .hamburger {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 800px; /* converti de 100vh */
-    background-color: #000000;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-right: 5px groove #41156A;
-    border-radius: 0 10px 10px 0;
-    transition: width 0.5s ease;
-    animation: neonGlow 3s infinite alternate;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 5px groove #41156A;
+  border-radius: 0 10px 10px 0;
+  transition: width 0.5s ease;
+  animation: neonGlow 3s infinite alternate;
+  z-index: 999;
 }
 
-/* Quand le menu est "ouvert" (classe ajoutée par JS) */
+/* Menu ouvert : prend toute la largeur de l'écran */
 .hamburger.open {
-    width: 100%;
+  width: 100%;
 }
 
-/* Contenu du menu (liens, logo) */
+/* Logo dans le menu hamburger (invisible au départ) */
 .hamburger img {
-    width: 100px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    opacity: 0;
-    transition: opacity 0.5s;
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-/* Liens du menu */
+/* Liens du menu hamburger (invisibles au départ) */
 .hamburger a {
-    opacity: 0;
-    color: white;
-    background-color: #41156A;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: opacity 0.5s, background 0.3s;
+  opacity: 0;
+  color: white;
+  background-color: #41156A;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: opacity 0.5s, background 0.3s;
 }
 
+/* Changement de couleur au survol des liens du menu */
 .hamburger a:hover {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
 
-/* Quand le menu est ouvert, on rend tout visible */
+/* Rendre visible le contenu quand le menu est ouvert */
 .hamburger.open a,
 .hamburger.open img {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* Lien actif */
+/* Style pour le lien actif dans le menu */
 .hamburger > .actif {
-    background-color: #BD22FB;
+  background-color: #BD22FB;
 }
-
-/* Option : cacher le menu sur grand écran si tu veux */
-@media (min-width: 768px) {
-    #burger-btn {
-        display: none;
-    }
-    .hamburger {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    header>nav {
-        flex-direction: column;
-    }
-
-    header>nav>a {
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-size: 16px; /* converti de 4vw */
-        padding: 5px 0;
-        border-radius: 0; /* on désactive les bordures arrondies */
-    }
-}
-
 
 /*================================*/
 /*========NAVBAR==================*/
