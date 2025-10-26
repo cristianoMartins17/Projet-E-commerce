@@ -15,6 +15,11 @@
   --accent1: rgba(189, 34, 251, 0.85);
   --accent2: rgba(237, 38, 192, 0.75);
   --blur: 100px;
+  
+  /* Variables pour le footer - en harmonie avec le thème */
+  --violet-fonce: #41156A;
+  --violet-clair: #BD22FB;
+  --rose: #ED26C0;
 }
 
 /* Configuration du body : fond sombre, hauteur minimale et centrage */
@@ -22,10 +27,8 @@ body {
   min-height: 100vh;
   font-family: system-ui, Arial, sans-serif;
   background: var(--sombre);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  padding: 0;  /* Changé de 2rem à 0 */
+  margin: 0;
 }
 
 /* Titre principal de la page avec effet néon */
