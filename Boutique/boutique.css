@@ -494,19 +494,12 @@ h2 {
 
 .Grille-produits {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: start;
-  justify-content: center;
-  padding: 0 40px;
-  max-width: 1400px;
+  flex-direction: column;
+  gap: 50px;          /* espace vertical entre les cartes */
+  align-items: center;
+  padding: 0 20px;    /* padding horizontal pour éviter que ça touche le bord */
+  max-width: 1200px;
   margin: 50px auto 0;
-}
-
-.produit-container {
-  flex: 0 0 calc(50% - 20px); /* Prend la moitié de l'espace moins la moitié du gap */
-  display: flex;
-  gap: 20px;
 }
 
 
@@ -519,19 +512,21 @@ h2 {
   cursor: pointer;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--rose);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   padding: 30px;
   border-radius: 12px;
   color: #fff;
   text-align: center;
   box-shadow: 0 6px 30px black;
   backdrop-filter: blur(6px);
-  flex: 1;
-  min-width: 250px;
 
   opacity: 0;
   transition: all 0.8s ease-out;
-  transform: translateY(50px);
+
+  width: 30%;     
+  transform: translateY(50px); 
+  transition: all 0.8s ease-out;
+
 }
 
 
@@ -586,47 +581,6 @@ h2 {
 
 .produit:hover .produit-texte {
   transform: translateY(0);
-}
-
-/* Texte à l'extérieur des cartes */
-.description-externe {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 12px;
-  margin: 20px 0;
-  border: 1px solid var(--violet-clair);
-  box-shadow: 0 4px 20px rgba(189, 34, 251, 0.2);
-}
-
-.description-externe h3 {
-  color: var(--rose);
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.description-externe p {
-  color: white;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.description-externe .specs {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.description-externe .spec-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.description-externe .spec-item::before {
-  content: "•";
-  color: var(--violet-clair);
-  font-size: 20px;
 }
 
 .produit-gauche { align-self: flex-start; transform: translateX(-50%) translateY(50px);
@@ -748,55 +702,6 @@ h2 {
 /*================================*/
 /*========PRINCIPAL===============*/
 /*================================*/
-
-/* Section de texte indépendante */
-.section-texte {
-  padding: 30px;
-  background: rgba(65, 21, 106, 0.3);
-  border-radius: 15px;
-  border: 1px solid var(--violet-clair);
-  backdrop-filter: blur(8px);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.section-texte h2 {
-  width: 100%;
-  margin: 0 0 30px 0;
-  font-size: 32px;
-  background: none;
-  color: var(--rose);
-  box-shadow: none;
-  text-align: left;
-  padding: 0;
-}
-
-.section-texte p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.section-texte ul {
-  list-style: none;
-  padding-left: 20px;
-}
-
-.section-texte li {
-  margin: 15px 0;
-  position: relative;
-  padding-left: 25px;
-}
-
-.section-texte li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--violet-clair);
-}
 
 /*================================*/
 /*========FOOTER===============*/
@@ -972,9 +877,13 @@ a{
 /* Tablettes (largeur ≤ 1024px) */
 @media (max-width: 1024px) {
   .Grille-produits {
-    padding: 0 20px;
-    gap: 20px;
+    padding: 0 40px;
   }
+  .produit {
+    width: 45%;
+  }
+  .produit-gauche { transform: translateX(-20%) translateY(50px); }
+  .produit-droite { transform: translateX(20%) translateY(50px); }
 }
 
 /* Petits écrans / mobiles (largeur ≤ 768px) */
@@ -985,22 +894,15 @@ a{
   #burger-btn { display: block; }
 
   .Grille-produits {
-    padding: 0 15px;
-    gap: 30px;
-  }
-
-  .produit-container {
-    flex: 0 0 100%;
-    flex-direction: column;
+    padding: 0 20px;
   }
 
   .produit {
-    width: 100%;
+    width: 90%;        /* carte presque pleine largeur */
+    align-self: center; /* toutes centrées */
+    transform: translateX(0) translateY(50px);
   }
-
-  .section-texte {
-    width: 100%;
-  }
+  .produit-gauche, .produit-droite { transform: translateX(0) translateY(50px); }
 }
 
 /* Très petits écrans (≤ 480px) */
