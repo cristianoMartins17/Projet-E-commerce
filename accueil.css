@@ -929,44 +929,70 @@ figcaption {
 
 
 /* ========================================
-   10. RESPONSIVE (Adaptations mobiles)
+   10. RESPONSIVE (Adaptations mobiles / desktop)
    ======================================== */
+
+/* 💻 Version DESKTOP (à partir de 769px) */
 @media (min-width: 769px) {
-     #burger-btn {
-       display: none;
+  /* Cacher le bouton burger */
+  #burger-btn {
+    display: none;
   }
-   
-/* Sur grand écran : on cache le menu burger */
-@media (max-width: 769px) {
+
+  /* Afficher la navbar de base */
+  .navbar {
+    display: flex;
+  }
+
+  /* S'assurer que le menu hamburger reste invisible */
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* 📱 Version MOBILE (jusqu’à 768px) */
+@media (max-width: 768px) {
+  /* Bouton burger visible */
   #burger-btn {
     display: flex;
   }
 
+  /* Navbar classique masquée */
   .navbar {
     display: none;
   }
 
-  header>nav {
+  /* Image du menu hamburger — taille normale */
+  .hamburger img {
+    width: 150px; /* taille plus standard */
+    max-width: 60%;
+    height: auto;
+    opacity: 0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+  }
+
+  /* Liens visibles au centre */
+  header > nav {
     flex-direction: column;
   }
 
-  header>nav>a {
+  header > nav > a {
     width: 100%;
     text-align: center;
     color: white;
     font-size: 4vw;
     padding: 5px 0;
     border-radius: 0;
-    /* on désactive les bordures arrondies */
   }
-   
-  /* Correction du body pour éviter les débordements */
+
+  /* Body et main sans débordement */
   body {
     padding: 1rem;
     overflow-x: hidden;
   }
 
-  /* Main prend toute la largeur disponible */
   main {
     width: 100%;
     max-width: 100%;
@@ -974,7 +1000,7 @@ figcaption {
     overflow-x: hidden;
   }
 
-  /* Titre principal centré et responsive */
+  /* Titres */
   .titre_principale {
     margin-top: 80px;
     font-size: 2em;
@@ -983,7 +1009,7 @@ figcaption {
     padding: 10px 15px;
   }
 
-  /* Conteneur du titre et de la carte en colonne */
+  /* Titre diagonal centré */
   .contenue {
     flex-direction: column;
     align-items: center;
@@ -992,7 +1018,6 @@ figcaption {
     width: 100%;
   }
 
-  /* Titre diagonal centré */
   .titre-diagonal {
     font-size: 2em;
     text-align: center;
@@ -1007,14 +1032,13 @@ figcaption {
     width: 280px;
   }
 
-  /* Paragraphe centré et bien dimensionné */
+  /* Paragraphe centré */
   .box-paragraphe {
     width: 100%;
     max-width: 100%;
     margin: 20px auto;
     padding: 15px;
     font-size: 1rem;
-    box-sizing: border-box;
   }
 
   /* Titres h2 centrés */
@@ -1027,14 +1051,13 @@ figcaption {
     padding: 1rem;
   }
 
-  /* Titre de box centré */
   .titre-box {
     font-size: 1.5rem;
     text-align: center;
     width: 100%;
   }
 
-  /* Section Description responsive */
+  /* Section description */
   .Description {
     width: 100%;
     padding: 40px 15px;
@@ -1049,7 +1072,7 @@ figcaption {
     gap: 30px;
   }
 
-  .Description-gauche, 
+  .Description-gauche,
   .Description-droite {
     flex: 1 1 100%;
     justify-content: center;
@@ -1067,26 +1090,18 @@ figcaption {
     margin: 10px auto 0;
   }
 
-  .Description-droite {
-    justify-content: center;
-    width: 100%;
-  }
-
   .Description-droite .box-paragraphe {
     width: 100%;
-    max-width: 100%;
     margin: 0 auto;
     text-align: center;
     padding: 15px;
   }
 
-  /* Carrousel responsive et centré */
+  /* Carrousel centré */
   .carrousel {
     height: 350px;
     width: 100%;
-    max-width: 100%;
     padding: 0 10px;
-    box-sizing: border-box;
     overflow: visible;
   }
 
@@ -1095,7 +1110,6 @@ figcaption {
     height: 280px;
   }
 
-  /* Boutons de navigation plus petits */
   .btn-nav {
     width: 45px;
     height: 45px;
@@ -1110,13 +1124,11 @@ figcaption {
     right: 2%;
   }
 
-  /* Indicateurs centrés */
   .indicateurs {
     width: 100%;
     margin-top: 1.5rem;
   }
 
-  /* Lien boutique centré */
   .lien {
     margin: 20px auto;
     display: block;
