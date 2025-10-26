@@ -22,42 +22,42 @@
     <main>
 
         <!-- NAVBAR -->
-      <!-- NAVBAR -->
-  <header>
-    <nav class="navbar" id="mainNav">
-      <div class="nav-global">
-        <!-- gauche : boutique + panier (sur mobile on cache) -->
-        <div class="nav-gauche">
-          <a href="/boutique" class="nav-lien">Boutique</a>
-          <a href="/panier" class="nav-lien">Panier</a>
-        </div>
+      <header>
+        <nav class="navbar" id="mainNav">
+          <div class="nav-inner">
+            <!-- gauche : boutique + panier (sur mobile on cache) -->
+            <div class="nav-left">
+              <a href="Boutique/boutique.html" class="nav-link">Boutique</a>
+              <a href="Panier/panier.html" class="nav-link">Panier</a>
+            </div>
+    
+            <!-- titre : centré sur ordi, gauche sur mobile.
+                 Contient texte + logo (on swap par hover via CSS) -->
+            <div class="nav-title">
+              <a href="" class="title-link" aria-label="Accueil">
+                <span class="title-text">Not For Teachers</span>
+                <img src="c:\Users\maham\OneDrive\Documents\S1\dev-web\Pirolley\E-commerce\logo-nft\Logo_NF_bgrm.png" alt="Logo" class="title-logo">
+              </a>
+            </div>
+    
+            <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
+            <div class="nav-right">
+              <a href="A_propos/propos.html" class="nav-link">À propos</a>
+            </div>
+          </div>
+        </nav>
+    
+        <!-- Menu burger -->
+      <button id="burger-btn">&#9776;</button>
+      <nav class="hamburger" id="menu">
+          <img src="Images/logo_nft.jpg" alt="logo nft">
+          <a href="" class="actif">Accueil</a>
+          <a href="Boutique/boutique.html">Boutique</a>
+          <a href="Panier/panier.html">Panier</a>
+          <a href="A_propos/propos.html">À propos</a>
+      </nav>  
+    </header>
 
-        <!-- titre : centré sur ordi, gauche sur mobile.
-             Contient texte + logo (on swap par hover via CSS) -->
-        <div class="nav-titre">
-          <a href="/" class="titre-lien" aria-label="Accueil">
-            <span class="titre-texte">Not For Teachers</span>
-            <img src="error.gif" alt="Logo" class="titre-logo">
-          </a>
-        </div>
-
-        <!-- droite : à propos (sur mobile on cache, hamburger visible) -->
-        <div class="nav-droite">
-          <a href="/a-propos" class="nav-lien">À propos</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Menu burger -->
-  <button id="burger-btn">&#9776;</button>
-  <nav class="hamburger" id="menu">
-      <img src="Images/logo_nft.jpg" alt="logo nft">
-      <a href="" class="actif">Accueil</a>
-      <a href="">Boutique</a>
-      <a href="page_production.html">Panier</a>
-      <a href="">À propos</a>
-  </nav>
-  </header>
            
     <main>
         <section class="shop">
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="section-texte">
-                            <h2>Mathématiques</h2>
+                            <h2>Professeur de Mathématiques</h2>
                             <p>Expert en équations et en résolution de problèmes complexes, Mr.Hildenbrand est réputé pour sa rigueur et sa passion pour les mathématiques.</p>
                             <ul>
                                 <li>Spécialité : Algèbre avancée</li>
