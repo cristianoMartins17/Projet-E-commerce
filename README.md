@@ -43,7 +43,7 @@ Vérification W3C :
 <strong>Page panier<br>
 Auteur : SAMIL Omeyya</strong><br>
 Vérification W3C :
-![screenW3S](image/Vérif_O.png)
+![screenW3S](image/vérif_o.png)
 
 <br><br>
 <strong>Page à propos<br>
