@@ -562,6 +562,7 @@ body:hover .animated-bg {
 
 /* Logo caché par défaut, apparaît au survol */
 .titre-logo {
+  background-color: #00000000;
   position: absolute;
   left: 50%;
   top: 50%;
