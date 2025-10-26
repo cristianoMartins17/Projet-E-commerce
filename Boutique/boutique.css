@@ -386,7 +386,6 @@ body:hover .animated-bg {
 /*================================*/
 
 body{
-  background: var(--sombre);
   color: #fff;
   font-family: "Space Grotesk", sans-serif;
   margin: 0;
@@ -404,14 +403,12 @@ body{
   padding: 10px 0px;
 }
 
-.shop h1 {
-  width: 60%;
-  font-size: 3em;
+.titre_principale {
   margin-top: 100px;
-  margin-bottom: 70px;
   justify-content: center;
   display: flex;
   transform-origin: center;
+  font-size: 3em;
   font-weight: bold;
   background: linear-gradient(135deg, #ED26C0, #BD22FB);
   box-shadow: 0 0 20px rgba(237, 38, 192, 0.5);
