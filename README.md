@@ -6,9 +6,9 @@ Notre site : [Not For Teachers](https://cristianoMartins17.github.io/Projet-E-co
 ## Membres du groupe :
 
 Etudiant 1 :  [MARTINS Cristiano](mailto:critiano.martins@edu.univ-fcomte.fr?subject=SAE_1_05_06)  
-Etudiant 2 :  [MAHAMANE Mansourah](omeyya.samil@edu.univ-fcomte.fr)  
+Etudiant 2 :  [MAHAMANE Mansourah]()  
 Etudiant 3 :  [TACHERIFT Sofiane]()  
-Etudiant 4 :  [SAMIL Omeyya]()
+Etudiant 4 :  [SAMIL Omeyya](omeyya.samil@edu.univ-fcomte.fr)
 
 ## Présentation du projet
 Ce dépôt correspond à un site web créé avec les langages HTML/CSS/JS dans le cadre d'un projet en développement d'interface web à l'IUT de Belfort-Montbéliard.
@@ -43,7 +43,7 @@ Vérification W3C :
 <strong>Page panier<br>
 Auteur : SAMIL Omeyya</strong><br>
 Vérification W3C :
-![screenW3S]()
+![screenW3S](image/Vérif_O.png)
 
 <br><br>
 <strong>Page à propos<br>
