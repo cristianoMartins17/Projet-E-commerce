@@ -755,6 +755,11 @@ footer h3 {
   background: none;
 }
 
+.nous {
+  max-height: 300px;
+  background: none;
+}
+
 footer a {
   color: white;
   text-decoration: none;
