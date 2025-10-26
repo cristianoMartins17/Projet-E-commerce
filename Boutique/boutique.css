@@ -735,16 +735,6 @@ footer h2 {
   color: white;
   text-align: center;
   margin-bottom: 10px;
-  background: transparent;
-  box-shadow: none;
-  padding: 5px 0;
-}
-
-footer h3 {
-  width: 100%;
-  font-size: 15px;
-  color: white;
-  text-align: center;
 }
 
 .nous {
