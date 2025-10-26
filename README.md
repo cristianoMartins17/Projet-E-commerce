@@ -27,7 +27,7 @@ Pour la conception du site, nous nous sommes inspirés de différents designs tr
 ###Nos concepts de design original : (réalisé par Mansourah sur Canva) :
 ![Premier Design Footer](image/Design1.png)
 ![Deuxième Design Footer](image/Design2.png)
-![Description Deuxième Design Footer](image/Design2_expliqué.png)
+![Description Deuxième Design Footer](image/Description_Design2.png)
 
 Palette :
 ![Palette](image/Palette.png)
