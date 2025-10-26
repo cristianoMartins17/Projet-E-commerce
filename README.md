@@ -25,9 +25,12 @@ Pour la conception du site, nous nous sommes inspirés de différents designs tr
 - Carte (Accueil) : <a href="https://codepen.io/AbubakerSaeed/pen/EJrRvY">Codepen</a>
 
 ###Nos concepts de design original : (réalisé par Mansourah sur Canva) :
-![Premier Design Footer]()
-![Deuxième Design Footer]()
-![Description Deuxième Design Footer]()
+![Premier Design Footer](image/Design1.png)
+![Deuxième Design Footer](image/Design2.png)
+![Description Deuxième Design Footer](image/Design2_expliqué.png)
+
+Palette :
+![Palette](image/Palette.png)
 
 ## Développement site web et validation des pages
 <strong>Page d'accueil<br>
