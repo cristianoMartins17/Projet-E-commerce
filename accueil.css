@@ -360,12 +360,6 @@ body:hover .halo {
   transition: 0.3s; 
 }
 
-/* Effet d'agrandissement au survol du bouton burger */
-#burger-btn:hover {
-  transform: scale(1.1);
-  background-color: #f0f0f0;
-}
-
 /* Menu hamburger caché par défaut (largeur 0) */
 .hamburger {
   position: fixed;
