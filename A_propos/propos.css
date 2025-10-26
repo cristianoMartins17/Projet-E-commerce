@@ -1117,35 +1117,35 @@ footer {
 .footer-contenu {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   gap: 40px;
 }
 
 /* --- PARTIE GAUCHE : personnages --- */
 .Personnages-reseaux {
+  flex-direction: column;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
 }
-
-.nom-Personnages {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-content: flex-end;
-  font-size: 18px;
-  
+footer h3 {
+  width: 100%;
+  font-size: 15px;
 }
 
+footer h2 {
+  font-size: 13px;
+  width: 100%;
+
+}
+
+
 .nous {
-  width: 450px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  position: absolute;
-  bottom: 0; /* colle l’image au bas du footer */
-  left: 150px;
+  max-height: 300px;
+  background: none;
 }
 
 /* --- PARTIE CENTRALE --- */
@@ -1155,13 +1155,18 @@ a{
   text-decoration: none;
 }
 
+.footer-centre-principal {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+
 .footer-centre {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 150px;
   gap: 30px;
 }
 
@@ -1193,12 +1198,7 @@ a{
 }
 
 /* Deux box du bas alignées */
-.footer-lois-gif {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: 80%; /* même largeur que la box du haut */
-}
+
 
 /* Les deux petites box */
 .footer-lois,
@@ -1213,21 +1213,20 @@ a{
   gap: 10px;
 }
 
-/* GIF ajusté */
-.footer-gif img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+.footer-lois {
+  text-align: center;
 }
+
+/* GIF ajusté */
+
 
 /* --- RESEAUX SOCIAUX --- */
 .Reseaux_sociaux-general {
-  position: absolute;
   right: 40px;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
@@ -1249,11 +1248,9 @@ a{
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.twitter , .instagram , .facebook , .mail , .phone {
-  
-  color: var(--rose);
+footer img {
+  background: none;
 }
-
 
 .Reseaux_sociaux-general a:hover {
   background-color: var(--rose);
@@ -1369,5 +1366,42 @@ a{
 
   #actualites>#conteneurActu {
     width: 100%;
+  }
+
+  #inscription {
+    width: 100%;
+  }
+  #inscription form {
+    width: 100%;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+  .footer-centre-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .Personnages-reseaux img {
+    display: none;
+  }
+  footer div {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .footer-centre {
+    flex-direction: column;
+  }
+
+  .Reseaux_sociaux-general {
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+
   }
 }
