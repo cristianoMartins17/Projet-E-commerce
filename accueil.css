@@ -969,8 +969,6 @@ footer h3 {
    width: 100%;
    font-size: 15px;
    margin-bottom: 20px;
-   font-size: 20px;
-   width: 20%;
    background-color: var(--violet-clair);
    color: white;
    padding: 10px;
@@ -992,8 +990,6 @@ footer h2 {
    padding: 10px 20px;
    color: white;
    margin: 0;
-   font-size: 30px;
-   width: 50%;
    margin-bottom: 20px;
 }
 
@@ -1003,11 +999,6 @@ footer h2 {
 }
 
 /* --- PARTIE CENTRALE --- */
-
-footer>a { 
-  color: white;
-  text-decoration: none;
-}
 
 .footer-centre-principal {
   flex-direction: row;
