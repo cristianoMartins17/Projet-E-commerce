@@ -33,6 +33,14 @@
 
 // modif class sur la navbar au scroll
 
+
+
+// De Base, je comptait mettre une animation de changement de page entre le main et le footer mais
+// cela aurait compliqué la mise en place du responsive
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.getElementById('mainNav');
 

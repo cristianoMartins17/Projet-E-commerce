@@ -613,6 +613,7 @@ body:hover .animated-bg {
 /* ---------- NAVBAR hamburger (mobile) ---------- */
 /* Bouton burger (le seul visible au départ) */
 #burger-btn {
+  display: none;
   position: fixed;
   top: 15px;
   left: 15px;
@@ -630,7 +631,6 @@ body:hover .animated-bg {
   /* Largeur du cercle */
   height: 45px;
   /* Hauteur du cercle */
-  display: flex;
   /* Pour centrer le symbole */
   align-items: center;
   justify-content: center;
@@ -707,36 +707,7 @@ body:hover .animated-bg {
   background-color: #BD22FB;
 }
 
-/* Option : cacher le menu sur grand écran si tu veux */
-@media (min-width: 768px) {
-  #burger-btn {
-    display: none;
-  }
 
-  .hamburger {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
-
-  header>nav {
-    flex-direction: column;
-  }
-
-  header>nav>a {
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 4vw;
-    padding: 5px 0;
-    border-radius: 0;
-    /* on désactive les bordures arrondies */
-  }
-}
 
 
 
@@ -779,7 +750,6 @@ main {
   flex-direction: column;
   display: flex;
   flex-direction: column;
-  padding-bottom: 300px;
 }
 
 
@@ -1280,13 +1250,43 @@ a{
 }
 
 @media (max-width:768px) {
-  
+
+
+
+  .navbar {
+    display: none;
+  }
+
+  header>nav {
+    flex-direction: column;
+  }
+
+  header>nav>a {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 4vw;
+    padding: 5px 0;
+    border-radius: 0;
+    /* on désactive les bordures arrondies */
+  }
+  main {
+    padding: 0px;
+    width: 100%;
+    position: relative;
+  }
+  section {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
   h1 {
     width: 100%;
   }
 
   h2 {
     width: 100%;
+    background-color: #ccc;
   }
 
   .imageDroite div {
@@ -1315,7 +1315,6 @@ a{
     align-items: center;
     flex-direction: row;
     width: 100%;
-    background-color: #41156A;
     align-items: center;
     position: relative;
   }
@@ -1339,6 +1338,16 @@ a{
   #actualites {
     justify-content: center;
     margin-right: 0%;
-    width: 80%;
+    width: 100%;
+  }
+
+  #actualites>#actuTitre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #actualites>#conteneurActu {
+    width: 100%;
   }
 }
