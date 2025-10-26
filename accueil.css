@@ -129,6 +129,17 @@ h2 {
   opacity: 0.6;
 }
 
+/* Quatrième halo : animation la plus lente pour effet de profondeur */
+.halo:nth-child(4) {
+  background: radial-gradient(
+    circle at 80% 20%,
+    color-mix(in srgb, var(--accent2) 60%, transparent) 0%,
+    transparent 25%
+  );
+  animation: float4 26s infinite ease-in-out;
+  opacity: 0.6;
+}
+
 /* Animation du premier halo : mouvement fluide en diagonale */
 @keyframes float1 {
   0%, 100% { transform: translate3d(-30%, -20%, 0) scale(1); }
@@ -723,12 +734,13 @@ figcaption {
   font-weight: 900;
   text-transform: uppercase;
   background: linear-gradient(90deg, #ED26C0, #BD22FB);
-  background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 25px rgba(189, 34, 251, 0.4);
+  background-clip: text;
+  color: transparent;
   margin: 0;
+  /* Ombre pour effet néon (fonctionne même avec text transparent) */
+  filter: drop-shadow(0 0 25px rgba(189, 34, 251, 0.4));
 }
 
 /* Petite barre décorative sous le titre */
@@ -940,7 +952,7 @@ figcaption {
    ======================================== */
 
 /* Sur grand écran : on cache le menu burger */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   #burger-btn {
     display: none;
   }
@@ -951,80 +963,220 @@ figcaption {
 
 /* Sur mobile : on cache la navbar classique et affiche le burger */
 @media (max-width: 768px) {
+  /* Cache la navbar desktop */
   .navbar {
     display: none;
   }
 
-  header > nav {
-    flex-direction: column;
+  /* Menu burger prend toute la hauteur */
+  .hamburger {
+    height: 100vh;
+    height: 100dvh; /* Pour les mobiles modernes */
   }
 
-  header > nav > a {
+  /* Correction du body pour éviter les débordements */
+  body {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+
+  /* Main prend toute la largeur disponible */
+  main {
     width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    overflow-x: hidden;
+  }
+
+  /* Titre principal centré et responsive */
+  .titre_principale {
+    margin-top: 80px;
+    font-size: 2em;
     text-align: center;
-    color: white;
-    font-size: 4vw;
-    padding: 5px 0;
-    border-radius: 0;
+    width: 100%;
+    padding: 10px 15px;
   }
 
-  /* Adaptation du carrousel sur mobile */
-  .carrousel {
-    height: 350px;
+  /* Conteneur du titre et de la carte en colonne */
+  .contenue {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 10px;
+    width: 100%;
   }
 
-  .image {
-    width: 220px;
-    height: 280px;
+  /* Titre diagonal centré */
+  .titre-diagonal {
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
-  .btn-nav {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+  /* Carte centrée */
+  .contenue-Carte {
+    margin: 20px auto;
+    width: 280px;
   }
 
+  /* Paragraphe centré et bien dimensionné */
+  .box-paragraphe {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Titres h2 centrés */
   h2 {
     font-size: 1.8rem;
+    width: 100%;
+    max-width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
   }
-}
 
-/* Adaptation de la section Description sur petit écran */
-@media (max-width: 900px) {
+  /* Titre de box centré */
+  .titre-box {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Section Description responsive */
+  .Description {
+    width: 100%;
+    padding: 40px 15px;
+    overflow-x: hidden;
+  }
+
   .Description-contenue {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    gap: 30px;
   }
 
   .Description-gauche, 
   .Description-droite {
     flex: 1 1 100%;
     justify-content: center;
+    width: 100%;
   }
 
   .Description-titre {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
   }
 
   .Description-titre::after {
     margin: 10px auto 0;
   }
 
-  .box-paragraphe {
-    width: 100%;
-    max-width: 90%;
-    padding: 20px;
-    font-size: 1rem;
-  }
-
   .Description-droite {
     justify-content: center;
+    width: 100%;
   }
 
   .Description-droite .box-paragraphe {
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding: 15px;
+  }
+
+  /* Carrousel responsive et centré */
+  .carrousel {
+    height: 350px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+
+  .image {
+    width: 200px;
+    height: 280px;
+  }
+
+  /* Boutons de navigation plus petits */
+  .btn-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  #avant {
+    left: 2%;
+  }
+
+  #apres {
+    right: 2%;
+  }
+
+  /* Indicateurs centrés */
+  .indicateurs {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  /* Lien boutique centré */
+  .lien {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+  .titre_principale {
+    font-size: 1.5em;
+  }
+
+  .titre-diagonal {
+    font-size: 1.5em;
+  }
+
+  .contenue-Carte {
+    width: 250px;
+  }
+
+  .Carte {
+    width: 250px;
+    height: 420px;
+  }
+
+  .Description-titre {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .carrousel {
+    height: 300px;
+  }
+
+  .image {
+    width: 180px;
+    height: 240px;
+  }
+
+  .btn-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
 }
