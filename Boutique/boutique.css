@@ -526,6 +526,7 @@ h2 {
   width: 30%;     
   transform: translateY(50px); 
   transition: all 0.8s ease-out;
+
 }
 
 
@@ -594,27 +595,55 @@ h2 {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
+}
+
+.explication {
+  /* Positionné sur la droite de l'écran sur desktop */
+  position: relative;
+  right: 24px;
+  top: 140px; /* ajuste selon le header */
+  width: 320px;
+  max-width: 28%;
+  padding: 18px;
+  /* background: rgba(44, 18, 97, 0.9); */
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  text-align: left;
+  margin-top: 400px;
+  margin-right: 60px;
+}
+
+/* Responsive: sur petits écrans, placer l'explication sous le contenu et pleine largeur */
+@media (max-width: 1024px) {
+  .explication {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin: 20px 0 0 0;
+    padding: 16px;
+    border-radius: 12px;
+  }
+}
 
   /*================================*/
 /*========POP-UP===============*/
 /*================================*/
-}
 
 /* POPUP (modal) */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;  
-  height: auto;
-  background: rgba(10, 0, 25, 0.9);
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 0, 25, 0.95);
   display: none;
   justify-content: center;
   align-items: center;
-  /* margin-top: 30px;
-  margin-bottom: 30px; */
   z-index: 1000;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  padding: 20px;
 }
 
 .popup.show {
@@ -622,82 +651,105 @@ h2 {
 }
 
 .popup-content {
-  background: #1a1a2f;
+  background: linear-gradient(145deg, #1a1a2f, #2a1a3f);
   border-radius: 20px;
   padding: 20px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 25px #a64dff;
-  text-align: center;
+  width: 70%;
+  max-width: 350px;
+  box-shadow: 0 0 30px rgba(189, 34, 251, 0.3);
   animation: popupIn 0.5s ease forwards;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin: auto;
+  transform: translateY(-2vh); /* Décale légèrement vers le haut pour un meilleur équilibre visuel */
 }
 
 .popup-content img {
-  width: auto;
-  max-height: 250px;
+  width: 60%;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 15px;
-  margin: 0 auto 15px auto;
-  display: block;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-
-@keyframes popupIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
 
 .popup-content h2 {
   color: #fcf9ff;
   margin: 10px 0;
-  font-size: 1.4em;
+  font-size: 1.3em;
+  text-align: center;
+  width: 100%;
 }
 
 .popup-price {
-  color: #c87dff;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-size: 1em;
+  color: var(--violet-clair);
+  font-size: 1.1em;
+  margin: 10px 0 20px 0;
+  font-weight: bold;
 }
 
+.popup-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
 
 .popup-buttons button {
-  background: #a64dff;
+  background: var(--violet-clair);
   border: none;
   color: #fff;
-  padding: 12px 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  margin: 10px;
-  transition: background 0.3s;
-  padding: 10px 16px;
+  transition: all 0.3s ease;
   font-size: 0.9em;
+  box-shadow: 0 4px 15px rgba(189, 34, 251, 0.2);
 }
 
 .popup-buttons button:hover {
-  background: #c87dff;
+  background: var(--rose);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(237, 38, 192, 0.3);
 }
 
 .close {
   position: absolute;
   top: 15px;
-  right: 20px;
-  font-size: 2em;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8em;
   color: #fff;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .close:hover {
-  transform: scale(1.2);
+  transform: rotate(90deg);
+  background: rgba(237, 38, 192, 0.2);
 }
 
+@keyframes popupIn {
+  from { 
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /*================================*/
 /*========PRINCIPAL===============*/
 /*================================*/
