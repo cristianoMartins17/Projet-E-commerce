@@ -4,13 +4,12 @@ function openModal(imgSrc, name, desc, price) {
   document.getElementById("popupTitle").textContent = name;
   document.getElementById("popupDesc").textContent = desc;
   document.getElementById("popupPrice").textContent = price;
-  popup.classList.add("show"); // <-- au lieu de display:flex
+  popup.style.display = "flex";
 }
 
 function closeModal() {
-  document.getElementById("popup").classList.remove("show");
+  document.getElementById("popup").style.display = "none";
 }
-
 
 window.onclick = function(e) {
   if (e.target.id === "popup") {
