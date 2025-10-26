@@ -129,17 +129,6 @@ h2 {
   opacity: 0.6;
 }
 
-/* Quatrième halo : animation la plus lente pour effet de profondeur */
-.halo:nth-child(4) {
-  background: radial-gradient(
-    circle at 80% 20%,
-    color-mix(in srgb, var(--accent2) 60%, transparent) 0%,
-    transparent 25%
-  );
-  animation: float4 26s infinite ease-in-out;
-  opacity: 0.6;
-}
-
 /* Animation du premier halo : mouvement fluide en diagonale */
 @keyframes float1 {
   0%, 100% { transform: translate3d(-30%, -20%, 0) scale(1); }
