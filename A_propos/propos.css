@@ -976,6 +976,7 @@ hr {
   flex-direction: column;
 }
 
+
 #caniotte>div {
   /* background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.04);
@@ -1120,8 +1121,9 @@ progress::-webkit-progress-value {
   background-color: white;
 }
 
-input[type="submit"] {
-  background-color: #0D0723;
+input {
+  margin-bottom: 20px;
+  color: black;
 }
 
 #inscription input:invalid {
