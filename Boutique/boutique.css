@@ -404,6 +404,20 @@ body{
   padding: 10px 0px;
 }
 
+.titre_principal{
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border: 1px solid white;
+    color: white;
+    background: linear-gradient(to right, var(--violet-fonce)#41156A 10%, #421868 90%);
+    width: 60%;
+    text-align: center;
+    text-justify: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 50px;
+}
+
 h2 {
   position: relative;
   transform-origin: center;
