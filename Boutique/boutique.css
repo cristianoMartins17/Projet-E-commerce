@@ -479,18 +479,19 @@ h2 {
   transform: translateY(50px); 
 }
 
-texte_principal{
-margin-bottom: 100px;
-margin-top: 100px;
-border: 1px solid white;
-color: white;
-background: linear-gradient(to right, var(--violet-fonce) 10%, #421868 90%);
-width: 60%;
-text-align: center;
-text-justify: center;
-padding: 10px;
-border-radius: 10px;
-font-size: 50px;
+.texte_principal {
+    width: 60%;
+    font-size: 3em;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    justify-content: center;
+    display: flex;
+    transform-origin: center;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ED26C0, #BD22FB);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
 }
 
 .produit-gauche {
