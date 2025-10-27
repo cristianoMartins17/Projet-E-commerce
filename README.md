@@ -61,6 +61,18 @@ Vérification W3C :
 Commits : ![screenCommits](image/screenCommit.png)
 
 Cristiano :
+- Idée du concept de NFT + nom 
+- Moodboard 
+- Organisation du projet :
+    - Planification des tâches 
+    - Répartition des tâches 
+- Fonctionnement des barres de navigation 
+    - Hover sur les liens ;
+    - Animation de défilement (pas le style néon, seulement son fonctionnement) 
+    - Hover sur le titre ;
+    - Toute la barre hamburger ;
+- Le contenu de la page d'accueil (sauf le fond et le pied de page, légèrement adaptés).
+- Le style des titres (rose aspect « néon »)
 
 Mansourah :
 
