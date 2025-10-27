@@ -746,14 +746,8 @@ footer::after {
 }
 
 footer h2 {
-  font-size: 13px;
-  width: 100%;
-  color: white;
-  text-align: center;
-  margin-bottom: 10px;
-  background: transparent;
-  box-shadow: none;
-  padding: 5px 0;
+    font-size: 13px;
+    width: 100%;
 }
 
 .nous {
