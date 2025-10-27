@@ -792,15 +792,14 @@ footer a:hover {
 }
 
 .liens {
-  width: 80%;
-  background-color: var(--violet-fonce);
-  padding: 50px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    width: 80%;
+    background-color: var(--violet-fonce);
+    padding: 50px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .liens-A,
