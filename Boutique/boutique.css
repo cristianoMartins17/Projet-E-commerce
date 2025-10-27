@@ -409,7 +409,7 @@ body{
     margin-top: 100px;
     border: 1px solid white;
     color: white;
-    background: linear-gradient(to right, var(--violet-fonce)#41156A 10%, #421868 90%);
+    background-color: var(--violet-fonce);
     width: 60%;
     text-align: center;
     text-justify: center;
