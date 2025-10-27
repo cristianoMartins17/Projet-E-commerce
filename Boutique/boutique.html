@@ -4,79 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="boutique.css">
-    <link rel="icon" type="../image/x-icon" href="../image/logo-nft.png">
+    <!-- Correction du type MIME du favicon -->
+    <link rel="icon" type="image/png" href="../image/logo-nft.png">
     <title>Boutique</title>
 </head>
 <body>
 
-        <!-- NAVBAR -->
-      <header>
+    <!-- NAVBAR -->
+    <header>
         <nav class="navbar" id="mainNav">
-          <div class="nav-inner">
+            <div class="nav-inner">
+                <div class="nav-left">
+                    <a href="../Boutique/boutique.html" class="nav-link">Boutique</a>
+                    <a href="../Panier/panier.html" class="nav-link">Panier</a>
+                </div>
 
-            <div class="nav-left">
-                <a href="../Boutique/boutique.html" class="nav-link">Boutique</a>
-                <a href="../Panier/panier.html" class="nav-link">Panier</a>
+                <div class="nav-title">
+                    <a href="../index.html" class="title-link" aria-label="Accueil">
+                        <span class="title-text">Not For Teachers</span>
+                        <img src="../image/logo-nft.png" alt="Logo Not For Teachers" class="title-logo">
+                    </a>
+                </div>
+
+                <div class="nav-right">
+                    <a href="../A_propos/propos.html" class="nav-link">À propos</a>
+                </div>
             </div>
-    
-            <div class="nav-title">
-              <a href="../index.html" class="title-link" aria-label="Accueil">
-                <span class="title-text">Not For Teachers</span>
-                <img src="../image/logo-nft.png" alt="Logo" class="title-logo">
-              </a>
-            </div>
-    
-        
-            <div class="nav-right">
-              <a href="../A_propos/propos.html" class="nav-link">À propos</a>
-            </div>
-          </div>
         </nav>
-    
+
         <!-- Menu burger -->
-      <button id="burger-btn">&#9776;</button>
-      <nav class="hamburger" id="menu">
-          <img src="../image/logo-nft.png" alt="logo nft">
-          <a href="../index.html">Accueil</a>
-          <a href="#" class="actif">Boutique</a>
-          <a href="../Panier/panier.html">Panier</a>
-          <a href="../A_propos/propos.html">À propos</a>
-      </nav>  
+        <button id="burger-btn" aria-label="Menu mobile">&#9776;</button>
+        <nav class="hamburger" id="menu" aria-label="Menu mobile">
+            <img src="../image/logo-nft.png" alt="Logo Not For Teachers">
+            <a href="../index.html">Accueil</a>
+            <a href="#" class="actif">Boutique</a>
+            <a href="../Panier/panier.html">Panier</a>
+            <a href="../A_propos/propos.html">À propos</a>
+        </nav>  
     </header>
 
-    
     <!-- ===============Background================ -->
-    <div class="animated-bg">
+    <div class="animated-bg" aria-hidden="true">
         <div class="lines"></div>
         <div class="halo"></div>
         <div class="halo"></div>
     </div> 
     
     <main>
-    <section class="shop">
-
+        <section class="shop">
             <h1 class="titre_principal">BOUTIQUE</h1>
             <h2>COLLECTION</h2>
 
             <div class="shop-content">
                 <div class="Grille-produits">
+
                     <!-- Exemple de carte -->
-                    <div class="produit produit-gauche" onclick="openModal('../image/MR_Hildenbrand.png', 'Mr Hildenbrand', 'L'inspiration divine vous guidera.', '62 K')">
+                    <div class="produit produit-gauche" onclick="openModal('../image/MR_Hildenbrand.png', 'Mr Hildenbrand', 'L’inspiration divine vous guidera.', '62 K')">
                         <div class="produit-image-texte">
-                            <img src="../image/MR_Hildenbrand.png" alt="Mr Hildenbrand" />
+                            <img src="../image/MR_Hildenbrand.png" alt="Portrait de Mr Hildenbrand">
                             <div class="produit-texte">
                                 <h3>Mr Hildenbrand</h3>
                                 <p class="price">62 K</p>
-                                <p class="description">L'inspiration divine vous guidera.</p>
+                                <p class="description">L’inspiration divine vous guidera.</p>
                             </div>
                         </div>
                     </div>
 
-
-
                     <div class="produit produit-droite" onclick="openModal('../image/MR_Salomon.png', 'Mr Salomon', 'Linux >> Windows.', '59 K')">
                         <div class="produit-image-texte">
-                            <img src="../image/MR_Salomon.png" alt="Mr Salomon" />
+                            <img src="../image/MR_Salomon.png" alt="Portrait de Mr Salomon">
                             <div class="produit-texte">
                                 <h3>Mr Salomon</h3>
                                 <p class="price">59 K</p>
@@ -85,122 +81,115 @@
                         </div>
                     </div>
 
+                    <div class="produit produit-gauche" onclick="openModal('../image/MR_Martinet.png', 'Prof. Martinet', 'Ses QCM sont à éviter absolument.', '60 K')">
+                        <div class="produit-image-texte">
+                            <img src="../image/MR_Martinet.png" alt="Portrait de Mr Martinet">
+                            <div class="produit-texte">
+                                <h3>Mr Martinet</h3>
+                                <p class="price">60 K</p>
+                                <p class="description">Ses QCM sont à éviter absolument.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="produit produit-gauche" onclick="openModal('../image/MR_Martinet.png', 'Prof. Martinet', 'Ces QCM sont à éviter absolument..', '60 K')">
-                    <div class="produit-image-texte">
-                        <img src="../image/MR_Martinet.png" alt="Mr Martinet" />
-                        <div class="produit-texte">
-                            <h3>Mr Martinet</h3>
-                            <p class="price">60 K</p>
-                            <p class="description">Ses QCM sont à éviter absolument..</p>
+                    <div class="produit produit-droite" onclick="openModal('../image/M_Paterlini.png', 'Mme Paterlini', 'Ce n’est pas parce qu’elle a les yeux fermés qu’elle ne vous voit pas.', '77 K')">
+                        <div class="produit-image-texte">
+                            <img src="../image/M_Paterlini.png" alt="Portrait de Mme Paterlini">
+                            <div class="produit-texte">
+                                <h3>Mme Paterlini</h3>
+                                <p class="price">77 K</p>
+                                <p class="description">Ce n’est pas parce qu’elle a les yeux fermés qu’elle ne vous voit pas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produit produit-gauche" onclick="openModal('../image/MR_Lassabe.png', 'Mr Lassabe', 'Affronte mon regard.', '87 K')">
+                        <div class="produit-image-texte">
+                            <img src="../image/MR_Lassabe.png" alt="Portrait de Mr Lassabe">
+                            <div class="produit-texte">
+                                <h3>Mr Lassabe</h3>
+                                <p class="price">87 K</p>
+                                <p class="description">Affronte mon regard.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produit produit-droite" onclick="openModal('../image/MR_Char.png', 'Mr Charr', 'Faites les TP.', '100 K')">
+                        <div class="produit-image-texte">
+                            <img src="../image/MR_Char.png" alt="Portrait de Mr Charr">
+                            <div class="produit-texte">
+                                <h3>Mr Charr</h3>
+                                <p class="price">100 K</p>
+                                <p class="description">Faites les TP.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produit produit-gauche" onclick="openModal('../image/MR_Pirolley.png', 'Mr Pirolley', 'Oui, nous avons votre image sous patin à glace prime.', '99 K')">
+                        <div class="produit-image-texte">
+                            <img src="../image/MR_Pirolley.png" alt="Portrait de Mr Pirolley">
+                            <div class="produit-texte">
+                                <h3>Mr Pirolley</h3>
+                                <p class="price">99 K</p>
+                                <p class="description">Oui, nous avons votre image sous patin à glace prime.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="produit produit-droite" onclick="openModal('../image/M_Paterlini.png', 'M Paterlini', 'Ce n'est pas parce qu'elle a les yeux fermés qu'elle ne vous voit pas.', '77 K')">
-                    <div class="produit-image-texte">
-                        <img src="../image/M_Paterlini.png" alt="M Paterlini" />
-                        <div class="produit-texte">
-                            <h3>M Paterlini</h3>
-                            <p class="price">77 K</p>
-                            <p class="description">Ce n'est pas parce qu'elle a les yeux fermés qu'elle ne vous voit pas.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="produit produit-gauche" onclick="openModal('../image/MR_Lassabe.png', 'Mr Lassabe', 'Affronte mon regard.', '87 K')">
-                    <div class="produit-image-texte">
-                        <img src="../image/MR_Lassabe.png" alt="Mr Lassabe" />
-                        <div class="produit-texte">
-                            <h3>Mr Lassabe</h3>
-                            <p class="price">87 K</p>
-                            <p class="description">Affronte mon regard.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="produit produit-droite" onclick="openModal('../image/MR_Char.png', 'Mr Charr', 'Faites lèèèè TP.', '100 K')">
-                    <div class="produit-image-texte">
-                        <img src="../image/MR_Char.png" alt="Mr Charr" />
-                        <div class="produit-texte">
-                            <h3>Mr Charr</h3>
-                            <p class="price">100 K</p>
-                            <p class="description">Faites lèèèè TP.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="produit produit-gauche" onclick="openModal('../image/MR_Pirolley.png', 'Mr Pirolley', 'Oui, nous avons votre image sous patin à glace prime.', '99 k')">
-                    <div class="produit-image-texte">
-                        <img src="../image/MR_Pirolley.png" alt="Prof Hildenbrand" />
-                        <div class="produit-texte">
-                            <h3>Mr Pirolley</h3>
-                            <p class="price">99 k</p>
-                            <p class="description">Oui, nous avons votre image sous patin à glace prime.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                <!-- labels column: moved outside the product cards -->
+                <!-- Informations latérales -->
                 <aside class="explication">
                     <h3>Promotions</h3>
                     <p>Les promotions ne seront accordées que si les partiels sont réussis (on est cuit).</p>
                 </aside>
 
-                    <!-- Fenêtre popup (modal) -->
-            <div id="popup" class="popup">
-                <div class="popup-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <img id="popupImg" src="" alt="">
-                    <h2 id="popupTitle"></h2>
-                    <p id="popupDesc"></p>
-                    <p class="popup-price" id="popupPrice"></p>
+                <!-- Fenêtre popup (modal) -->
+                <div id="popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+                    <div class="popup-content">
+                        <button class="close" onclick="closeModal()" aria-label="Fermer la fenêtre">&times;</button>
 
-                    <div class="popup-buttons">
-                        <button class="buy">🛒 Ajouter au panier</button>
-                        <button class="buy-now"> Acheter maintenant</button>
+                        <h2 id="popupTitle"></h2>
+                        <p id="popupDesc"></p>
+                        <p class="popup-price" id="popupPrice"></p>
+
+                        <div class="popup-buttons">
+                            <button class="buy">🛒 Ajouter au panier</button>
+                            <button class="buy-now">Acheter maintenant</button>
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-        </div>
-    </section>
-
-            
+        </section>
     </main>
 
-<!-- =================================================== -->
-
- <footer>
+    <!-- =================================================== -->
+    <footer>
         <section class="footer-contenu">
             <div class="Personnages-reseaux">
                 <div class="nom-Personnages">
                     <h2>Page réalisée par Mahamane Mansourah</h2>
-
-                    <h2>Avec l'aide de Cristiano Martins, Tacherift Sofiane et Samil Omeyya.</h2>
-
+                    <h2>Avec l’aide de Cristiano Martins, Tacherift Sofiane et Samil Omeyya.</h2>
                 </div>
-                <img src="../image/nous.png" alt="Personnages" class="nous">
+                <img src="../image/nous.png" alt="Illustration de l’équipe" class="nous">
             </div>
 
             <div class="footer-centre-principal">
                 <div class="footer-centre">
                     <div class="liens">
                         <div class="liens-A">
-                            <a href="#">Accueil</a>
-                            <a href="#">Boutique</a>
-                            <a href="#">Panier</a>
+                            <a href="../index.html">Accueil</a>
+                            <a href="../Boutique/boutique.html">Boutique</a>
+                            <a href="../Panier/panier.html">Panier</a>
                         </div>
                         <div class="liens-B">
                             <a href="#">Nouveautés</a>
-                            <a href="#">À propos</a>
+                            <a href="../A_propos/propos.html">À propos</a>
                             <a href="#">Contact</a>
                         </div>
                     </div>
 
-                    <p>NFTNFTNFTNFNTNFTNFTNFTNFT</p>
+                    <p>NFTNFTNFTNFTNFTNFTNFTNFTNFT</p>
 
                     <div class="footer-lois-gif">
                         <div class="footer-lois">
@@ -211,12 +200,18 @@
                     </div>
                 </div>
 
-                <!-- Réseaux sociaux sur le côté -->
+                <!-- Réseaux sociaux -->
                 <div class="Reseaux_sociaux-general">
                     <h2>Mes réseaux</h2>
-                    <a href="https://www.linkedin.com/in/mansourah-mahamane-300031329/"><img src="../image/linkedin.png" alt="Linkedin" class="icon"></a>
-                    <a href="ihttps://www.instagram.com/ms.dadart?igsh=M2JlY3I4eGV1N2Vj"><img src="../image/instagram.png" alt="Instagram" class="icon"></a>
-                    <a href="https://www.behance.net/mrlarillustr"><img src="../image/lien.png" alt="Lien" class="icon"></a>
+                    <a href="https://www.linkedin.com/in/mansourah-mahamane-300031329/">
+                        <img src="../image/linkedin.png" alt="LinkedIn" class="icon">
+                    </a>
+                    <a href="https://www.instagram.com/ms.dadart">
+                        <img src="../image/instagram.png" alt="Instagram" class="icon">
+                    </a>
+                    <a href="https://www.behance.net/mrlarillustr">
+                        <img src="../image/lien.png" alt="Behance" class="icon">
+                    </a>
                 </div>
             </div>
         </section>
@@ -225,6 +220,7 @@
             <p>&copy; 2025 Boutique. Tous droits réservés.</p>
         </div>
     </footer>
+
     <script src="boutique.js"></script>
 </body>
 </html>
