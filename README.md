@@ -58,7 +58,7 @@ Vérification W3C :
 ![screenW3S]()
 
 ## Répartition du Travail
-Commits : ![screenCommits]()
+Commits : ![screenCommits](image/screenCommit.png)
 
 Cristiano :
 
