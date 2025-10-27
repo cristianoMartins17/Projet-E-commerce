@@ -60,4 +60,11 @@ Vérification W3C :
 ## Répartition du Travail
 Commits : ![screenCommits]()
 
+Cristiano :
+
+Mansourah :
+
+Omeyya :
+
+Sofiane :
 
