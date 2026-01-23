@@ -79,4 +79,13 @@ Mansourah :
 Omeyya :
 
 Sofiane :
+-Organisation et réalisation de la page à propos :
+    -Hover et ombre en rose sur les élements
+    -Logo de l'application imaginaire "NotProfHelp"
+    -idée du fait que çe soit un site de nft pour une cause caricative
+    -formulaire pour s'inscire ( Il ne récupère pas les données )
+-Réalisation des bas-de-page:
+    -fonctionnement des liens pour aller sur les autres pages
+    -Style et réalisation des boutons pour aller sur nos réseaux
+
 
